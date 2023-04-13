@@ -11,7 +11,7 @@ website:
     search: true
     pinned: false
     collapse: true
-    left: 
+    right: 
       - text: Inicio
         file: index.qmd
       - text: Presentaciones
@@ -22,7 +22,6 @@ website:
         file: Paginas_Web.qmd
       - text: Articulos
         file: Articulos.qmd
-    right:
       - icon: github
         href: https://github.com/estadisticaun
         aria-label: GitHub
