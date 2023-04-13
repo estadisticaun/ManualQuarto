@@ -1,0 +1,45 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Proyecto Quarto UNAL"
+  favicon: 'Imagenes/Logos/Escudo_UNAL.png'
+  reader-mode: true
+  navbar:
+    logo: 'Imagenes/Logos/Logo_UNAL.png'
+    search: true
+    pinned: false
+    collapse: true
+    left: 
+      - text: Inicio
+        file: index.qmd
+      - text: Presentaciones
+        file: Presentaciones.qmd
+      - text: Libros
+        file: Libros.qmd
+      - text: Páginas Web
+        file: Paginas_Web.qmd
+      - text: Articulos
+        file: Articulos.qmd
+    right:
+      - icon: github
+        href: https://github.com/estadisticaun
+        aria-label: GitHub
+      - icon: youtube
+        href: https://www.youtube.com/@UNALoficial
+      - icon: globe2
+        href: https://unal.edu.co/
+      
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+  
+  pdf:
+    documentclass: scrreprt
+
+editor: visual
+

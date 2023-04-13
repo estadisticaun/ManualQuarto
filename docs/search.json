@@ -1,0 +1,44 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "Articulos.html",
+    "href": "Articulos.html",
+    "title": "Articulos",
+    "section": "",
+    "text": "Articulos\nContenido"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Proyecto Quarto UNAL",
+    "section": "",
+    "text": "Este proyecto es creado para la divulgación sobre como crear todo tipo de documentos en Quarto."
+  },
+  {
+    "objectID": "Libros.html",
+    "href": "Libros.html",
+    "title": "Libros",
+    "section": "",
+    "text": "Libros\nContenido"
+  },
+  {
+    "objectID": "Paginas_Web.html",
+    "href": "Paginas_Web.html",
+    "title": "Páginas Web",
+    "section": "",
+    "text": "Páginas Web\nContenido"
+  },
+  {
+    "objectID": "Presentaciones.html",
+    "href": "Presentaciones.html",
+    "title": "Presentaciones",
+    "section": "",
+    "text": "Presentaciones\nContenido"
+  }
+]
