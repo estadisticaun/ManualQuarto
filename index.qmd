@@ -1,6 +1,5 @@
 ---
 title: "Proyecto Quarto UNAL "
 ---
+
 Este proyecto es creado para la divulgación sobre como crear todo tipo de documentos en Quarto.
-
-
