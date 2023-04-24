@@ -1,5 +1,126 @@
 ---
-title: "Proyecto Quarto UNAL "
+pagetitle: "Proyecto Quarto UNAL"
+page-layout: full
+section-divs: false
+editor: source
+sidebar: false
+search: false
+description: |
+  Motivación del uso de Quarto para creación de documentos académicos.
+image: Imagenes/Logos/jupyter-logo.png
+listing:
+  - id: latest-content
+    contents: 
+    - "Presentaciones.qmd"
+    sort: "date desc"
+    type: grid
+    categories: false
+    sort-ui: false
+    filter-ui: false
+    max-items: 3
+    feed: false
+toc: false
 ---
 
+
+::: {.content-container}
+::: {.top-story .gray-background}
+<a href="Presentaciones.qmd">
+
+:::  grid
+::: {.g-col-12 .g-col-lg-8 .top-story-text}
+## Proyecto Quarto UNAL
+
+
+El principal objetivo es crear una página web
+
+:::
+::: {.g-col-12 .g-col-lg-4 .top-story-img}
+![](Imagenes/Logos/jupyter-logo.png)
+:::
+:::
+
+</a>
+
+:::
+:::
+
+
+::: {.header-text} 
+::: {.content-container}
+::: {.header-block}
+
 Este proyecto es creado para la divulgación sobre como crear todo tipo de documentos en Quarto.
+
+:::
+
+:::
+
+:::
+
+___
+
+::: {.content-container}
+
+::: {.listing-block}
+<a href="Libros.qmd">
+
+## Articulos relacionados 
+</a>
+
+::: {#latest-content}
+
+:::
+
+<!-- aaaaa -->
+:::
+:::
+
+
+
+::: {.footer-text}
+::: {.footer-container .black-background}
+::: {.footer-block}
+::: grid
+
+
+::: {.g-col-12 .g-col-md-6}
+
+### Publicado por
+[![](Imagenes/Logos/escudoUnal.svg){ width=50% }](https://unal.edu.co/)
+
+:::
+
+::: {.g-col-12 .g-col-md-2}
+
+### Sobre nosotros
+Objetivo\
+Grupo\
+Contactenos
+
+:::
+
+::: {.g-col-12 .g-col-md-2}
+
+### Paginas Web
+
+
+:::
+
+::: {.g-col-12 .g-col-md-2}
+
+### Siguenos en
+[GitHub](https://github.com/realworlddatascience)\
+[Twitter](https://twitter.com/rwdatasci)\
+[LinkedIn](https://www.linkedin.com/showcase/rss-real-world-data-science)\
+[Mastodon](https://fosstodon.org/@rwdatasci)\
+
+:::
+
+:::
+
+:::
+
+:::
+
+:::

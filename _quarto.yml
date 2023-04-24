@@ -35,10 +35,7 @@ format:
   html:
     theme: cosmo
     css: styles.css
-    toc: true
-  
-  pdf:
-    documentclass: scrreprt
+    toc: false
 
 editor: visual
 

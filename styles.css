@@ -1,4 +1,378 @@
 /* css styles */
+
 .navbar-logo {
-    max-height: 50px;
+    max-height: 51px;
+    width: auto;
+    align-items: baseline;
 }
+
+h2.anchored {
+    margin-bottom: 0;
+    color: black;
+  }
+
+a {
+    text-decoration: none;
+}
+
+ .navbar {
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: 1em;
+  }
+
+
+#quarto-header {
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+
+
+.header-text p {
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  .header-block {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-top: 1em;
+    padding-bottom: 1.8em; 
+    box-sizing: border-box;
+    border-bottom: 1px solid black;
+  }
+
+
+  .nav-item {
+    margin-top: 1rem; 
+  }
+
+  @media (max-width: 1200px) {
+    .nav-item {
+      margin-right: 0.5rem;
+    }
+  }
+
+  @media (max-width: 991px) {
+    .nav-item {
+      margin-top: 0;
+      margin-right: 0rem;
+  }
+  }
+
+  .aa-DetachedSearchButton {
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 991px) {
+    .aa-DetachedSearchButton {
+      margin-top: 0;
+  }
+  }
+
+  .dropdown-item {
+    font-family: inherit;
+    letter-spacing: 1px;
+    display: block;
+    width: 100%;
+    padding: 0.25rem 1rem;
+    clear: both;
+    font-weight: 300;
+    color: black;
+    text-align: inherit;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    background-color: rgba(0,0,0,0);
+    border: 0;
+  }
+
+
+
+  /*-- quarto titles --*/
+
+#title-block-header {
+    margin-block-end: 1rem;
+    position: relative;
+    margin-top: -1px;
+    margin-bottom: 1.8em;
+    border-bottom: 1px solid black;
+    background-color: #f0eeeb;
+  }
+
+
+.quarto-title-banner {
+    margin-bottom: 0.75em;
+}
+
+@media (max-width: 991.98px) {
+    .quarto-title-banner {
+        padding-top: 2.5em;
+        padding-bottom: 0;
+    }
+}
+
+@media (min-width: 992px) {
+.quarto-title-banner {
+    padding-top: 2.5em;
+    padding-bottom: 0;
+}
+}
+
+.quarto-title-banner .quarto-title .title {
+    font-weight: 500;
+  }
+
+#title-block-header.quarto-title-block.default .description {
+margin-top: 1.5em;
+font-weight: 400;
+font-size: 1.2em;
+color: black;
+}
+
+
+
+.quarto-title .quarto-categories {
+    display: flex;
+    column-gap: 0.4em;
+    padding-bottom: 0.5em;
+    margin-top: 1.9em;
+  }
+
+/*-- background styles --*/
+
+.black-background {
+    background-color: black;
+  }
+  
+  .gray-background {
+    background-color: #fafafa;
+  }
+  
+  .blue-background {
+    background-color: #7eadba;
+  }
+  
+  .yellow-background {
+    background-color: #e3b638;
+  }
+  
+  .pink-background {
+    background-color: #d6748c;
+  }
+  
+  .orange-background {
+    background-color: #da9359;
+  }
+
+/*-- homepage styles --*/
+
+.content-container {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+  }
+
+.content-container .listing-pagination {
+display: none;
+}
+
+.top-story {
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-bottom: 1em; 
+    box-sizing: border-box;
+    height: auto;
+    display: flex;
+    align-items: center;
+    color: black;
+  }
+
+
+.top-story img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.top-story-text {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 0;
+    color: black;
+}
+
+.top-story-text h2 {
+    margin-top: 1.5rem;
+    color: black;
+  }
+
+.top-story-img p {
+    margin-bottom: 0;
+}
+
+.header-banner {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+
+.header-banner {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .header-banner .header-image {
+    position: absolute;
+    display: none;
+    height: auto;
+  }
+  
+  .header-text p {
+    text-align: center;
+    margin-bottom: 0;
+  }
+  
+  .header-block {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-top: 1em;
+    padding-bottom: 2em; 
+    box-sizing: border-box;
+    border-bottom: 1px solid black;
+  }
+  
+  .listing-block {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-bottom: 1.8em; 
+    box-sizing: border-box;
+    border-bottom: 1px solid black;
+  }
+  
+  .listing-block h2 {
+    /* margin-top: 1.5em; */
+    color: black;
+    text-transform: uppercase;
+  }
+  
+  .listing-block h2:hover {
+    color: #ffffff;
+  }
+  
+  
+  .pullout-container {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    padding-top: 2.5em;
+  }
+  
+  .pullout-block {
+    text-align: center;
+    max-width: calc(1000px + 6vw);
+    margin: 0 auto;
+    padding-top: 1em;
+    padding-bottom: 1.8em; 
+    box-sizing: border-box;
+  }
+  
+  .pullout-text h2 {
+    text-align: center;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    color: white;
+    margin-top: 0.5em;
+  }
+  
+  .pullout-text p {
+    text-align: center;
+    font-family: 'Oswald';
+    font-weight: 500;
+    color: white;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-decoration-color: #939bc9;
+    text-decoration-thickness: 3px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .button {
+    border: none;
+    border-radius: 0px;
+    color: black;
+    background-color: white;
+    padding: 15px 32px;
+    text-align: center;
+    /* text-decoration: none; */
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  
+  .button p {
+    color: black;
+    font-family: 'Oswald';
+    font-size: 1.3em;
+    text-transform: uppercase;
+    margin-bottom: 0px;
+    text-decoration: none;
+  }
+  
+  .button a {
+    color: black;
+    font-weight: 500;
+  }
+
+
+/*-- footer style --*/
+
+.footer-container {
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 1em;
+    padding-bottom: 0em;
+    margin-top: 1em;
+  }
+  
+  .footer-text h3, .h3 {
+    color: white;
+    font-size: .875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    margin-top: 0.3rem;
+    border-bottom: 0;
+    padding-bottom: 0;
+    padding-top: 0px;
+  }
+  
+  .footer-text p, .p {
+    color: white;
+    font-size: .875rem;
+    font-weight: 400;
+  }
+  
+  .footer-text p > a {
+    color: white;
+    font-size: .875rem;
+    font-weight: 400;
+  }
+  
+  .footer-text p > a:hover {
+    color: #939bc9;
+    font-size: .875rem;
+    font-weight: 400;
+  }
+  
+  .footer-block {
+    max-width:  1000px;
+    max-height: 1000px;
+    margin: 0 auto;
+    padding-top: 0em;
+    padding-bottom: 0em; 
+    box-sizing: border-box;
+  }  
+
+
