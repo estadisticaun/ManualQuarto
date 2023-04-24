@@ -2,7 +2,9 @@
   {
     "listing": "/index.html",
     "items": [
-      "/Presentaciones.html"
+      "/Presentaciones.html",
+      "/Libros.html",
+      "/Paginas_Web.html"
     ]
   }
 ]

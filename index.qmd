@@ -12,6 +12,8 @@ listing:
   - id: latest-content
     contents: 
     - "Presentaciones.qmd"
+    - "Libros.qmd"
+    - "Paginas_Web.qmd"
     sort: "date desc"
     type: grid
     categories: false
