@@ -71,13 +71,15 @@ Nuestra página web tiene como objetivo empoderarte en el proceso de creación d
 
 ## Instalación de Quarto y RStudio
 
-Quarto es un programa de código abierto que puede ser utilizado en diferentes IDE. En esta página usaremos RStudio y el lenguaje de programación de R y Python. Es importante aclarar que RStudio únicamente está en Inglés. Para esto, seguir los soguientes pasos:
+Quarto es un programa de código abierto que puede ser utilizado en diferentes IDE. En esta página usaremos RStudio y el lenguaje de programación de R y Python. Es importante aclarar que RStudio únicamente está en Inglés. Para esto, seguir los siguientes pasos:
 
-1. Descarga e instala Quarto en la página oficial: [https://quarto.org/docs/get-started/](https://quarto.org/docs/get-started/)
+1. Descarga e instala Quarto en la página oficial: [https://quarto.org/docs/get-started/](https://quarto.org/docs/get-started/){target="_blank"}.
 
-2. Seleccionar un IDE, en este caso RStudio. Para esto, instala R y después puedes instalar RStudio en la página oficial: [https://posit.co/download/rstudio-desktop/](https://posit.co/download/rstudio-desktop/)
+2. Instala R en la página oficial: [https://posit.co/download/rstudio-desktop/](https://posit.co/download/rstudio-desktop/){target="_blank"}.
 
-3. Verifica que la instalación de R, RStudio y Quarto es correcta. Para esto, vamos a descargar el ejemplo 
+3. Selecciona un IDE, en este caso RStudio. Para esto, instala R y después puedes instalar RStudio en la página oficial: [https://posit.co/download/rstudio-desktop/](https://posit.co/download/rstudio-desktop/){target="_blank"}.
+
+4. Verifica que la instalación de R, RStudio y Quarto es correcta. Para esto, descarga el ejemplo.
 
 ::: {.callout}
 <a href="https://quarto.org/docs/get-started/hello/rstudio/_hello.qmd" download="hello.qmd">Download hello.qmd </a>
@@ -87,18 +89,18 @@ Quarto es un programa de código abierto que puede ser utilizado en diferentes I
 ![](Imagenes/00_Instalacion/0_Ejemplo.png)
 
 
-4. Debemos instalar las librerias necesarias 
+5. Instala las librerias necesarias.
 
 ```default
 install.packages("tidyverse")
 install.packages("palmerpenguins")
 ```
 
-5. Renderizar el documento en la parte superior marcada con una flecha azul hacia la derecha
+6. Renderiza el documento en la parte superior marcada con una flecha azul hacia la derecha.
 
 ![](Imagenes/00_Instalacion/1_Render.png)
 
-6. Una vez realizado todos los pasos anteriores deberíamos tener sin problema el siguiente documento HTML
+7. Una vez realizado todos los pasos anteriores deberias tener sin problema el siguiente documento HTML.
 
 ![](Imagenes/00_Instalacion/2_HTML.png)
 
@@ -161,10 +163,10 @@ Contactenos
 ::: {.g-col-12 .g-col-md-2}
 
 ### Siguenos en
-[GitHub](https://github.com/realworlddatascience)\
-[Twitter](https://twitter.com/rwdatasci)\
-[LinkedIn](https://www.linkedin.com/showcase/rss-real-world-data-science)\
-[Mastodon](https://fosstodon.org/@rwdatasci)\
+[GitHub](https://github.com/realworlddatascience){target="_blank"}\
+[Twitter](https://twitter.com/rwdatasci){target="_blank"}\
+[LinkedIn](https://www.linkedin.com/showcase{target="_blank"}/rss-real-world-data-science){target="_blank"}\
+[Mastodon](https://fosstodon.org/@rwdatasci){target="_blank"}\
 
 :::
 
