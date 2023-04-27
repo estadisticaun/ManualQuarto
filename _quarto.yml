@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "Proyecto Quarto UNAL"
+  title: "Manual Quarto"
   favicon: 'Imagenes/Logos/Escudo_UNAL.png'
   reader-mode: true
   navbar:

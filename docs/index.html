@@ -8,7 +8,7 @@
 
 <meta name="description" content="Motivación del uso de Quarto para creación de documentos académicos.">
 
-<title>Proyecto Quarto UNAL</title>
+<title>Manual Quarto</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -109,7 +143,7 @@ ul.task-list li input[type="checkbox"] {
     <img src="./Imagenes/Logos/Logo_UNAL.png" alt="" class="navbar-logo">
     </a>
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Proyecto Quarto UNAL</span>
+    <span class="navbar-title">Manual Quarto</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="false"></div>
@@ -177,27 +211,60 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="content-container">
 <div class="top-story gray-background">
-<p><a href="./Presentaciones.html"></a></p><a href="./Presentaciones.html">
 <div class="grid">
-<section id="proyecto-quarto-unal" class="g-col-12 g-col-lg-8 top-story-text">
-<h2 class="anchored">Proyecto Quarto UNAL</h2>
-<p>El principal objetivo es crear una página web</p>
+<section id="crea-documentos-con-quarto" class="g-col-12 g-col-lg-6 top-story-text">
+<h2 class="anchored">¡Crea documentos con <span style="color:darkblue"> Quarto </span>!</h2>
+<p>Posit en el evento <em>rstudio::conf(2022)</em> anuncio la creación de <strong>Quarto</strong>, un nuevo sistema de publicación científica y técnica de código abierto que funciona con R, Python, Julia, JavaScript y muchos otros lenguajes, para la creación de documentos dinámicos como artículos, presentaciones, páginas web, blogs, y libros en HTML, PDF, MS Word, ePub, y muchos más. El objetivo de Quarto aparte de manejar diferentes lenguajes es poder trabajar en diferentes Entornos de Desarrollo Integrado (IDE – siglas en ingles) como lo es Jupyter, Visual Studio Code (VSC) y RStudio.</p>
 </section>
-<div class="g-col-12 g-col-lg-4 top-story-img">
-<p><img src="Imagenes/Logos/jupyter-logo.png" class="img-fluid"></p>
+<div class="g-col-12 g-col-lg-6 top-story-img">
+<p><a href="https://posit.co/blog/four-announcements-from-rstudio-conf-2022/"> <img src="Imagenes/Logos/Quarto.jpg" class="img-fluid"> </a></p>
 </div>
 </div>
-</a><p><a href="./Presentaciones.html"></a></p>
 </div>
 </div>
 <div class="header-text">
 <div class="content-container">
 <div class="header-block">
-<p>Este proyecto es creado para la divulgación sobre como crear todo tipo de documentos en Quarto.</p>
+<p>Nuestra página web tiene como objetivo empoderarte en el proceso de creación de diferentes tipos de documentos, guiándote desde el inicio hasta el final del proceso. Aprenderás todo lo necesario, incluyendo la instalación de programas y el uso de Quarto, de una manera clara y detallada. Nuestro objetivo es hacerte sentir seguro y confiado en tus habilidades de creación de documentos, para que puedas aplicarlas en tu trabajo, estudio o cualquier proyecto que te propongas.</p>
+<p>¡Únete a nuestra comunidad de creadores de documentos y descubre todo lo que puedes lograr!</p>
 </div>
 </div>
 </div>
-<hr>
+<div class="content-container">
+<section id="instalación-de-quarto-y-rstudio" class="listing-block">
+<h2 class="anchored">Instalación de Quarto y RStudio</h2>
+<p>Quarto es un programa de código abierto que puede ser utilizado en diferentes IDE. En esta página usaremos RStudio y el lenguaje de programación de R y Python. Es importante aclarar que RStudio únicamente está en Inglés. Para esto, seguir los soguientes pasos:</p>
+<ol type="1">
+<li><p>Descarga e instala Quarto en la página oficial: <a href="https://quarto.org/docs/get-started/">https://quarto.org/docs/get-started/</a></p></li>
+<li><p>Seleccionar un IDE, en este caso RStudio. Para esto, instala R y después puedes instalar RStudio en la página oficial: <a href="https://posit.co/download/rstudio-desktop/">https://posit.co/download/rstudio-desktop/</a></p></li>
+<li><p>Verifica que la instalación de R, RStudio y Quarto es correcta. Para esto, vamos a descargar el ejemplo</p></li>
+</ol>
+<div class="callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><a href="https://quarto.org/docs/get-started/hello/rstudio/_hello.qmd" download="hello.qmd">Download hello.qmd </a></p>
+</div>
+</div>
+</div>
+<p><img src="Imagenes/00_Instalacion/0_Ejemplo.png" class="img-fluid"></p>
+<ol start="4" type="1">
+<li>Debemos instalar las librerias necesarias</li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>install.packages("tidyverse")</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>install.packages("palmerpenguins")</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="5" type="1">
+<li>Renderizar el documento en la parte superior marcada con una flecha azul hacia la derecha</li>
+</ol>
+<p><img src="Imagenes/00_Instalacion/1_Render.png" class="img-fluid"></p>
+<ol start="6" type="1">
+<li>Una vez realizado todos los pasos anteriores deberíamos tener sin problema el siguiente documento HTML</li>
+</ol>
+<p><img src="Imagenes/00_Instalacion/2_HTML.png" class="img-fluid"></p>
+</section>
+</div>
 <div class="content-container">
 <div class="listing-block">
 <p><a href="./Libros.html"></a></p><a href="./Libros.html">
@@ -270,7 +337,6 @@ Contenido
 No matching items
 </div>
 </div>
-<!-- aaaaa -->
 </div>
 </div>
 <div class="footer-text">

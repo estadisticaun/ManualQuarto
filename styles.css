@@ -190,6 +190,8 @@ display: none;
 .top-story img {
     height: 100%;
     object-fit: cover;
+    display: grid;
+    place-items: center;
 }
 
 .top-story-text {
@@ -197,6 +199,8 @@ display: none;
     margin-right: 1rem;
     margin-top: 0;
     color: black;
+    display: grid;
+    place-items: center;
 }
 
 .top-story-text h2 {
@@ -206,6 +210,8 @@ display: none;
 
 .top-story-img p {
     margin-bottom: 0;
+    padding-top: 70px;
+    padding-bottom: 50px;
 }
 
 .header-banner {
