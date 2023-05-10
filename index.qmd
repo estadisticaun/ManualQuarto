@@ -23,157 +23,113 @@ listing:
 toc: false
 ---
 
-
-::: {.content-container}
+::: content-container
 ::: {.top-story .gray-background}
-
-
-:::  grid
+::: grid
 ::: {.g-col-12 .g-col-lg-6 .top-story-text}
-## ¡Crea documentos con <span style="color:darkblue"> Quarto </span>!
+## ¡Crea documentos con [ Quarto ]{style="color:darkblue"}!
 
-
-Posit en el evento *rstudio::conf(2022)* anuncio la creación de **Quarto**, un nuevo sistema de publicación científica y técnica de código abierto que funciona con R, Python, Julia, JavaScript y muchos otros lenguajes, para la creación de documentos dinámicos como artículos, presentaciones, páginas web, blogs, y libros en HTML, PDF, MS Word, ePub, y muchos más. El objetivo de Quarto aparte de manejar diferentes lenguajes es poder trabajar en diferentes Entornos de Desarrollo Integrado (IDE – siglas en ingles) como lo es Jupyter, Visual Studio Code (VSC) y RStudio.
-
-
+Posit en el evento *rstudio::conf(2022)* anuncio la creación de **Quarto**, un nuevo sistema de publicación científica y técnica de código abierto que funciona con R, Python, Julia, JavaScript y muchos otros lenguajes, para la creación de documentos dinámicos como artículos, presentaciones, páginas web, blogs, y libros en HTML, PDF, MS Word, ePub, y muchos más. El objetivo de Quarto aparte de manejar diferentes lenguajes es poder trabajar en diferentes Entornos de Desarrollo Integrado (IDE -- siglas en ingles) como lo es Jupyter, Visual Studio Code (VSC) y RStudio.
 :::
+
 ::: {.g-col-12 .g-col-lg-6 .top-story-img}
-<a href="https://posit.co/blog/four-announcements-from-rstudio-conf-2022/">
-![](Imagenes/Logos/Quarto.jpg)
-</a>
+<a href="https://posit.co/blog/four-announcements-from-rstudio-conf-2022/"> ![](Imagenes/Logos/Quarto.jpg) </a>
+:::
+:::
 :::
 :::
 
-
-
-:::
-:::
-
-
-::: {.header-text} 
-::: {.content-container}
-::: {.header-block}
-
-Nuestra página web tiene como objetivo empoderarte en el proceso de creación de diferentes tipos de documentos, guiándote desde el inicio hasta el final del proceso. Aprenderás todo lo necesario, incluyendo la instalación de programas y el uso de Quarto, de una manera clara y detallada. Nuestro objetivo es hacerte sentir seguro y confiado en tus habilidades de creación de documentos, para que puedas aplicarlas en tu trabajo, estudio o cualquier proyecto que te propongas. 
+::: header-text
+::: content-container
+::: header-block
+Nuestra página web tiene como objetivo empoderarte en el proceso de creación de diferentes tipos de documentos, guiándote desde el inicio hasta el final del proceso. Aprenderás todo lo necesario, incluyendo la instalación de programas y el uso de Quarto, de una manera clara y detallada. Nuestro objetivo es hacerte sentir seguro y confiado en tus habilidades de creación de documentos, para que puedas aplicarlas en tu trabajo, estudio o cualquier proyecto que te propongas.
 
 ¡Únete a nuestra comunidad de creadores de documentos y descubre todo lo que puedes lograr!
-
-
+:::
+:::
 :::
 
-:::
-
-:::
-
-::: {.content-container}
-
-::: {.listing-block}
-
+::: content-container
+::: listing-block
 ## Instalación de Quarto y RStudio
 
 Quarto es un programa de código abierto que puede ser utilizado en diferentes IDE. En esta página usaremos RStudio y el lenguaje de programación de R y Python. Es importante aclarar que RStudio únicamente está en Inglés. Para esto, seguir los siguientes pasos:
 
-1. Descarga e instala Quarto en la página oficial: [https://quarto.org/docs/get-started/](https://quarto.org/docs/get-started/){target="_blank"}.
+1.  Descarga e instala Quarto en la página oficial: [https://quarto.org/docs/get-started/](https://quarto.org/docs/get-started/){target="_blank"}.
 
-2. Instala R en la página oficial: [https://posit.co/download/rstudio-desktop/](https://posit.co/download/rstudio-desktop/){target="_blank"}.
+2.  Instala R en la página oficial: [https://posit.co/download/rstudio-desktop/](https://posit.co/download/rstudio-desktop/){target="_blank"}.
 
-3. Selecciona un IDE, en este caso RStudio. Para esto, instala R y después puedes instalar RStudio en la página oficial: [https://posit.co/download/rstudio-desktop/](https://posit.co/download/rstudio-desktop/){target="_blank"}.
+3.  Selecciona un IDE, en este caso RStudio. Para esto, instala R y después puedes instalar RStudio en la página oficial: [https://posit.co/download/rstudio-desktop/](https://posit.co/download/rstudio-desktop/){target="_blank"}.
 
-4. Verifica que la instalación de R, RStudio y Quarto es correcta. Para esto, descarga el ejemplo.
+4.  Verifica que la instalación de R, RStudio y Quarto es correcta. Para esto, descarga el ejemplo.
 
-::: {.callout}
+::: callout
 <a href="https://quarto.org/docs/get-started/hello/rstudio/_hello.qmd" download="hello.qmd">Download hello.qmd </a>
 :::
 
-
 ![](Imagenes/00_Instalacion/0_Ejemplo.png)
 
+5.  Instala las librerias necesarias.
 
-5. Instala las librerias necesarias.
-
-```default
+``` default
 install.packages("tidyverse")
 install.packages("palmerpenguins")
 ```
 
-6. Renderiza el documento en la parte superior marcada con una flecha azul hacia la derecha.
+6.  Renderiza el documento en la parte superior marcada con una flecha azul hacia la derecha.
 
 ![](Imagenes/00_Instalacion/1_Render.png)
 
-7. Una vez realizado todos los pasos anteriores deberias tener sin problema el siguiente documento HTML.
+7.  Una vez realizado todos los pasos anteriores deberias tener sin problema el siguiente documento HTML.
 
 ![](Imagenes/00_Instalacion/2_HTML.png)
-
-
+:::
 :::
 
-:::
-
-
-
-
-
-
-::: {.content-container}
-
-::: {.listing-block}
+::: content-container
+::: listing-block
 <a href="Libros.qmd">
 
-## Articulos relacionados 
+## Articulos relacionados
+
 </a>
 
 ::: {#latest-content}
-
-:::
-
 :::
 :::
+:::
 
-
-
-::: {.footer-text}
+::: footer-text
 ::: {.footer-container .black-background}
-::: {.footer-block}
+::: footer-block
 ::: grid
-
-
 ::: {.g-col-12 .g-col-md-6}
-
 ### Publicado por
-[![](Imagenes/Logos/escudoUnal.svg){ width=50% }](https://unal.edu.co/)
 
+[![](Imagenes/Logos/escudoUnal.svg){width="50%"}](https://unal.edu.co/)
 :::
 
 ::: {.g-col-12 .g-col-md-2}
-
 ### Sobre nosotros
+
 Objetivo\
 Grupo\
 Contactenos
-
 :::
 
 ::: {.g-col-12 .g-col-md-2}
-
 ### Paginas Web
-
-
 :::
 
 ::: {.g-col-12 .g-col-md-2}
-
 ### Siguenos en
+
 [GitHub](https://github.com/realworlddatascience){target="_blank"}\
 [Twitter](https://twitter.com/rwdatasci){target="_blank"}\
-[LinkedIn](https://www.linkedin.com/showcase{target="_blank"}/rss-real-world-data-science){target="_blank"}\
+[LinkedIn](https://www.linkedin.com/showcase%7Btarget=%22_blank%22%7D/rss-real-world-data-science){target="_blank"}\
 [Mastodon](https://fosstodon.org/@rwdatasci){target="_blank"}\
-
 :::
-
 :::
-
 :::
-
 :::
-
 :::
