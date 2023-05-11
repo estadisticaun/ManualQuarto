@@ -1,6 +1,136 @@
-# Libros
+---
+page-layout: article
+section-divs: true
+sidebar: true
+search: true
+toc: true
+---
 
-Contenido
+
+# Libros 
+
+En esta sección, aprenderás cómo crear un libro utilizando Quarto, el cual consiste en combinar múltiples documentos HTML en un solo documento. Además, Quarto permite hacer referencias cruzadas entre diferentes capítulos para mejorar la navegación y la experiencia del usuario.
+
+
+## Plantilla básica
+
+Quarto cuenta con plantillas, lo cual resulta muy práctico al momento de comenzar un proyecto y personalizarlo según las necesidades específicas. Para esto:
+
+1. Abre RStudio
+2. En la parte superior derecha, selecciona `Project` y después `New Project`.
+![](Imagenes/01_Libros/00_Crear_Project.png)
+
+3. Es recomendable guardar el proyecto en un nuevo directorio para mantenerlo organizado y evitar confusiones.
+![](Imagenes/01_Libros/01_Project_New.png)
+
+4. Selecciona `Quarto Book` que es el documento que estamos interesados crear.
+![](Imagenes/01_Libros/02_Seleccionar_Book.png)
+
+5. Es recomendable seleccionar la opción `Create a git repository` en caso de que se desee mantener un control de versiones y ser publicado en GitHub. Además, para mantener un ambiente único del proyecto seleccionar la opción `Open in new session`.
+![](Imagenes/01_Libros/03_Crear_Book.png)
+
+6. De esta manera, deben aparecer los documentos necesarios para crear todo el libro.
+![](Imagenes/01_Libros/04_Final_Book.png) 
+
+7. Renderizar el libro seleccionando `Build` y luego en `All Formats`
+![](Imagenes/01_Libros/05_Render_Book.png)
+
+8. Al final, debemos tener el siguiente libro creado de la plantilla básica de Quarto.
+![](Imagenes/01_Libros/06_Book.png)
+
+
+
+## Estructura del libro
+
+El documento previamente creado consta de cuatro capítulos, con el contenido de cada capítulo en los archivos `index.qmd`, `intro.qmd`, `summary.qmd` y `references.qmd`. Para poder agregar cada capítulo al libro, es obligatorio incluirlos en el archivo `_quarto.yml` en el orden en que se desee visualizar, como se muestra a continuación:
+
+``` default
+# Archivo: _quarto.yml
+
+project:
+  type: book
+
+book:
+  title: "Quarto Book"
+  author: "Norah Jones"
+  date: "10/5/2023"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+editor: visual
+```
+
+Este documento es esencial, ya que establece la configuración inicial del libro. En términos generales, para todos los tipos de documentos en Quarto es necesaria esta configuración. En este documento se detalla el tipo de documento (**Project**), la estructura del libro (**book**), la bibliografía con las referencias necesarias para el libro (**bibliography**), el formato del libro (**format**), entre otros aspectos importantes.
+
+
+
+# Características más avanzadas - Proyecto
+
+Con el propósito de servir como guía, una vez creado el documento base, vamos a crear un libro sobre cómo crear gráficas, tablas y modelos estadísticos básicos en R. El objetivo es crear un libro con características más avanzadas, en el que se puedan explorar las diferentes configuraciones y personalizaciones que Quarto ofrece para mejorar la presentación y la experiencia de usuario.
+
+Empezaremos por ver las diferentes opciones en la configuración inicial del libro, ...
+
+
+## Configuración inicial: `_quarto.yml`
+
+## Capítulos:  `.qmd`
+
+## Figuras
+## Gráficas
+## Videos
+## Referencias cruzadas
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Firma -->
 
 
 
