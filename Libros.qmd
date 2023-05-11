@@ -84,6 +84,7 @@ Empezaremos por ver las diferentes opciones en la configuración inicial del lib
 
 ## Configuración inicial: `_quarto.yml`
 
+## Títulos
 ## Capítulos:  `.qmd`
 
 ## Figuras
