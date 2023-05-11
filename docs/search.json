@@ -21,27 +21,6 @@
     "text": "En esta sección, aprenderás cómo crear un libro utilizando Quarto, el cual consiste en combinar múltiples documentos HTML en un solo documento. Además, Quarto permite hacer referencias cruzadas entre diferentes capítulos para mejorar la navegación y la experiencia del usuario.\n\n\nQuarto cuenta con plantillas, lo cual resulta muy práctico al momento de comenzar un proyecto y personalizarlo según las necesidades específicas. Para esto:\n\nAbre RStudio\nEn la parte superior derecha, selecciona Project y después New Project. \nEs recomendable guardar el proyecto en un nuevo directorio para mantenerlo organizado y evitar confusiones. \nSelecciona Quarto Book que es el documento que estamos interesados crear. \nEs recomendable seleccionar la opción Create a git repository en caso de que se desee mantener un control de versiones y ser publicado en GitHub. Además, para mantener un ambiente único del proyecto seleccionar la opción Open in new session. \nDe esta manera, deben aparecer los documentos necesarios para crear todo el libro. \nRenderizar el libro seleccionando Build y luego en All Formats \nAl final, debemos tener el siguiente libro creado de la plantilla básica de Quarto. \n\n\n\n\nEl documento previamente creado consta de cuatro capítulos, con el contenido de cada capítulo en los archivos index.qmd, intro.qmd, summary.qmd y references.qmd. Para poder agregar cada capítulo al libro, es obligatorio incluirlos en el archivo _quarto.yml en el orden en que se desee visualizar, como se muestra a continuación:\n# Archivo: _quarto.yml\n\nproject:\n  type: book\n\nbook:\n  title: \"Quarto Book\"\n  author: \"Norah Jones\"\n  date: \"10/5/2023\"\n  chapters:\n    - index.qmd\n    - intro.qmd\n    - summary.qmd\n    - references.qmd\n\nbibliography: references.bib\n\nformat:\n  html:\n    theme: cosmo\n  pdf:\n    documentclass: scrreprt\n\neditor: visual\nEste documento es esencial, ya que establece la configuración inicial del libro. En términos generales, para todos los tipos de documentos en Quarto es necesaria esta configuración. En este documento se detalla el tipo de documento (Project), la estructura del libro (book), la bibliografía con las referencias necesarias para el libro (bibliography), el formato del libro (format), entre otros aspectos importantes."
   },
   {
-    "objectID": "Paginas_Web.html",
-    "href": "Paginas_Web.html",
-    "title": "Páginas Web",
-    "section": "",
-    "text": "Páginas Web\nContenido\n\n\n\n\n\nPublicado por\n\n\n\n\n\n\n\nSobre nosotros\nObjetivo\nGrupo\nContactenos\n\n\nPaginas Web\n\n\nSiguenos en\nGitHub\nTwitter\nLinkedIn\nMastodon"
-  },
-  {
-    "objectID": "Presentaciones.html",
-    "href": "Presentaciones.html",
-    "title": "Presentaciones",
-    "section": "",
-    "text": "Presentaciones\nContenido\n\n\n\n\n\nPublicado por\n\n\n\n\n\n\n\nSobre nosotros\nObjetivo\nGrupo\nContactenos\n\n\nPaginas Web\n\n\nSiguenos en\nGitHub\nTwitter\nLinkedIn\nMastodon"
-  },
-  {
-    "objectID": "Libros.html#descripción",
-    "href": "Libros.html#descripción",
-    "title": "Libros",
-    "section": "",
-    "text": "En esta sección, aprenderás cómo crear un libro utilizando Quarto, el cual consiste en combinar múltiples documentos HTML en un solo documento. Además, Quarto permite hacer referencias cruzadas entre diferentes capítulos para mejorar la navegación y la experiencia del usuario."
-  },
-  {
     "objectID": "Libros.html#plantilla-básica",
     "href": "Libros.html#plantilla-básica",
     "title": "Libros",
@@ -63,11 +42,11 @@
     "text": "Configuración inicial: _quarto.yml"
   },
   {
-    "objectID": "Libros.html#capítulos",
-    "href": "Libros.html#capítulos",
+    "objectID": "Libros.html#capítulos-.qmd",
+    "href": "Libros.html#capítulos-.qmd",
     "title": "Libros",
-    "section": "Capítulos",
-    "text": "Capítulos"
+    "section": "Capítulos: .qmd",
+    "text": "Capítulos: .qmd"
   },
   {
     "objectID": "Libros.html#figuras",
@@ -98,10 +77,17 @@
     "text": "Referencias cruzadas\n\n\n\n\n\n\nPublicado por\n\n\n\n\n\n\n\nSobre nosotros\nObjetivo\nGrupo\nContactenos\n\n\nPaginas Web\n\n\nSiguenos en\nGitHub\nTwitter\nLinkedIn\nMastodon"
   },
   {
-    "objectID": "Libros.html#capítulos-.qmd",
-    "href": "Libros.html#capítulos-.qmd",
-    "title": "Libros",
-    "section": "Capítulos: .qmd",
-    "text": "Capítulos: .qmd"
+    "objectID": "Paginas_Web.html",
+    "href": "Paginas_Web.html",
+    "title": "Páginas Web",
+    "section": "",
+    "text": "Páginas Web\nContenido\n\n\n\n\n\nPublicado por\n\n\n\n\n\n\n\nSobre nosotros\nObjetivo\nGrupo\nContactenos\n\n\nPaginas Web\n\n\nSiguenos en\nGitHub\nTwitter\nLinkedIn\nMastodon"
+  },
+  {
+    "objectID": "Presentaciones.html",
+    "href": "Presentaciones.html",
+    "title": "Presentaciones",
+    "section": "",
+    "text": "Presentaciones\nContenido\n\n\n\n\n\nPublicado por\n\n\n\n\n\n\n\nSobre nosotros\nObjetivo\nGrupo\nContactenos\n\n\nPaginas Web\n\n\nSiguenos en\nGitHub\nTwitter\nLinkedIn\nMastodon"
   }
 ]
