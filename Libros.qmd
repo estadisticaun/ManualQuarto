@@ -77,12 +77,179 @@ Este documento es esencial, ya que establece la configuración inicial del libro
 
 # Características más avanzadas - Proyecto
 
-Con el propósito de servir como guía, una vez creado el documento base, vamos a crear un libro sobre cómo crear gráficas, tablas y modelos estadísticos básicos en R. El objetivo es crear un libro con características más avanzadas, en el que se puedan explorar las diferentes configuraciones y personalizaciones que Quarto ofrece para mejorar la presentación y la experiencia de usuario.
+Con el propósito de servir como guía, una vez creado el documento base, vamos a crear un libro sobre cómo crear tablasde resumen en R, como se observa a continuación:
 
-Empezaremos por ver las diferentes opciones en la configuración inicial del libro, ...
+![](Imagenes/01_Libros/07_gt_table.png)
 
 
-## Configuración inicial: `_quarto.yml`
+El objetivo es crear un libro con características más avanzadas, en el que se puedan explorar las diferentes configuraciones y personalizaciones que Quarto ofrece para mejorar la presentación y la experiencia de usuario.
+
+## Configuración inicial: `_language.yml`
+
+Como se puede apreciar en la figura anterior, hay títulos que no se pueden modificar directamente en el cuerpo del documento (como "Author", "Table of contents", etc.), por lo tanto, existen al menos dos formas para corregir esto:
+
+1. Crear un archivo _language.yml y añadirlo al espacio de trabajo. En este archivo podemos modificar directamente el título deseado. 
+
+::: callout
+
+<a href="_language.yml" download="_language.yml"> Descargar _language.yml </a>
+
+:::
+
+El contenido del archivo es el siguiente:
+
+``` default
+toc-title-document: "Tabla de contenido"
+toc-title-website: "On this page"
+
+section-title-abstract: "Abstract"
+section-title-appendices: "Appendices"
+section-title-footnotes: "Footnotes"
+section-title-references: "Bibliografia"
+section-title-reuse: "Reuse"
+section-title-citation: "Citation"
+
+appendix-attribution-cite-as: "For attribution, please cite this work as:"
+appendix-attribution-bibtex: "BibTeX citation:"
+
+title-block-author-single: "Autor"
+title-block-author-plural: "Autores"
+title-block-affiliation-single: "Affiliation"
+title-block-affiliation-plural: "Affiliations"
+title-block-published: "Fecha de Publicación"
+
+callout-tip-caption: "Tip"
+callout-note-caption: "Note"
+callout-warning-caption: "Warning"
+callout-important-caption: "Important"
+callout-caution-caption: "Danger"
+
+code-summary: "Code"
+
+code-tools-menu-caption: "Code"
+code-tools-show-all-code: "Show All Code"
+code-tools-hide-all-code: "Hide All Code"
+code-tools-view-source: "View Source"
+code-tools-source-code: "Source Code"
+
+copy-button-tooltip: "Copy to Clipboard"
+copy-button-tooltip-success: "Copied!"
+
+repo-action-links-edit: "Editar este libro"
+repo-action-links-source: "View source"
+repo-action-links-issue: "Report an issue"
+
+search-no-results-text: "No results"
+search-matching-documents-text: "matching documents"
+search-copy-link-title: "Copy link to search"
+search-hide-matches-text: "Hide additional matches"
+search-more-match-text: "more match in this document"
+search-more-matches-text: "more matches in this document"
+search-clear-button-title: "Clear"
+search-detached-cancel-button-title: "Cancel"
+search-submit-button-title: "Submit"
+
+crossref-fig-title: "Figure"
+crossref-tbl-title: "Table"
+crossref-lst-title: "Listing"
+crossref-thm-title: "Theorem"
+crossref-lem-title: "Lemma"
+crossref-cor-title: "Corollary"
+crossref-prp-title: "Proposition"
+crossref-cnj-title: "Conjecture"
+crossref-def-title: "Definition"
+crossref-exm-title: "Example"
+crossref-exr-title: "Exercise"
+crossref-ch-prefix: "Chapter"
+crossref-apx-prefix: "Appendix"
+crossref-sec-prefix: "Section"
+crossref-eq-prefix: "Equation"
+crossref-lof-title: "List of Figures"
+crossref-lot-title: "List of Tables"
+crossref-lol-title: "List of Listings"
+
+environment-proof-title: "Proof"
+environment-remark-title: "Remark"
+environment-solution-title: "Solution"
+
+listing-page-order-by: "Order By"
+listing-page-order-by-default: "Default"
+listing-page-order-by-date-asc: "Oldest"
+listing-page-order-by-date-desc: "Newest"
+listing-page-order-by-number-desc: "High to Low"
+listing-page-order-by-number-asc: "Low to High"
+listing-page-field-date: "Date"
+listing-page-field-title: "Title"
+listing-page-field-description: "Description"
+listing-page-field-author: "Author"
+listing-page-field-filename: "File Name"
+listing-page-field-filemodified: "Modified"
+listing-page-field-subtitle: "Subtitle"
+listing-page-field-readingtime: "Reading Time"
+listing-page-field-categories: "Categories"
+listing-page-minutes-compact: "{0} min"
+listing-page-category-all: "All"
+listing-page-no-matches: "No matching items"
+```
+
+
+De esta forma corregimos los titulos del documento
+![](Imagenes/01_Libros/08_gt_table_corregido.png)
+
+
+2. Este caso resulta práctico cuando se tienen varios idiomas en cada capítulo, por ejemplo, un capítulo está creado en español y otro en inglés. En este caso, establecemos el idioma predeterminado utilizando la clave "lang: es", y luego utilizamos la clave "language" para especificar cómo deseamos que se llame cada elemento en la página según el idioma, de la siguiente manera:
+
+```default
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "Crear tablas de resumen en R"
+  author: "Dirección Nacional de Planeación y Estadística"
+  chapters:
+    - index.qmd
+    - "Conceptos Basicos.qmd"
+    - "Agregar Partes.qmd"
+    - Referencias.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+editor: visual
+
+lang: es
+language:
+  en:
+    toc-title-document: "Table of contents"
+    title-block-author-single: "Author"
+    title-block-author-plural: "Authors"
+  es:
+    toc-title-document: "Tabla de contenidos"
+    title-block-author-single: "Autor"
+    title-block-author-plural: "Autores"
+```
+
+Dado que el idioma predeterminado es el español, no es necesario realizar ninguna configuración adicional. Sin embargo, en caso de que se requiera utilizar otro idioma, es necesario especificarlo al inicio del documento.
+
+![](Imagenes/01_Libros/11_gt_table_2_conf.png)
+
+
+De esta manera podemos tener los titulos en diferentes idiomas, en este caso, en español e inglés
+
+::: {layout-ncol=2}
+
+![Español](Imagenes/01_Libros/09_gt_table_2_es.png)
+
+![Inglés](Imagenes/01_Libros/10_gt_table_2_en.png)
+
+:::
+
 
 ## Títulos
 ## Capítulos:  `.qmd`

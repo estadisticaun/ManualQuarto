@@ -123,12 +123,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Inicio</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Presentaciones.html" rel="" target="">
- <span class="menu-text">Presentaciones</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link active" href="./Libros.html" rel="" target="" aria-current="page">
  <span class="menu-text">Libros</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./Presentaciones.html" rel="" target="">
+ <span class="menu-text">Presentaciones</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./Paginas_Web.html" rel="" target="">
@@ -181,7 +181,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#características-más-avanzadas---proyecto" id="toc-características-más-avanzadas---proyecto" class="nav-link" data-scroll-target="#características-más-avanzadas---proyecto">Características más avanzadas - Proyecto</a>
   <ul class="collapse">
-  <li><a href="#configuración-inicial-_quarto.yml" id="toc-configuración-inicial-_quarto.yml" class="nav-link" data-scroll-target="#configuración-inicial-_quarto.yml">Configuración inicial: <code>_quarto.yml</code></a></li>
+  <li><a href="#configuración-inicial-_language.yml" id="toc-configuración-inicial-_language.yml" class="nav-link" data-scroll-target="#configuración-inicial-_language.yml">Configuración inicial: <code>_language.yml</code></a></li>
   <li><a href="#títulos" id="toc-títulos" class="nav-link" data-scroll-target="#títulos">Títulos</a></li>
   <li><a href="#capítulos-.qmd" id="toc-capítulos-.qmd" class="nav-link" data-scroll-target="#capítulos-.qmd">Capítulos: <code>.qmd</code></a></li>
   <li><a href="#figuras" id="toc-figuras" class="nav-link" data-scroll-target="#figuras">Figuras</a></li>
@@ -246,10 +246,177 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="características-más-avanzadas---proyecto" class="level1">
 <h1>Características más avanzadas - Proyecto</h1>
-<p>Con el propósito de servir como guía, una vez creado el documento base, vamos a crear un libro sobre cómo crear gráficas, tablas y modelos estadísticos básicos en R. El objetivo es crear un libro con características más avanzadas, en el que se puedan explorar las diferentes configuraciones y personalizaciones que Quarto ofrece para mejorar la presentación y la experiencia de usuario.</p>
-<p>Empezaremos por ver las diferentes opciones en la configuración inicial del libro, …</p>
-<section id="configuración-inicial-_quarto.yml" class="level2">
-<h2 class="anchored" data-anchor-id="configuración-inicial-_quarto.yml">Configuración inicial: <code>_quarto.yml</code></h2>
+<p>Con el propósito de servir como guía, una vez creado el documento base, vamos a crear un libro sobre cómo crear tablasde resumen en R, como se observa a continuación:</p>
+<p><img src="Imagenes/01_Libros/07_gt_table.png" class="img-fluid"></p>
+<p>El objetivo es crear un libro con características más avanzadas, en el que se puedan explorar las diferentes configuraciones y personalizaciones que Quarto ofrece para mejorar la presentación y la experiencia de usuario.</p>
+<section id="configuración-inicial-_language.yml" class="level2">
+<h2 class="anchored" data-anchor-id="configuración-inicial-_language.yml">Configuración inicial: <code>_language.yml</code></h2>
+<p>Como se puede apreciar en la figura anterior, hay títulos que no se pueden modificar directamente en el cuerpo del documento (como “Author”, “Table of contents”, etc.), por lo tanto, existen al menos dos formas para corregir esto:</p>
+<ol type="1">
+<li>Crear un archivo _language.yml y añadirlo al espacio de trabajo. En este archivo podemos modificar directamente el título deseado.</li>
+</ol>
+<div class="callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><a href="_language.yml" download="_language.yml"> Descargar _language.yml </a></p>
+</div>
+</div>
+</div>
+<p>El contenido del archivo es el siguiente:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>toc-title-document: "Tabla de contenido"</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>toc-title-website: "On this page"</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>section-title-abstract: "Abstract"</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>section-title-appendices: "Appendices"</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>section-title-footnotes: "Footnotes"</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>section-title-references: "Bibliografia"</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>section-title-reuse: "Reuse"</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>section-title-citation: "Citation"</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>appendix-attribution-cite-as: "For attribution, please cite this work as:"</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>appendix-attribution-bibtex: "BibTeX citation:"</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>title-block-author-single: "Autor"</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>title-block-author-plural: "Autores"</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>title-block-affiliation-single: "Affiliation"</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>title-block-affiliation-plural: "Affiliations"</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>title-block-published: "Fecha de Publicación"</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>callout-tip-caption: "Tip"</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>callout-note-caption: "Note"</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>callout-warning-caption: "Warning"</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>callout-important-caption: "Important"</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>callout-caution-caption: "Danger"</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>code-summary: "Code"</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>code-tools-menu-caption: "Code"</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>code-tools-show-all-code: "Show All Code"</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>code-tools-hide-all-code: "Hide All Code"</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>code-tools-view-source: "View Source"</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>code-tools-source-code: "Source Code"</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>copy-button-tooltip: "Copy to Clipboard"</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>copy-button-tooltip-success: "Copied!"</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>repo-action-links-edit: "Editar este libro"</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>repo-action-links-source: "View source"</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>repo-action-links-issue: "Report an issue"</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>search-no-results-text: "No results"</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>search-matching-documents-text: "matching documents"</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>search-copy-link-title: "Copy link to search"</span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>search-hide-matches-text: "Hide additional matches"</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>search-more-match-text: "more match in this document"</span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>search-more-matches-text: "more matches in this document"</span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>search-clear-button-title: "Clear"</span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>search-detached-cancel-button-title: "Cancel"</span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>search-submit-button-title: "Submit"</span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>crossref-fig-title: "Figure"</span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>crossref-tbl-title: "Table"</span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>crossref-lst-title: "Listing"</span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>crossref-thm-title: "Theorem"</span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>crossref-lem-title: "Lemma"</span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>crossref-cor-title: "Corollary"</span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>crossref-prp-title: "Proposition"</span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>crossref-cnj-title: "Conjecture"</span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>crossref-def-title: "Definition"</span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>crossref-exm-title: "Example"</span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>crossref-exr-title: "Exercise"</span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>crossref-ch-prefix: "Chapter"</span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>crossref-apx-prefix: "Appendix"</span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>crossref-sec-prefix: "Section"</span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>crossref-eq-prefix: "Equation"</span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>crossref-lof-title: "List of Figures"</span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>crossref-lot-title: "List of Tables"</span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>crossref-lol-title: "List of Listings"</span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>environment-proof-title: "Proof"</span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>environment-remark-title: "Remark"</span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>environment-solution-title: "Solution"</span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>listing-page-order-by: "Order By"</span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>listing-page-order-by-default: "Default"</span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>listing-page-order-by-date-asc: "Oldest"</span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>listing-page-order-by-date-desc: "Newest"</span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>listing-page-order-by-number-desc: "High to Low"</span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>listing-page-order-by-number-asc: "Low to High"</span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>listing-page-field-date: "Date"</span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>listing-page-field-title: "Title"</span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>listing-page-field-description: "Description"</span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>listing-page-field-author: "Author"</span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>listing-page-field-filename: "File Name"</span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>listing-page-field-filemodified: "Modified"</span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>listing-page-field-subtitle: "Subtitle"</span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a>listing-page-field-readingtime: "Reading Time"</span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a>listing-page-field-categories: "Categories"</span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a>listing-page-minutes-compact: "{0} min"</span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a>listing-page-category-all: "All"</span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a>listing-page-no-matches: "No matching items"</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>De esta forma corregimos los titulos del documento <img src="Imagenes/01_Libros/08_gt_table_corregido.png" class="img-fluid"></p>
+<ol start="2" type="1">
+<li>Este caso resulta práctico cuando se tienen varios idiomas en cada capítulo, por ejemplo, un capítulo está creado en español y otro en inglés. En este caso, establecemos el idioma predeterminado utilizando la clave “lang: es”, y luego utilizamos la clave “language” para especificar cómo deseamos que se llame cada elemento en la página según el idioma, de la siguiente manera:</li>
+</ol>
+<div class="sourceCode" id="cb3"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>project:</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  type: book</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  output-dir: docs</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>book:</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  title: "Crear tablas de resumen en R"</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  author: "Dirección Nacional de Planeación y Estadística"</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  chapters:</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    - index.qmd</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    - "Conceptos Basicos.qmd"</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    - "Agregar Partes.qmd"</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    - Referencias.qmd</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>bibliography: references.bib</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>format:</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  html:</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    theme: cosmo</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  pdf:</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    documentclass: scrreprt</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>editor: visual</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>lang: es</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>language:</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>  en:</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>    toc-title-document: "Table of contents"</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>    title-block-author-single: "Author"</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>    title-block-author-plural: "Authors"</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>  es:</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>    toc-title-document: "Tabla de contenidos"</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>    title-block-author-single: "Autor"</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>    title-block-author-plural: "Autores"</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Dado que el idioma predeterminado es el español, no es necesario realizar ninguna configuración adicional. Sin embargo, en caso de que se requiera utilizar otro idioma, es necesario especificarlo al inicio del documento.</p>
+<p><img src="Imagenes/01_Libros/11_gt_table_2_conf.png" class="img-fluid"></p>
+<p>De esta manera podemos tener los titulos en diferentes idiomas, en este caso, en español e inglés</p>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Imagenes/01_Libros/09_gt_table_2_es.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Español</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Imagenes/01_Libros/10_gt_table_2_en.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Inglés</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="títulos" class="level2">
 <h2 class="anchored" data-anchor-id="títulos">Títulos</h2>

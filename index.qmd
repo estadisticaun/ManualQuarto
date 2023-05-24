@@ -64,7 +64,7 @@ Quarto es un programa de código abierto que puede ser utilizado en diferentes I
 4.  Verifica que la instalación de R, RStudio y Quarto es correcta. Para esto, descarga el ejemplo.
 
 ::: callout
-<a href="https://quarto.org/docs/get-started/hello/rstudio/_hello.qmd" download="hello.qmd">Download hello.qmd </a>
+<a href="https://quarto.org/docs/get-started/hello/rstudio/_hello.qmd" download="hello.qmd">Descargar hello.qmd </a>
 :::
 
 ![](Imagenes/00_Instalacion/0_Ejemplo.png)

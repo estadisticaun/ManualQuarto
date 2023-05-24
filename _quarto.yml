@@ -14,10 +14,10 @@ website:
     right: 
       - text: Inicio
         file: index.qmd
-      - text: Presentaciones
-        file: Presentaciones.qmd
       - text: Libros
         file: Libros.qmd
+      - text: Presentaciones
+        file: Presentaciones.qmd
       - text: Páginas Web
         file: Paginas_Web.qmd
       - text: Articulos
