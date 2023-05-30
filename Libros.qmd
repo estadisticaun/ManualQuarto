@@ -6,39 +6,29 @@ search: true
 toc: true
 ---
 
-
-# Libros 
+# Libros
 
 En esta sección, aprenderás cómo crear un libro utilizando Quarto, el cual consiste en combinar múltiples documentos HTML en un solo documento. Además, Quarto permite hacer referencias cruzadas entre diferentes capítulos para mejorar la navegación y la experiencia del usuario.
-
 
 ## Plantilla básica
 
 Quarto cuenta con plantillas, lo cual resulta muy práctico al momento de comenzar un proyecto y personalizarlo según las necesidades específicas. Para esto:
 
-1. Abre RStudio
-2. En la parte superior derecha, selecciona `Project` y después `New Project`.
-![](Imagenes/01_Libros/00_Crear_Project.png)
+1.  Abre RStudio
 
-3. Es recomendable guardar el proyecto en un nuevo directorio para mantenerlo organizado y evitar confusiones.
-![](Imagenes/01_Libros/01_Project_New.png)
+2.  En la parte superior derecha, selecciona `Project` y después `New Project`. ![](Imagenes/01_Libros/00_Crear_Project.png)
 
-4. Selecciona `Quarto Book` que es el documento que estamos interesados crear.
-![](Imagenes/01_Libros/02_Seleccionar_Book.png)
+3.  Es recomendable guardar el proyecto en un nuevo directorio para mantenerlo organizado y evitar confusiones. ![](Imagenes/01_Libros/01_Project_New.png)
 
-5. Es recomendable seleccionar la opción `Create a git repository` en caso de que se desee mantener un control de versiones y ser publicado en GitHub. Además, para mantener un ambiente único del proyecto seleccionar la opción `Open in new session`.
-![](Imagenes/01_Libros/03_Crear_Book.png)
+4.  Selecciona `Quarto Book` que es el documento que estamos interesados crear. ![](Imagenes/01_Libros/02_Seleccionar_Book.png)
 
-6. De esta manera, deben aparecer los documentos necesarios para crear todo el libro.
-![](Imagenes/01_Libros/04_Final_Book.png) 
+5.  Es recomendable seleccionar la opción `Create a git repository` en caso de que se desee mantener un control de versiones y ser publicado en GitHub. Además, para mantener un ambiente único del proyecto seleccionar la opción `Open in new session`. ![](Imagenes/01_Libros/03_Crear_Book.png)
 
-7. Renderizar el libro seleccionando `Build` y luego en `All Formats`
-![](Imagenes/01_Libros/05_Render_Book.png)
+6.  De esta manera, deben aparecer los documentos necesarios para crear todo el libro. ![](Imagenes/01_Libros/04_Final_Book.png)
 
-8. Al final, debemos tener el siguiente libro creado de la plantilla básica de Quarto.
-![](Imagenes/01_Libros/06_Book.png)
+7.  Renderizar el libro seleccionando `Build` y luego en `All Formats` ![](Imagenes/01_Libros/05_Render_Book.png)
 
-
+8.  Al final, debemos tener el siguiente libro creado de la plantilla básica de Quarto. ![](Imagenes/01_Libros/06_Book.png)
 
 ## Estructura del libro
 
@@ -73,14 +63,11 @@ editor: visual
 
 Este documento es esencial, ya que establece la configuración inicial del libro. En términos generales, para todos los tipos de documentos en Quarto es necesaria esta configuración. En este documento se detalla el tipo de documento (**Project**), la estructura del libro (**book**), la bibliografía con las referencias necesarias para el libro (**bibliography**), el formato del libro (**format**), entre otros aspectos importantes.
 
-
-
 # Características más avanzadas - Proyecto
 
 Con el propósito de servir como guía, una vez creado el documento base, vamos a crear un libro sobre cómo crear tablasde resumen en R, como se observa a continuación:
 
 ![](Imagenes/01_Libros/07_gt_table.png)
-
 
 El objetivo es crear un libro con características más avanzadas, en el que se puedan explorar las diferentes configuraciones y personalizaciones que Quarto ofrece para mejorar la presentación y la experiencia de usuario.
 
@@ -88,12 +75,10 @@ El objetivo es crear un libro con características más avanzadas, en el que se 
 
 Como se puede apreciar en la figura anterior, hay títulos que no se pueden modificar directamente en el cuerpo del documento (como "Author", "Table of contents", etc.), por lo tanto, existen al menos dos formas para corregir esto:
 
-1. Crear un archivo _language.yml y añadirlo al espacio de trabajo. En este archivo podemos modificar directamente el título deseado. 
+1.  Crear un archivo \_language.yml y añadirlo al espacio de trabajo. En este archivo podemos modificar directamente el título deseado.
 
 ::: callout
-
-<a href="_language.yml" download="_language.yml"> Descargar _language.yml </a>
-
+<a href="_language.yml" download="_language.yml"> Descargar \_language.yml </a>
 :::
 
 El contenido del archivo es el siguiente:
@@ -192,14 +177,11 @@ listing-page-category-all: "All"
 listing-page-no-matches: "No matching items"
 ```
 
+De esta forma corregimos los titulos del documento ![](Imagenes/01_Libros/08_gt_table_corregido.png)
 
-De esta forma corregimos los titulos del documento
-![](Imagenes/01_Libros/08_gt_table_corregido.png)
+2.  Este caso resulta práctico cuando se tienen varios idiomas en cada capítulo, por ejemplo, un capítulo está creado en español y otro en inglés. En este caso, establecemos el idioma predeterminado utilizando la clave "lang: es", y luego utilizamos la clave "language" para especificar cómo deseamos que se llame cada elemento en la página según el idioma, de la siguiente manera:
 
-
-2. Este caso resulta práctico cuando se tienen varios idiomas en cada capítulo, por ejemplo, un capítulo está creado en español y otro en inglés. En este caso, establecemos el idioma predeterminado utilizando la clave "lang: es", y luego utilizamos la clave "language" para especificar cómo deseamos que se llame cada elemento en la página según el idioma, de la siguiente manera:
-
-```default
+``` default
 project:
   type: book
   output-dir: docs
@@ -239,112 +221,59 @@ Dado que el idioma predeterminado es el español, no es necesario realizar ningu
 
 ![](Imagenes/01_Libros/11_gt_table_2_conf.png)
 
-
 De esta manera podemos tener los titulos en diferentes idiomas, en este caso, en español e inglés
 
-::: {layout-ncol=2}
-
+::: {layout-ncol="2"}
 ![Español](Imagenes/01_Libros/09_gt_table_2_es.png)
 
 ![Inglés](Imagenes/01_Libros/10_gt_table_2_en.png)
-
 :::
 
-
 ## Títulos
-## Capítulos:  `.qmd`
+
+## Capítulos: `.qmd`
 
 ## Figuras
+
 ## Gráficas
+
 ## Videos
+
 ## Referencias cruzadas
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!-- Firma -->
 
-
-
-::: {.footer-text}
+::: footer-text
 ::: {.footer-container .black-background}
-::: {.footer-block}
+::: footer-block
 ::: grid
-
-
 ::: {.g-col-12 .g-col-md-6}
-
 ### Publicado por
-[![](Imagenes/Logos/escudoUnal.svg){ width=50% }](https://unal.edu.co/)
 
+[![](Imagenes/Logos/escudoUnal.svg){width="50%"}](https://unal.edu.co/)
 :::
 
 ::: {.g-col-12 .g-col-md-2}
-
 ### Sobre nosotros
+
 Objetivo\
 Grupo\
 Contactenos
-
 :::
 
 ::: {.g-col-12 .g-col-md-2}
-
 ### Paginas Web
-
-
 :::
 
 ::: {.g-col-12 .g-col-md-2}
-
 ### Siguenos en
+
 [GitHub](https://github.com/realworlddatascience)\
 [Twitter](https://twitter.com/rwdatasci)\
 [LinkedIn](https://www.linkedin.com/showcase/rss-real-world-data-science)\
 [Mastodon](https://fosstodon.org/@rwdatasci)\
-
 :::
-
 :::
-
 :::
-
 :::
-
 :::

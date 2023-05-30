@@ -27,7 +27,7 @@ toc: false
 ::: {.top-story .gray-background}
 ::: grid
 ::: {.g-col-12 .g-col-lg-6 .top-story-text}
-## ¡Crea documentos con [ Quarto ]{style="color:darkblue"}!
+## ¡Crea documentos con [Quarto]{style="color:darkblue"}!
 
 Posit en el evento *rstudio::conf(2022)* anuncio la creación de **Quarto**, un nuevo sistema de publicación científica y técnica de código abierto que funciona con R, Python, Julia, JavaScript y muchos otros lenguajes, para la creación de documentos dinámicos como artículos, presentaciones, páginas web, blogs, y libros en HTML, PDF, MS Word, ePub, y muchos más. El objetivo de Quarto aparte de manejar diferentes lenguajes es poder trabajar en diferentes Entornos de Desarrollo Integrado (IDE -- siglas en ingles) como lo es Jupyter, Visual Studio Code (VSC) y RStudio.
 :::
