@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.310">
+<meta name="generator" content="quarto-1.2.269">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,10 +17,9 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -47,13 +46,43 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
+    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -112,55 +141,55 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <span class="navbar-title">Manual Quarto</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="true"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html" rel="" target="">
+    <a class="nav-link" href="./index.html">
  <span class="menu-text">Inicio</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./Libros.html" rel="" target="" aria-current="page">
+    <a class="nav-link active" href="./Libros.html" aria-current="page">
  <span class="menu-text">Libros</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Presentaciones.html" rel="" target="">
+    <a class="nav-link" href="./Presentaciones.html">
  <span class="menu-text">Presentaciones</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Paginas_Web.html" rel="" target="">
+    <a class="nav-link" href="./Paginas_Web.html">
  <span class="menu-text">Páginas Web</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Articulos.html" rel="" target="">
+    <a class="nav-link" href="./Articulos.html">
  <span class="menu-text">Articulos</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/estadisticaun" rel="" target=""><i class="bi bi-github" role="img" aria-label="GitHub">
+    <a class="nav-link" href="https://github.com/estadisticaun"><i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://www.youtube.com/@UNALoficial" rel="" target=""><i class="bi bi-youtube" role="img">
+    <a class="nav-link" href="https://www.youtube.com/@UNALoficial"><i class="bi bi-youtube" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://unal.edu.co/" rel="" target=""><i class="bi bi-globe2" role="img">
+    <a class="nav-link" href="https://unal.edu.co/"><i class="bi bi-globe2" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
-  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+              <div class="quarto-toggle-container">
+                  <a href="" class="quarto-reader-toggle nav-link" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
   </div>
 </a>
-</div>
+              </div>
+              <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -171,7 +200,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+    <h2 id="toc-title">En esta página</h2>
    
   <ul>
   <li><a href="#libros" id="toc-libros" class="nav-link active" data-scroll-target="#libros">Libros</a>
@@ -183,11 +212,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#configuración-inicial-_language.yml" id="toc-configuración-inicial-_language.yml" class="nav-link" data-scroll-target="#configuración-inicial-_language.yml">Configuración inicial: <code>_language.yml</code></a></li>
   <li><a href="#títulos" id="toc-títulos" class="nav-link" data-scroll-target="#títulos">Títulos</a></li>
-  <li><a href="#capítulos-.qmd" id="toc-capítulos-.qmd" class="nav-link" data-scroll-target="#capítulos-.qmd">Capítulos: <code>.qmd</code></a></li>
-  <li><a href="#figuras" id="toc-figuras" class="nav-link" data-scroll-target="#figuras">Figuras</a></li>
-  <li><a href="#gráficas" id="toc-gráficas" class="nav-link" data-scroll-target="#gráficas">Gráficas</a></li>
-  <li><a href="#videos" id="toc-videos" class="nav-link" data-scroll-target="#videos">Videos</a></li>
-  <li><a href="#referencias-cruzadas" id="toc-referencias-cruzadas" class="nav-link" data-scroll-target="#referencias-cruzadas">Referencias cruzadas</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -255,7 +279,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol type="1">
 <li>Crear un archivo _language.yml y añadirlo al espacio de trabajo. En este archivo podemos modificar directamente el título deseado.</li>
 </ol>
-<div class="callout callout-style-simple callout-none no-icon">
+<div class="callout callout callout-style-simple no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -420,21 +444,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="títulos" class="level2">
 <h2 class="anchored" data-anchor-id="títulos">Títulos</h2>
-</section>
-<section id="capítulos-.qmd" class="level2">
-<h2 class="anchored" data-anchor-id="capítulos-.qmd">Capítulos: <code>.qmd</code></h2>
-</section>
-<section id="figuras" class="level2">
-<h2 class="anchored" data-anchor-id="figuras">Figuras</h2>
-</section>
-<section id="gráficas" class="level2">
-<h2 class="anchored" data-anchor-id="gráficas">Gráficas</h2>
-</section>
-<section id="videos" class="level2">
-<h2 class="anchored" data-anchor-id="videos">Videos</h2>
-</section>
-<section id="referencias-cruzadas" class="level2">
-<h2 class="anchored" data-anchor-id="referencias-cruzadas">Referencias cruzadas</h2>
+<p>Las opciones de representación se definen en el archivo <code>_quarto.yml</code>. Existen dos maneras de agregar un título a nuestro libro. La primera forma es haciendo:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a># Conceptos Básicos</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>La segunda manera es:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>title: "Conceptos Básicos"</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>---</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>De ambas formas se obtiene el siguiente resultado:</p>
+<p><img src="Imagenes/01_Libros/12_gt_table_titulo.png" class="img-fluid"></p>
+<p>Por defecto, el título aparece enumerado, pero si no lo queremos enumerado, basta con agregar <code>{.unnumbered}</code> así:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a># Conceptos Básicos {.unnumbered}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>De ese modo obtenemos:</p>
+<p><img src="Imagenes/01_Libros/13_gt_table_titulo_sinnum.png" class="img-fluid"> ## Figuras {#sec-figuras}</p>
+<p>En Quarto se pueden hacer muchísimas cosas con las figuras, tablas u otro contenido, entre ellas, agregar o eliminar títulos/subtítulos, cambiar el tamaño, la ubicación, incluirlas en paneles y demás.</p>
+<p>Por defecto, en Pandoc Markadown se crea una figura y su subtítulo cuando una imagen aparece en el párrafo. Continuando con nuestro libro de GT Table, mostraremos una imagen llamada “1. Intro”, ubicada en la subcarpeta “Gt table” de la carpeta “Imagenes” en nuestro directorio, con el subtítulo “GT Table” así:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>![GT Table](Imagenes/Gt table/1. Intro.jpg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>La forma en que se visualiza el subtítulo de la imagen depende del formato de salida (HTML, PDF, etc), en HTML se verá así:</p>
+<p><img src="Imagenes/01_Libros/14_gt_table_imagen_basica.png" class="img-fluid" alt="Implementacion básica de una imagen"></p>
+<p>Como dijimos anteriormente, en Quarto se pueden hacer muchas cosas con las figuras:</p>
+<ol type="1">
+<li>Modificar el tamaño: Por defecto, las figuras se muestran en su tamaño real teniendo en cuenta las restricciones de ancho impuestas por la página en que se presentan, sin embargo, el tamaño se puede cambiar usando los atributos <code>width</code> y <code>height</code> cuyas unidades predeterminadas son pixeles pero tambien pueden especificarse en pulgadas o porcentaje; se pueden especificar ambos atributos o solamente uno.</li>
+</ol>
+<div class="sourceCode" id="cb8"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>![GT Table](Imagenes/Gt table/1. Intro.jpg){width=300}</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>![GT Table](Imagenes/Gt table/1. Intro.jpg){width=80%}</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>![GT Table](Imagenes/Gt table/1. Intro.jpg){width=4in}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En cualquier caso el resultado será (dependiendo de cómo especifique <code>width</code>) como el siguiente:</p>
+<p><img src="Imagenes/01_Libros/15_gt_table_imagen_pequena.png" class="img-fluid" alt="Disminución del tamaño de la imagen"></p>
+<p>Si se desea eliminar el subtítulo basta con:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>![](Imagenes/Gt table/1. Intro.jpg){width=300}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li>Alineación de la figura: Si no queremos que la imagen esté centrada, usamos <code>fig-aling</code> para cambiar la alineación de la imagen.</li>
+</ol>
+<div class="sourceCode" id="cb10"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>![](Imagenes/Gt table/1. Intro.jpg){fig-align="left"}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Si queremos cambiar la alineación y el tamaño de la figura, basta con usar los atributos <code>width</code> y <code>fig-align</code> separados por un espacio. Esto funciona en general para usar más de una atributo.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>![](Imagenes/Gt table/1. Intro.jpg){width=300 fig-align="left"}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>El resultado será:</p>
+<p><img src="Imagenes/01_Libros/16_gt_table_imagen_izquierda.png" class="img-fluid" alt="Imagen a la izquierda"></p>
+<ol start="3" type="1">
+<li>Texto Alternativo: Sabemos que el texto alternativo es el texto que acompaña a las imagenes y resulta bastante útil cuando se utiliza el lector de pantalla. Para agregarlo a nuestra imagen hacemos:</li>
+</ol>
+<div class="sourceCode" id="cb12"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>![](Imagenes/Gt table/1. Intro.jpg){fig-alt="GT Table"}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="4" type="1">
+<li>Referencias cruzadas: Para hacer referencia a nuestra imagen, usamos <code>#fig-</code> para identificar a la imagen y para llamarla usamos <code>@fig-</code>. Cuando hacemos una referencia cruzada <strong><em>Es necesario agregar un subtítulo</em></strong>.</li>
+</ol>
+<div class="sourceCode" id="cb13"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>![Gt Table](Imagenes/Gt table/1. Intro.jpg){#fig-gtTable}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="Imagenes/01_Libros/17_gt_table_imagen_referencia.png" class="img-fluid" alt="Referencia a una imagen"></p>
+<p>En HTML se verá así:</p>
+<p><img src="Imagenes/01_Libros/18_gt_table_referencia.png" class="img-fluid" alt="Referencia a una imagen"></p>
+<ol start="5" type="1">
+<li>Paneles de figuras: Es posible que se tenga más de una figura y se quieran mostrar una al lado de la otra o debajo, Quarto permite acomodar las figuras de la forma en que lo creamos más conveniente. Ahora vamos a colocar una imagen llamada “02. Ejemplo” junto a la imagen “1. Intro” en nuestro libro de Gt Table, para eso hacemos:</li>
+</ol>
+<div class="sourceCode" id="cb14"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>::: {layout-ncol=2}</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>![Gt Table](Imagenes/Gt table/1. Intro.jpg)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>![Ejemplo](Imagenes/Gt table/02. Ejemplo.png)</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Y se visualizará así:</p>
+<p><img src="Imagenes/01_Libros/19_gt_table_dos_imagenes.png" class="img-fluid">{fig-alt=’Dos figuras en un panel}</p>
+<p>En lo anterior se muestran dos figuras, si queremos que se trate de una sola figura con dos subfiguras hacemos:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>::: {#fig-estructurayejemplo layout-ncol=2}</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>![Gt Table](Imagenes/Gt table/1. Intro.jpg)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>![Ejemplo](Imagenes/Gt table/02. Ejemplo.png)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>Estructura y Ejemplo</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <!-- Firma -->
 <div class="footer-text">
 <div class="footer-container black-background">
@@ -502,23 +577,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
+    target: function(trigger) {
+      return trigger.previousElementSibling;
     }
   });
   clipboard.on('success', function(e) {
@@ -583,92 +644,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {

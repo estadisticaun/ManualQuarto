@@ -231,15 +231,248 @@ De esta manera podemos tener los titulos en diferentes idiomas, en este caso, en
 
 ## Títulos
 
-## Capítulos: `.qmd`
+Las opciones de representación se definen en el archivo `_quarto.yml`. Existen dos maneras de agregar un título a nuestro libro. La primera forma es haciendo:
 
-## Figuras
+``` default
+# Conceptos Básicos
+```
 
-## Gráficas
+La segunda manera es:
+
+``` default
+---
+title: "Conceptos Básicos"
+---
+```
+
+De ambas formas se obtiene el siguiente resultado:
+
+![](Imagenes/01_Libros/12_gt_table_titulo.png)
+
+Por defecto, el título aparece enumerado, pero si no lo queremos enumerado, basta con agregar `{.unnumbered}` así:
+
+``` default
+# Conceptos Básicos {.unnumbered}
+```
+
+De ese modo obtenemos:
+
+![](Imagenes/01_Libros/13_gt_table_titulo_sinnum.png) \## Figuras {#sec-figuras}
+
+En Quarto se pueden hacer muchísimas cosas con las figuras, tablas u otro contenido, entre ellas, agregar o eliminar títulos/subtítulos, cambiar el tamaño, la ubicación, incluirlas en paneles y demás.
+
+Por defecto, en Pandoc Markadown se crea una figura y su subtítulo cuando una imagen aparece en el párrafo. Continuando con nuestro libro de GT Table, mostraremos una imagen llamada "1. Intro", ubicada en la subcarpeta "Gt table" de la carpeta "Imagenes" en nuestro directorio, con el subtítulo "GT Table" así:
+
+``` default
+![GT Table](Imagenes/Gt table/1. Intro.jpg)
+```
+
+La forma en que se visualiza el subtítulo de la imagen depende del formato de salida (HTML, PDF, etc), en HTML se verá así:
+
+![](Imagenes/01_Libros/14_gt_table_imagen_basica.png){fig-alt="Implementacion básica de una imagen"}
+
+Como dijimos anteriormente, en Quarto se pueden hacer muchas cosas con las figuras:
+
+1.  Modificar el tamaño: Por defecto, las figuras se muestran en su tamaño real teniendo en cuenta las restricciones de ancho impuestas por la página en que se presentan, sin embargo, el tamaño se puede cambiar usando los atributos `width` y `height` cuyas unidades predeterminadas son pixeles pero tambien pueden especificarse en pulgadas o porcentaje; se pueden especificar ambos atributos o solamente uno.
+
+``` default
+![GT Table](Imagenes/Gt table/1. Intro.jpg){width=300}
+![GT Table](Imagenes/Gt table/1. Intro.jpg){width=80%}
+![GT Table](Imagenes/Gt table/1. Intro.jpg){width=4in}
+```
+
+En cualquier caso el resultado será (dependiendo de cómo especifique `width`) como el siguiente:
+
+![](Imagenes/01_Libros/15_gt_table_imagen_pequena.png){fig-alt="Disminución del tamaño de la imagen"}
+
+Si se desea eliminar el subtítulo basta con:
+
+``` default
+![](Imagenes/Gt table/1. Intro.jpg){width=300}
+```
+
+2.  Alineación de la figura: Si no queremos que la imagen esté centrada, usamos `fig-aling` para cambiar la alineación de la imagen.
+
+``` default
+![](Imagenes/Gt table/1. Intro.jpg){fig-align="left"}
+```
+
+Si queremos cambiar la alineación y el tamaño de la figura, basta con usar los atributos `width` y `fig-align` separados por un espacio. Esto funciona en general para usar más de una atributo.
+
+``` default
+![](Imagenes/Gt table/1. Intro.jpg){width=300 fig-align="left"}
+```
+
+El resultado será:
+
+![](Imagenes/01_Libros/16_gt_table_imagen_izquierda.png){fig-alt="Imagen a la izquierda"}
+
+3.  Texto Alternativo: Sabemos que el texto alternativo es el texto que acompaña a las imagenes y resulta bastante útil cuando se utiliza el lector de pantalla. Para agregarlo a nuestra imagen hacemos:
+
+``` default
+![](Imagenes/Gt table/1. Intro.jpg){fig-alt="GT Table"}
+```
+
+4.  Referencias cruzadas: Para hacer referencia a nuestra imagen, usamos `#fig-` para identificar a la imagen y para llamarla usamos `@fig-`. Cuando hacemos una referencia cruzada ***Es necesario agregar un subtítulo***.
+
+``` default
+![Gt Table](Imagenes/Gt table/1. Intro.jpg){#fig-gtTable}
+```
+
+![](Imagenes/01_Libros/17_gt_table_imagen_referencia.png){fig-alt="Referencia a una imagen"}
+
+En HTML se verá así:
+
+![](Imagenes/01_Libros/18_gt_table_referencia.png){fig-alt="Referencia a una imagen"}
+
+5.  Paneles de figuras: Es posible que se tenga más de una figura y se quieran mostrar una al lado de la otra o debajo, Quarto permite acomodar las figuras de la forma en que lo creamos más conveniente. Ahora vamos a colocar una imagen llamada "02. Ejemplo" junto a la imagen "1. Intro" en nuestro libro de Gt Table, para eso hacemos:
+
+``` default
+::: {layout-ncol=2}
+![Gt Table](Imagenes/Gt table/1. Intro.jpg)
+
+![Ejemplo](Imagenes/Gt table/02. Ejemplo.png)
+:::
+```
+
+Y se visualizará así:
+
+![](Imagenes/01_Libros/19_gt_table_dos_imagenes.png){fig-alt='Dos figuras en un panel}
+
+En lo anterior se muestran dos figuras, si queremos que se trate de una sola figura con dos subfiguras hacemos:
+
+``` default
+::: {#fig-estructurayejemplo layout-ncol=2}
+
+![Gt Table](Imagenes/Gt table/1. Intro.jpg)
+
+![Ejemplo](Imagenes/Gt table/02. Ejemplo.png)
+
+Estructura y Ejemplo
+:::
+```
+
+![](Imagenes/01_Libros/20_gt_table_subfiguras.png){fi-alt='Subfiguras'}
+
+Si se desea que estén una debajo de la otra se modifica `layout-ncol` por `layout-nrow`. Se pueden quitar o agregar los subtítulos de las figuras, se puede hacer una referecia cruzada a las figuras sin importar si están en un panel. Si, por ejemplo, se tienen tres imagenes, quiero dos de ellas en la parte superior y la ultima en la parte inferior se puede hacer así:
+
+``` default
+::: {layout="[[1,1], [1]]"}
+![Ejemplo 1](Imagenes/Gt table/02. Ejemplo.png)
+
+![Ejemplo 2](Imagenes/Gt table/03. Ejemplo2.png)
+
+![Gt Table](Imagenes/Gt table/1. Intro.jpg)
+:::
+```
+
+El fragmento `layout="[[1,1], [1]]"` se traduce como dos filas, la primera con dos columnas y la segunda con una única columna.
+
+![](Imagenes/01_Libros/21_gt_table_tres_graficas.png){fi-alt='Personalización de los paneles'}
+
+También es posible modificar el tamaño de cada una de las figuras:
+
+``` default
+::: {layout="[[40,60], [100]]"}
+
+![Ejemplo 1](Imagenes/Gt table/02. Ejemplo.png)
+
+![Ejemplo 2](Imagenes/Gt table/03. Ejemplo2.png)
+
+![Gt Table](Imagenes/Gt table/1. Intro.jpg)
+:::
+```
+
+Si se desea agregar un espacio entre las imagenes se usa el signo negativo así:
+
+``` default
+::: {layout="[[30,-20,50], [100]]"}
+![Ejemplo 1](Imagenes/Gt table/02. Ejemplo.png)
+
+![Ejemplo 2](Imagenes/Gt table/03. Ejemplo2.png)
+
+![Gt Table](Imagenes/Gt table/1. Intro.jpg)
+:::
+```
+
+Para alinear las imagenes en una fila se usa `layout-valign` así:
+
+``` default
+::: {layout-col=2 layout-valign="bottom"}
+![Gt Table](Imagenes/Gt table/1. Intro.jpg)
+
+![Ejemplo](Imagenes/Gt table/02. Ejemplo.png)
+:::
+```
+
+6.    Posición de la figura:Por defecto, el lugar donde se ubicará la figura depende del tamaño y el entorno, sin embargo, esto puede modificarse usando `fig-pos`, puede hacerse a nivel de documento:
+
+``` default
+title: "Crear tablas de resumen en R"
+  author: "Dirección Nacional de Planeación y Estadística"
+  chapters:
+    - index.qmd
+    - "Conceptos Basicos.qmd"
+    - "Agregar Partes.qmd"
+    - Referencias.qmd
+format:
+  pdf:
+    fig-pos: 'h'
+```
+
+También a nivel de un bloque de código ejecutable añadiendo `#| fig-pos: 'h'`; o directamente dentro del Markdown `![Gt Table](Imagenes/Gt table/1. Intro.jpg){fig-pos='h'}`.
+
+8.    Salidas computacionales: Para las figuras resultantes de un bloque de código ejecutable se usan los mismos atributos pero dentro del bloque de código. En nuestro ejemplo, se realizó una tabla de `islands`, vamos a agregar un subtítulo:
+
+![](Imagenes/01_Libros/23_gt_table_codigo_subtitulo.png){fi-alt='Código para agregar un subtítulo a una figura resultante de un bloque de código'}
+
+Se verá así:
+
+![](Imagenes/01_Libros/22_gt_table_subtitulo_codigo.png){fig-alt='Resultado del código anterior'}
+
+En Quarto es posible modificar la posición de los subtítulos usanso `fig-cap-location`.
 
 ## Videos
 
+Para incluir videos en un libro basta con implementar `{< video >}`. En nuestro libro de Gt Table incluiremos el video *"Making Beautiful Tables with {gt}"* de Richh Iannone que está disponible en YouTube:
+
+``` default
+{{< video https://www.youtube.com/watch?v=z0UGmMOxl-c&ab_channel=PositPBC >}}
+```
+
+se visualizará así
+
+![](Imagenes/01_Libros/24_gt_table_video_basico.png){fig-alt='Visualización del video'}
+
+Hay que tener en cuenta que en formato HTML el video puede reproducirse en la página, sin embargo, en otros formatos solo aparecerá el link del video. 
+
+Es posible cambiar el aspecto del video con la opción `aspect-ratio` que aacepta los valores `1x1`,`4x3`,`16x9` y `21x9`, o más específicamente utilizando `width` y `height`
+
+``` default
+{{< video https://www.youtube.com/watch?v=z0UGmMOxl-c&ab_channel=PositPBC aspect-ratio="4x3" >}}
+
+{{< video https://www.youtube.com/watch?v=z0UGmMOxl-c&ab_channel=PositPBC width="250" height="175" >}}
+```
+
+El cambio se ve así
+
+![](Imagenes/01_Libros/25_gt_table_video_aspect.png){fig-alt='Visualización del video en otro tamaño'}
+
+Se puede modificar la hora de inicio con el atributo `start`, en nuestro libro
+
+``` default
+{{< video https://www.youtube.com/watch?v=z0UGmMOxl-c&ab_channel=PositPBC start="20">}}
+```
+
+Notaremos que el video comienza en el segundo 20.
+
 ## Referencias cruzadas
+
+Como vimos en @sec-figuras, para hacer referencias a las figuras debe identificarse a la figura con `{#fig-nombrefigura}` y luego llamarla con `@fig-nombrefigura`. Para referenciar una sección como un capítulo o un apéndice se usa `{#sec-nombreseccion}` y luego `@sec-nombreseccion`. En nuestro libro, vamos a hacer referencia al capítulo 1 llamado *Conceptos Básicos*
+
+![](Imagenes/01_Libros/26_gt_table_referencia_seccion.png){fig-alt='Referencia a un capítulo}
+
+
 
 <!-- Firma -->
 
