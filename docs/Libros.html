@@ -212,7 +212,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <ul class="collapse">
   <li><a href="#configuración-inicial-_language.yml" id="toc-configuración-inicial-_language.yml" class="nav-link" data-scroll-target="#configuración-inicial-_language.yml">Configuración inicial: <code>_language.yml</code></a></li>
   <li><a href="#títulos" id="toc-títulos" class="nav-link" data-scroll-target="#títulos">Títulos</a></li>
+  <li><a href="#videos" id="toc-videos" class="nav-link" data-scroll-target="#videos">Videos</a></li>
+  <li><a href="#referencias-cruzadas" id="toc-referencias-cruzadas" class="nav-link" data-scroll-target="#referencias-cruzadas">Referencias cruzadas</a></li>
   </ul></li>
+  <li><a href="#estilo-del-libro" id="toc-estilo-del-libro" class="nav-link" data-scroll-target="#estilo-del-libro">Estilo del libro</a></li>
   </ul>
 </nav>
     </div>
@@ -510,6 +513,101 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>Estructura y Ejemplo</span>
 <span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="Imagenes/01_Libros/20_gt_table_subfiguras.png" class="img-fluid" data-fi-alt="Subfiguras"></p>
+<p>Si se desea que estén una debajo de la otra se modifica <code>layout-ncol</code> por <code>layout-nrow</code>. Se pueden quitar o agregar los subtítulos de las figuras, se puede hacer una referecia cruzada a las figuras sin importar si están en un panel. Si, por ejemplo, se tienen tres imagenes, quiero dos de ellas en la parte superior y la ultima en la parte inferior se puede hacer así:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>::: {layout="[[1,1], [1]]"}</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>![Ejemplo 1](Imagenes/Gt table/02. Ejemplo.png)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>![Ejemplo 2](Imagenes/Gt table/03. Ejemplo2.png)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>![Gt Table](Imagenes/Gt table/1. Intro.jpg)</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>El fragmento <code>layout="[[1,1], [1]]"</code> se traduce como dos filas, la primera con dos columnas y la segunda con una única columna.</p>
+<p><img src="Imagenes/01_Libros/21_gt_table_tres_graficas.png" class="img-fluid" data-fi-alt="Personalización de los paneles"></p>
+<p>También es posible modificar el tamaño de cada una de las figuras:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>::: {layout="[[40,60], [100]]"}</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>![Ejemplo 1](Imagenes/Gt table/02. Ejemplo.png)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>![Ejemplo 2](Imagenes/Gt table/03. Ejemplo2.png)</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>![Gt Table](Imagenes/Gt table/1. Intro.jpg)</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Si se desea agregar un espacio entre las imagenes se usa el signo negativo así:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>::: {layout="[[30,-20,50], [100]]"}</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>![Ejemplo 1](Imagenes/Gt table/02. Ejemplo.png)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>![Ejemplo 2](Imagenes/Gt table/03. Ejemplo2.png)</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>![Gt Table](Imagenes/Gt table/1. Intro.jpg)</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Para alinear las imagenes en una fila se usa <code>layout-valign</code> así:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>::: {layout-col=2 layout-valign="bottom"}</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>![Gt Table](Imagenes/Gt table/1. Intro.jpg)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>![Ejemplo](Imagenes/Gt table/02. Ejemplo.png)</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="6" type="1">
+<li>Posición de la figura:Por defecto, el lugar donde se ubicará la figura depende del tamaño y el entorno, sin embargo, esto puede modificarse usando <code>fig-pos</code>, puede hacerse a nivel de documento:</li>
+</ol>
+<div class="sourceCode" id="cb20"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>title: "Crear tablas de resumen en R"</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  author: "Dirección Nacional de Planeación y Estadística"</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  chapters:</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    - index.qmd</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>    - "Conceptos Basicos.qmd"</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>    - "Agregar Partes.qmd"</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>    - Referencias.qmd</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>format:</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>  pdf:</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>    fig-pos: 'h'</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>También a nivel de un bloque de código ejecutable añadiendo <code>#| fig-pos: 'h'</code>; o directamente dentro del Markdown <code>![Gt Table](Imagenes/Gt table/1. Intro.jpg){fig-pos='h'}</code>.</p>
+<ol start="8" type="1">
+<li>Salidas computacionales: Para las figuras resultantes de un bloque de código ejecutable se usan los mismos atributos pero dentro del bloque de código. En nuestro ejemplo, se realizó una tabla de <code>islands</code>, vamos a agregar un subtítulo:</li>
+</ol>
+<p><img src="Imagenes/01_Libros/23_gt_table_codigo_subtitulo.png" class="img-fluid" data-fi-alt="Código para agregar un subtítulo a una figura resultante de un bloque de código"></p>
+<p>Se verá así:</p>
+<p><img src="Imagenes/01_Libros/22_gt_table_subtitulo_codigo.png" class="img-fluid" alt="Resultado del código anterior"></p>
+<p>En Quarto es posible modificar la posición de los subtítulos usanso <code>fig-cap-location</code>.</p>
+</section>
+<section id="videos" class="level2">
+<h2 class="anchored" data-anchor-id="videos">Videos</h2>
+<p>Para incluir videos en un libro basta con implementar <code>{&lt; video &gt;}</code>. En nuestro libro de Gt Table incluiremos el video <em>“Making Beautiful Tables with {gt}”</em> de Richh Iannone que está disponible en YouTube:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>se visualizará así</p>
+<p><img src="Imagenes/01_Libros/24_gt_table_video_basico.png" class="img-fluid" alt="Visualización del video"></p>
+<p>Hay que tener en cuenta que en formato HTML el video puede reproducirse en la página, sin embargo, en otros formatos solo aparecerá el link del video.</p>
+<p>Es posible cambiar el aspecto del video con la opción <code>aspect-ratio</code> que aacepta los valores <code>1x1</code>,<code>4x3</code>,<code>16x9</code> y <code>21x9</code>, o más específicamente utilizando <code>width</code> y <code>height</code></p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>El cambio se ve así</p>
+<p><img src="Imagenes/01_Libros/25_gt_table_video_aspect.png" class="img-fluid" alt="Visualización del video en otro tamaño"></p>
+<p>Se puede modificar la hora de inicio con el atributo <code>start</code>, en nuestro libro</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Notaremos que el video comienza en el segundo 20.</p>
+</section>
+<section id="referencias-cruzadas" class="level2">
+<h2 class="anchored" data-anchor-id="referencias-cruzadas">Referencias cruzadas</h2>
+<p>Como vimos en <strong>?@sec-figuras</strong>, para hacer referencias a las figuras debe identificarse a la figura con <code>{#fig-nombrefigura}</code> y luego llamarla con <code>@fig-nombrefigura</code>. Para referenciar una sección como un capítulo o un apéndice se usa <code>{#sec-nombreseccion}</code> y luego <code>@sec-nombreseccion</code>. En nuestro libro, vamos a hacer referencia al capítulo 1 llamado <em>Conceptos Básicos</em></p>
+<p><img src="Imagenes/01_Libros/26_gt_table_referencia_seccion.png" class="img-fluid" alt="Referencia a un capítulo"></p>
+</section>
+</section>
+<section id="estilo-del-libro" class="level1">
+<h1>Estilo del libro</h1>
+<p>Para personalizar nuestro libro podemos usar el archivo <code>styles.css</code>, que usa <strong>CSS</strong> (<em>Cascading Style Sheets</em>).</p>
+<p>Lo primero que debemos hacer es agregar el CSS, de modo que vamos al archivo <code>_quarto.yml</code> y hacemos:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>format:</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  html: </span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    css: styles.css</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>y entonces creamos el archivo <code>styles.css</code> escribiendo literalmente <em>“styles.css”</em> luego de dar clic en</p>
+<p>[]!(Imagenes/01_Libros/27_gt_table_styles.png){fig-alt=‘crear archivo styles.css’}</p>
+<p>Ahora sí podemos empezar a personalizar nuestro libro, por ejemplo, pongamos todas las letras de los párrafos de color rojo escribiendo en <code>styles.css</code> lo siguiente</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>p {</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  color: red;</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>que se verá así</p>
+<p>[]!(Imagenes/01_Libros/28_gt_table_todo_rojo.png){fig-alt=‘crear archivo styles.css’}</p>
+<p>en el código anterior, <em>p</em> es el selector que básicamente nos indica a qué parte o elemento de nuestro libro le vamos a aplicar ciertas características que indicamos dentro de <em>{ }</em>. Lo que está dentro de las llaves debe tener concordancia en cuanto a que debe ser un atributo del selector y el valor que le asigno debe ser válido.</p>
+<p>Existen muchísimos tipos de selectores, por ejemplo, el selector <em>html</em> se refiere a la totalidad del documento, <em>h1</em> al título, <em>h2</em> al primer subtítulo, <em>h3</em> al segundo subtítulo y así sucesivamente, <em>li</em> hace referencia a cada uno de los elementos de una lista, y <em>p</em> a los párrafos. Así hay muchos más selectores, para explorar un poco más puede visitar <a href="https://developer.mozilla.org/es/docs/Learn/CSS">Aprenda CSS</a>.</p>
 <!-- Firma -->
 <div class="footer-text">
 <div class="footer-container black-background">
@@ -546,7 +644,6 @@ Contactenos</p>
 </div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

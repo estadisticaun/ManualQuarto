@@ -470,9 +470,39 @@ Notaremos que el video comienza en el segundo 20.
 
 Como vimos en @sec-figuras, para hacer referencias a las figuras debe identificarse a la figura con `{#fig-nombrefigura}` y luego llamarla con `@fig-nombrefigura`. Para referenciar una sección como un capítulo o un apéndice se usa `{#sec-nombreseccion}` y luego `@sec-nombreseccion`. En nuestro libro, vamos a hacer referencia al capítulo 1 llamado *Conceptos Básicos*
 
-![](Imagenes/01_Libros/26_gt_table_referencia_seccion.png){fig-alt='Referencia a un capítulo}
+![](Imagenes/01_Libros/26_gt_table_referencia_seccion.png){fig-alt='Referencia a un capítulo'}
 
+# Estilo del libro
 
+Para personalizar nuestro libro podemos usar el archivo `styles.css`, que usa **CSS** (*Cascading Style Sheets*).
+
+Lo primero que debemos hacer es agregar el CSS, de modo que vamos al archivo `_quarto.yml` y hacemos:
+
+``` default
+format:
+  html: 
+    css: styles.css
+```
+
+y entonces creamos el archivo `styles.css` escribiendo literalmente *"styles.css"* luego de dar clic en
+
+![](Imagenes/01_Libros/27_gt_table_styles.png){fig-alt='crear archivo styles.css'}
+
+Ahora sí podemos empezar a personalizar nuestro libro, por ejemplo, pongamos todas las letras de los párrafos de color rojo escribiendo en `styles.css` lo siguiente
+
+``` default
+p {
+  color: red;
+}
+```
+
+que se verá así
+
+![](Imagenes/01_Libros/28_gt_table_todo_rojo.PNG){fig-alt='crear archivo styles.css'}
+
+en el código anterior, *p* es el selector que básicamente nos indica a qué parte o elemento de nuestro libro le vamos a aplicar ciertas características que indicamos dentro de *{ }*. Lo que está dentro de las llaves debe tener concordancia en cuanto a que debe ser un atributo del selector y el valor que le asigno debe ser válido.
+
+Existen muchísimos tipos de selectores, por ejemplo, el selector *html* se refiere a la totalidad del documento, *h1* al título, *h2* al primer subtítulo, *h3* al segundo subtítulo y así sucesivamente, *li* hace referencia a cada uno de los elementos de una lista, y *p* a los párrafos. Así hay muchos más selectores, para explorar un poco más puede visitar [Aprenda CSS](https://developer.mozilla.org/es/docs/Learn/CSS).
 
 <!-- Firma -->
 
