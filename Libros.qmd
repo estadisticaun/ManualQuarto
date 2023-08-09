@@ -257,7 +257,9 @@ Por defecto, el título aparece enumerado, pero si no lo queremos enumerado, bas
 
 De ese modo obtenemos:
 
-![](Imagenes/01_Libros/13_gt_table_titulo_sinnum.png) \## Figuras {#sec-figuras}
+![](Imagenes/01_Libros/13_gt_table_titulo_sinnum.png) 
+
+## Figuras {#sec-figuras}
 
 En Quarto se pueden hacer muchísimas cosas con las figuras, tablas u otro contenido, entre ellas, agregar o eliminar títulos/subtítulos, cambiar el tamaño, la ubicación, incluirlas en paneles y demás.
 
@@ -474,6 +476,8 @@ Como vimos en @sec-figuras, para hacer referencias a las figuras debe identifica
 
 # Estilo del libro
 
+## Básicos de CSS
+
 Para personalizar nuestro libro podemos usar el archivo `styles.css`, que usa **CSS** (*Cascading Style Sheets*).
 
 Lo primero que debemos hacer es agregar el CSS, de modo que vamos al archivo `_quarto.yml` y hacemos:
@@ -498,11 +502,30 @@ p {
 
 que se verá así
 
-![](Imagenes/01_Libros/28_gt_table_todo_rojo.PNG){fig-alt='crear archivo styles.css'}
+![](Imagenes/01_Libros/28_gt_table_todo_rojo.PNG){fig-alt='títulos en color rojo'}
 
 en el código anterior, *p* es el selector que básicamente nos indica a qué parte o elemento de nuestro libro le vamos a aplicar ciertas características que indicamos dentro de *{ }*. Lo que está dentro de las llaves debe tener concordancia en cuanto a que debe ser un atributo del selector y el valor que le asigno debe ser válido.
 
 Existen muchísimos tipos de selectores, por ejemplo, el selector *html* se refiere a la totalidad del documento, *h1* al título, *h2* al primer subtítulo, *h3* al segundo subtítulo y así sucesivamente, *li* hace referencia a cada uno de los elementos de una lista, y *p* a los párrafos. Así hay muchos más selectores, para explorar un poco más puede visitar [Aprenda CSS](https://developer.mozilla.org/es/docs/Learn/CSS).
+
+También podemos determinar varios selectores a la vez, por ejemplo, si queremos que los títulos y los párrafos sean de color verde, podemos especificarlo en una sola instrucción
+
+``` default
+p,
+h1 {
+  color: green;
+}
+```
+
+y queda
+
+![](Imagenes/01_Libros/29_gt_table_todo_verde.PNG){fig-alt='título y párrafos en color verde'.css'}
+
+
+## Estilo del texto
+
+##Estilo de las figuras
+
 
 <!-- Firma -->
 

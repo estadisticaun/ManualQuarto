@@ -212,6 +212,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <ul class="collapse">
   <li><a href="#configuración-inicial-_language.yml" id="toc-configuración-inicial-_language.yml" class="nav-link" data-scroll-target="#configuración-inicial-_language.yml">Configuración inicial: <code>_language.yml</code></a></li>
   <li><a href="#títulos" id="toc-títulos" class="nav-link" data-scroll-target="#títulos">Títulos</a></li>
+  <li><a href="#sec-figuras" id="toc-sec-figuras" class="nav-link" data-scroll-target="#sec-figuras">Figuras</a></li>
   <li><a href="#videos" id="toc-videos" class="nav-link" data-scroll-target="#videos">Videos</a></li>
   <li><a href="#referencias-cruzadas" id="toc-referencias-cruzadas" class="nav-link" data-scroll-target="#referencias-cruzadas">Referencias cruzadas</a></li>
   </ul></li>
@@ -458,7 +459,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Por defecto, el título aparece enumerado, pero si no lo queremos enumerado, basta con agregar <code>{.unnumbered}</code> así:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a># Conceptos Básicos {.unnumbered}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>De ese modo obtenemos:</p>
-<p><img src="Imagenes/01_Libros/13_gt_table_titulo_sinnum.png" class="img-fluid"> ## Figuras {#sec-figuras}</p>
+<p><img src="Imagenes/01_Libros/13_gt_table_titulo_sinnum.png" class="img-fluid"></p>
+</section>
+<section id="sec-figuras" class="level2">
+<h2 class="anchored" data-anchor-id="sec-figuras">Figuras</h2>
 <p>En Quarto se pueden hacer muchísimas cosas con las figuras, tablas u otro contenido, entre ellas, agregar o eliminar títulos/subtítulos, cambiar el tamaño, la ubicación, incluirlas en paneles y demás.</p>
 <p>Por defecto, en Pandoc Markadown se crea una figura y su subtítulo cuando una imagen aparece en el párrafo. Continuando con nuestro libro de GT Table, mostraremos una imagen llamada “1. Intro”, ubicada en la subcarpeta “Gt table” de la carpeta “Imagenes” en nuestro directorio, con el subtítulo “GT Table” así:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>![GT Table](Imagenes/Gt table/1. Intro.jpg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -587,7 +591,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="referencias-cruzadas" class="level2">
 <h2 class="anchored" data-anchor-id="referencias-cruzadas">Referencias cruzadas</h2>
-<p>Como vimos en <strong>?@sec-figuras</strong>, para hacer referencias a las figuras debe identificarse a la figura con <code>{#fig-nombrefigura}</code> y luego llamarla con <code>@fig-nombrefigura</code>. Para referenciar una sección como un capítulo o un apéndice se usa <code>{#sec-nombreseccion}</code> y luego <code>@sec-nombreseccion</code>. En nuestro libro, vamos a hacer referencia al capítulo 1 llamado <em>Conceptos Básicos</em></p>
+<p>Como vimos en <a href="#sec-figuras">Section&nbsp;2.3</a>, para hacer referencias a las figuras debe identificarse a la figura con <code>{#fig-nombrefigura}</code> y luego llamarla con <code>@fig-nombrefigura</code>. Para referenciar una sección como un capítulo o un apéndice se usa <code>{#sec-nombreseccion}</code> y luego <code>@sec-nombreseccion</code>. En nuestro libro, vamos a hacer referencia al capítulo 1 llamado <em>Conceptos Básicos</em></p>
 <p><img src="Imagenes/01_Libros/26_gt_table_referencia_seccion.png" class="img-fluid" alt="Referencia a un capítulo"></p>
 </section>
 </section>
@@ -599,13 +603,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  html: </span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    css: styles.css</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>y entonces creamos el archivo <code>styles.css</code> escribiendo literalmente <em>“styles.css”</em> luego de dar clic en</p>
-<p>[]!(Imagenes/01_Libros/27_gt_table_styles.png){fig-alt=‘crear archivo styles.css’}</p>
+<p><img src="Imagenes/01_Libros/27_gt_table_styles.png" class="img-fluid" alt="crear archivo styles.css"></p>
 <p>Ahora sí podemos empezar a personalizar nuestro libro, por ejemplo, pongamos todas las letras de los párrafos de color rojo escribiendo en <code>styles.css</code> lo siguiente</p>
 <div class="sourceCode" id="cb25"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>p {</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  color: red;</span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>que se verá así</p>
-<p>[]!(Imagenes/01_Libros/28_gt_table_todo_rojo.png){fig-alt=‘crear archivo styles.css’}</p>
+<p><img src="Imagenes/01_Libros/28_gt_table_todo_rojo.PNG" class="img-fluid" alt="crear archivo styles.css"></p>
 <p>en el código anterior, <em>p</em> es el selector que básicamente nos indica a qué parte o elemento de nuestro libro le vamos a aplicar ciertas características que indicamos dentro de <em>{ }</em>. Lo que está dentro de las llaves debe tener concordancia en cuanto a que debe ser un atributo del selector y el valor que le asigno debe ser válido.</p>
 <p>Existen muchísimos tipos de selectores, por ejemplo, el selector <em>html</em> se refiere a la totalidad del documento, <em>h1</em> al título, <em>h2</em> al primer subtítulo, <em>h3</em> al segundo subtítulo y así sucesivamente, <em>li</em> hace referencia a cada uno de los elementos de una lista, y <em>p</em> a los párrafos. Así hay muchos más selectores, para explorar un poco más puede visitar <a href="https://developer.mozilla.org/es/docs/Learn/CSS">Aprenda CSS</a>.</p>
 <!-- Firma -->
