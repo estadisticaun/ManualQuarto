@@ -229,6 +229,8 @@ De esta manera podemos tener los titulos en diferentes idiomas, en este caso, en
 ![Inglés](Imagenes/01_Libros/10_gt_table_2_en.png)
 :::
 
+# Elementos de los libros
+
 ## Títulos
 
 Las opciones de representación se definen en el archivo `_quarto.yml`. Existen dos maneras de agregar un título a nuestro libro. La primera forma es haciendo:
@@ -474,9 +476,45 @@ Como vimos en @sec-figuras, para hacer referencias a las figuras debe identifica
 
 ![](Imagenes/01_Libros/26_gt_table_referencia_seccion.png){fig-alt='Referencia a un capítulo'}
 
-# Estilo del libro
+# Personalización del libro
 
-## Básicos de CSS
+## Tema del libro (***Theme***)
+Cuando creamos un libro en Quarto, este viene por defecto con el tema `default`, pero podemos cambiarlo y seleccionar una de las 25 opciones que trae Quarto, o bien podemos crear un nuevo tema usando archivos **SASS**.
+
+Las 25 opciones que nos ofrece Quarto son los temas ***Bootstap***: *default, cerulean, cosmo, cyborg, darkly, flatly, journal, litera, lumen, lux, materia, minty, morph, pulse, quartz, sandstone, simplex, sketchy, slate, solar, spacelab, superhero, united, vapor, yeti, zephyr*. Para nuestro libro, usaremos el tema *cerulean* y poco a poco lo iremos personalizando.
+
+``` default
+format:
+  html:
+    theme: cerulean
+``` 
+
+Y el libro se ve así
+
+![](Imagenes/01_Libros/30_gt_table_cerulean.PNG){fig-alt='cambio de tema a cerulean'.css'}
+
+Si usamos los temas *bootstrap* o *Pandoc* entonces podemos usar algunas de las opciones que permiten, por ejemplo, cambiar la fuente y el tamaño de la letra del libro, cambiar el color de fondo del libro, ajustar las márgenes del libro, entre otras. Al agregar en `_quarto.yml`
+
+``` default
+format:
+  html:
+    theme: cerulean
+    fontsize: 1.1em
+    linestretch: 1.7
+    fontcolor: white
+    backgroundcolor: black
+    css: styles.css
+    link-external-icon: true
+    link-external-newwindow: true
+```
+
+hemos modificado no solo el tema sino el tamaño de la letra (`fontsize`), el interlineado (`linestretch`), el color de la letra (`fontcolor`) y el color de fondo (`backgroundcolor`). Nuestro libro ahora se ve
+
+![](Imagenes/01_Libros/31_gt_cambio_tema.PNG){fig-alt='personalizando aún más el tema del libro'.css'}
+
+También podemos cambiar el tipo de letra (`mainfont`), el color de los hyperlinks (`linkcolor`), el color de fondo de los códigos (`monobackgroundcolor`), entre otros. Para más información no dude en visitar [HTML Theming](https://quarto.org/docs/output-formats/html-themes.html#theme-options) la sección *Basic Options*, ahí también puedes encontrar visualizaciones previas de cada tema para que escojas el que más te guste.
+
+## Usando CSS
 
 Para personalizar nuestro libro podemos usar el archivo `styles.css`, que usa **CSS** (*Cascading Style Sheets*).
 
@@ -522,9 +560,12 @@ y queda
 ![](Imagenes/01_Libros/29_gt_table_todo_verde.PNG){fig-alt='título y párrafos en color verde'.css'}
 
 
-## Estilo del texto
+### Estilo del texto
 
-##Estilo de las figuras
+### Estilo de las figuras
+
+## Usando SASS
+
 
 
 <!-- Firma -->
