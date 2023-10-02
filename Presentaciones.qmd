@@ -1,52 +1,308 @@
+---
+page-layout: article
+section-divs: true
+sidebar: true
+search: true
+toc: true
+---
+
 # Presentaciones
 
-Contenido
+En esta sección, aprenderás cómo crear una presentación (en distintos formatos) utilizando Quarto.
+
+La página oficial de presentaciones en Quarto se encuentra \[aquí\]<https://quarto.org/docs/presentations/>
+
+## Crea tu presentación
+
+Para crear una presentación en Quarto, no es necesario crear un nuevo proyecto, simplemente crearemos un nuevo documento con la opción ***Quarto Presentation***. SIgue los siguientes pasos:
+
+1.  Abre RStudio
+
+2.  En la parte superior izquierda, selecciona ***New File*** y después ***Quarto Presentation***. ![](Imagenes/02_Presentaciones/00_Creacion.png)
+
+3.  A continuación, dale un nombre a tu presentación y especifica el nombre del autor, y no olvides escoger el formato de la presentación (*Reveal JS, Beamer, PowerPoint*) pero no te afanes porque puedes modificarlo más adelante. ![](Imagenes/02_Presentaciones/01_preliminares.png)
+
+4.  Quedará una presentación así ![](Imagenes/02_Presentaciones/02_Fin_creacion.png)
+
+Ahora sí empezaremos a crear y personalizar nuestra presentación. Como ejemplo, haremos una presentación sobre el contenido de dos bases de datos (mtcars e iris), ambas disponibles en R.
+
+## Formato presentaciones
+
+En Quarto podemos crear presentaciones con tres formatos:
+
+-   `revealjs`: reveal.js (HTML)
+-   `pptx`: PowerPoint (MS Office)
+-   `beamer`: Beamer (LaTeX/PDF)
+
+La selección de determinado formato depende de las necesidades de cada autor, en general, `revealjs` funciona muy bien y cuenta con salida HTML y PDF, pero si se desea cierta función específica de PowerPoint o de Beamer, es mejor usar `pptx` o `beamer` respectivamente.
+
+### Generalidades
+
+#### Crear diapositivas
+
+Para añadir una nueva diapositiva basta con usar `#`, seguido del título de la diapositiva:
+
+``` {.markdown code-preview="ejemplos/nueva.qmd"}
+---
+title: "Bases de datos en R"
+author: "Estadística UN"
+format: revealjs
+---
+
+# mtcars
+
+- Los datos se extrajeron de la revista Motor Trend US de 1974
+- Comprenden el consumo de combustible y 10 aspectos del diseño y rendimiento del automóvil para 32 automóviles (modelos 1973-74)
 
 
+# iris
 
-::: {.footer-text}
+- Proporciona las medidas en centímetros de las variables longitud y ancho del sépalo y longitud y ancho de los pétalos, respectivamente, para 50 flores de cada una de las 3 especies de iris
+- Las especies son Iris setosa , versicolor y virginica
+
+```
+
+Para dividir la presentación en secciones usando diapositivas que tengan solo el título, para esto agregamos otro(s) `#`:
+
+``` {.markdown code-preview="ejemplos/dos.qmd"}
+---
+title: "Bases de datos en R"
+author: "Estadística UN"
+format: revealjs
+---
+
+# mtcars
+
+## Desripción
+
+- Los datos se extrajeron de la revista Motor Trend US de 1974
+- Comprenden el consumo de combustible y 10 aspectos del diseño y rendimiento del automóvil para 32 automóviles (modelos 1973-74)
+
+## Variables {.scrollable}
+
+- mpg: Millas/galón (EE.UU.)
+- cyl: Número de cilindros
+- disp: Desplazamiento (cu.in.)
+- hp: Caballos de fuerza brutos
+- drat: Relación del eje trasero
+- wt: Peso (1000 libras)
+-	qseg: Tiempo de 1/4 de milla
+- vs: Motor (0 = en forma de V, 1 = recto)
+- am: Transmisión (0 = automática, 1 = manual)
+- carb: Número de carburadores
+
+# iris
+
+## Descripción
+
+- Proporciona las medidas en centímetros de las variables longitud y ancho del sépalo y longitud y ancho de los pétalos, respectivamente, para 50 flores de cada una de las 3 especies de iris
+- Las especies son Iris setosa , versicolor y virginica
+
+## Variables
+
+- Sepal.Length: Longitud del sépalo
+- Sepal.Width: Ancho del sépalo
+- Petal.Length: Longitud del pétalo
+- Petal Width: Ancho del pétalo
+- Species: Especie
+```
+
+La opción `{.scrollable}` genera una barra en la parte derecha que permite desplazar la diapositiva hacia abajo para ver todo el contenido.
+
+Si no quieres títulos sino simplemente dividir las diapositivas, puedes usar `---` así:
+
+
+``` {.markdown code-preview="ejemplos/dividir.qmd"}
+---
+title: "Bases de datos en R"
+author: "Estadística UN"
+format: revealjs
+---
+
+Para mtcars:
+- Los datos se extrajeron de la revista Motor Trend US de 1974
+- Comprenden el consumo de combustible y 10 aspectos del diseño y rendimiento del automóvil para 32 automóviles (modelos 1973-74)
+
+---
+
+Para iris:
+- Proporciona las medidas en centímetros de las variables longitud y ancho del sépalo y longitud y ancho de los pétalos, respectivamente, para 50 flores de cada una de las 3 especies de iris
+- Las especies son Iris setosa , versicolor y virginica
+
+```
+
+#### Listas incrementales
+
+Puedes hacer que los elementos de una lista en una de tus diapositivas aparezcan de a una, para eso utiliza la opción `::: {.incremental} :::`, en nuestra presentación de librerías en R, haremos que los elementos de *mtcars* aparezcan de uno en uno así:
+
+``` {.markdown code-preview="ejemplos/incrementar.qmd"}
+---
+title: "Bases de datos en R"
+author: "Estadística UN"
+format: revealjs
+---
+
+# mtcars
+
+::: {.incremental}
+- Los datos se extrajeron de la revista Motor Trend US de 1974
+- Comprenden el consumo de combustible y 10 aspectos del diseño y rendimiento del automóvil para 32 automóviles (modelos 1973-74)
+::: 
+
+# iris
+
+- Proporciona las medidas en centímetros de las variables longitud y ancho del sépalo y longitud y ancho de los pétalos, respectivamente, para 50 flores de cada una de las 3 especies de iris
+- Las especies son Iris setosa , versicolor y virginica
+
+```
+
+Si quieres que, en general, todas las listas de todas las diapositivas aparezcan de a una en una, puedes agregar la opción global `incremental: true` así:
+
+
+``` {.markdown code-preview="ejemplos/incrementar_general.qmd"}
+---
+title: "Bases de datos en R"
+author: "Estadística UN"
+format: 
+  revealjs:
+    incremental: true
+---
+
+# mtcars
+
+- Los datos se extrajeron de la revista Motor Trend US de 1974
+- Comprenden el consumo de combustible y 10 aspectos del diseño y rendimiento del automóvil para 32 automóviles (modelos 1973-74)
+
+# iris
+
+- Proporciona las medidas en centímetros de las variables longitud y ancho del sépalo y longitud y ancho de los pétalos, respectivamente, para 50 flores de cada una de las 3 especies de iris
+- Las especies son Iris setosa , versicolor y virginica
+
+```
+
+y si luego de poner la opción global quieres que cierta lista no salga secuencialmente, utiliza `::: {.nonincremental} :::`:
+
+``` {.markdown code-preview="ejemplos/noincrementar.qmd"}
+---
+title: "Bases de datos en R"
+author: "Estadística UN"
+format: 
+  revealjs:
+    incremental: true
+---
+
+# mtcars
+
+- Los datos se extrajeron de la revista Motor Trend US de 1974
+- Comprenden el consumo de combustible y 10 aspectos del diseño y rendimiento del automóvil para 32 automóviles (modelos 1973-74)
+
+# iris
+::: {.nonincremental}
+
+- Proporciona las medidas en centímetros de las variables longitud y ancho del sépalo y longitud y ancho de los pétalos, respectivamente, para 50 flores de cada una de las 3 especies de iris
+- Las especies son Iris setosa , versicolor y virginica
+:::
+
+```
+
+#### Varias columnas
+
+Puedes dividir una diapositiva en varias columnas, solo debes ser cuidadoso con el argumento `width` en cada columna, ya que, en total, debe sumar $100%$. Para dividir en columnas es necesario usar `{.columns}` para indicar que la diapositiva se dividirá en columnas y `{.column width="40%"}` para especificar cada columna. En nuestro ejemplo, crearemos una diapositiva con dos columnas para la descripción y las variables de *iris*
+
+``` {.markdown code-preview="ejemplos/columnas.qmd"}
+---
+title: "Bases de datos en R"
+author: "Estadística UN"
+format: revealjs
+---
+
+# mtcars
+
+## Desripción
+
+- Los datos se extrajeron de la revista Motor Trend US de 1974
+- Comprenden el consumo de combustible y 10 aspectos del diseño y rendimiento del automóvil para 32 automóviles (modelos 1973-74)
+
+## Variables {.scrollable}
+
+- mpg: Millas/galón (EE.UU.)
+- cyl: Número de cilindros
+- disp: Desplazamiento (cu.in.)
+- hp: Caballos de fuerza brutos
+- drat: Relación del eje trasero
+- wt: Peso (1000 libras)
+-	qseg: Tiempo de 1/4 de milla
+- vs: Motor (0 = en forma de V, 1 = recto)
+- am: Transmisión (0 = automática, 1 = manual)
+- carb: Número de carburadores
+
+# iris
+
+# {.smaller}
+:::: {.columns}
+
+::: {.column width="60%"}
+
+Descripción:
+
+- Proporciona las medidas en centímetros de las variables longitud y ancho del sépalo y longitud y ancho de los pétalos, respectivamente, para 50 flores de cada una de las 3 especies de iris
+- Las especies son Iris setosa , versicolor y virginica
+:::
+
+
+::: {.column width="40%"}
+
+Variables:
+
+- Sepal.Length: Longitud del sépalo
+- Sepal.Width: Ancho del sépalo
+- Petal.Length: Longitud del pétalo
+- Petal Width: Ancho del pétalo
+- Species: Especie
+:::
+
+::::
+```
+
+La opción `{.smaller}` es para que el texto salga más pequeño y quepa en toda la diapositiva.
+
+### Revealjs
+
+### PowerPoint
+
+### Beamer
+
+::: footer-text
 ::: {.footer-container .black-background}
-::: {.footer-block}
+::: footer-block
 ::: grid
-
-
 ::: {.g-col-12 .g-col-md-6}
-
 ### Publicado por
-[![](Imagenes/Logos/escudoUnal.svg){ width=50% }](https://unal.edu.co/)
 
+[![](Imagenes/Logos/escudoUnal.svg){width="50%"}](https://unal.edu.co/)
 :::
 
 ::: {.g-col-12 .g-col-md-2}
-
 ### Sobre nosotros
+
 Objetivo\
 Grupo\
 Contactenos
-
 :::
 
 ::: {.g-col-12 .g-col-md-2}
-
 ### Paginas Web
-
-
 :::
 
 ::: {.g-col-12 .g-col-md-2}
-
 ### Siguenos en
+
 [GitHub](https://github.com/realworlddatascience)\
 [Twitter](https://twitter.com/rwdatasci)\
 [LinkedIn](https://www.linkedin.com/showcase/rss-real-world-data-science)\
 [Mastodon](https://fosstodon.org/@rwdatasci)\
-
 :::
-
 :::
-
 :::
-
 :::
-
 :::

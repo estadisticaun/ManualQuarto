@@ -1,0 +1,40 @@
+---
+title: "Bases de datos en R"
+author: "Estadística UN"
+format: revealjs
+---
+
+# mtcars
+
+## Desripción
+
+- Los datos se extrajeron de la revista Motor Trend US de 1974
+- Comprenden el consumo de combustible y 10 aspectos del diseño y rendimiento del automóvil para 32 automóviles (modelos 1973-74)
+
+## Variables {.scrollable}
+
+- mpg: Millas/galón (EE.UU.)
+- cyl: Número de cilindros
+- disp: Desplazamiento (cu.in.)
+- hp: Caballos de fuerza brutos
+- drat: Relación del eje trasero
+- wt: Peso (1000 libras)
+-	qseg: Tiempo de 1/4 de milla
+- vs: Motor (0 = en forma de V, 1 = recto)
+- am: Transmisión (0 = automática, 1 = manual)
+- carb: Número de carburadores
+
+# iris
+
+## Descripción
+
+- Proporciona las medidas en centímetros de las variables longitud y ancho del sépalo y longitud y ancho de los pétalos, respectivamente, para 50 flores de cada una de las 3 especies de iris
+- Las especies son Iris setosa , versicolor y virginica
+
+## Variables
+
+- Sepal.Length: Longitud del sépalo
+- Sepal.Width: Ancho del sépalo
+- Petal.Length: Longitud del pétalo
+- Petal Width: Ancho del pétalo
+- Species: Especie

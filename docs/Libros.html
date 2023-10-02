@@ -211,17 +211,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#características-más-avanzadas---proyecto" id="toc-características-más-avanzadas---proyecto" class="nav-link" data-scroll-target="#características-más-avanzadas---proyecto">Características más avanzadas - Proyecto</a>
   <ul class="collapse">
   <li><a href="#configuración-inicial-_language.yml" id="toc-configuración-inicial-_language.yml" class="nav-link" data-scroll-target="#configuración-inicial-_language.yml">Configuración inicial: <code>_language.yml</code></a></li>
+  </ul></li>
+  <li><a href="#elementos-de-los-libros" id="toc-elementos-de-los-libros" class="nav-link" data-scroll-target="#elementos-de-los-libros">Elementos de los libros</a>
+  <ul class="collapse">
   <li><a href="#títulos" id="toc-títulos" class="nav-link" data-scroll-target="#títulos">Títulos</a></li>
   <li><a href="#sec-figuras" id="toc-sec-figuras" class="nav-link" data-scroll-target="#sec-figuras">Figuras</a></li>
   <li><a href="#videos" id="toc-videos" class="nav-link" data-scroll-target="#videos">Videos</a></li>
   <li><a href="#referencias-cruzadas" id="toc-referencias-cruzadas" class="nav-link" data-scroll-target="#referencias-cruzadas">Referencias cruzadas</a></li>
   </ul></li>
-  <li><a href="#estilo-del-libro" id="toc-estilo-del-libro" class="nav-link" data-scroll-target="#estilo-del-libro">Estilo del libro</a>
+  <li><a href="#personalización-del-libro" id="toc-personalización-del-libro" class="nav-link" data-scroll-target="#personalización-del-libro">Personalización del libro</a>
   <ul class="collapse">
-  <li><a href="#básicos-de-css" id="toc-básicos-de-css" class="nav-link" data-scroll-target="#básicos-de-css">Básicos de CSS</a></li>
-  <li><a href="#estilo-del-texto" id="toc-estilo-del-texto" class="nav-link" data-scroll-target="#estilo-del-texto">Estilo del texto</a></li>
-  </ul></li>
   <li><a href="#tema-del-libro-theme" id="toc-tema-del-libro-theme" class="nav-link" data-scroll-target="#tema-del-libro-theme">Tema del libro (<strong><em>Theme</em></strong>)</a></li>
+  <li><a href="#usando-css" id="toc-usando-css" class="nav-link" data-scroll-target="#usando-css">Usando CSS</a>
+  <ul class="collapse">
+  <li><a href="#estilo-del-texto" id="toc-estilo-del-texto" class="nav-link" data-scroll-target="#estilo-del-texto">Estilo del texto</a></li>
+  <li><a href="#estilo-de-las-figuras" id="toc-estilo-de-las-figuras" class="nav-link" data-scroll-target="#estilo-de-las-figuras">Estilo de las figuras</a></li>
+  </ul></li>
+  <li><a href="#usando-sass" id="toc-usando-sass" class="nav-link" data-scroll-target="#usando-sass">Usando SASS</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -451,6 +458,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </section>
+</section>
+<section id="elementos-de-los-libros" class="level1">
+<h1>Elementos de los libros</h1>
 <section id="títulos" class="level2">
 <h2 class="anchored" data-anchor-id="títulos">Títulos</h2>
 <p>Las opciones de representación se definen en el archivo <code>_quarto.yml</code>. Existen dos maneras de agregar un título a nuestro libro. La primera forma es haciendo:</p>
@@ -596,65 +606,69 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="referencias-cruzadas" class="level2">
 <h2 class="anchored" data-anchor-id="referencias-cruzadas">Referencias cruzadas</h2>
-<p>Como vimos en <a href="#sec-figuras">Section&nbsp;2.3</a>, para hacer referencias a las figuras debe identificarse a la figura con <code>{#fig-nombrefigura}</code> y luego llamarla con <code>@fig-nombrefigura</code>. Para referenciar una sección como un capítulo o un apéndice se usa <code>{#sec-nombreseccion}</code> y luego <code>@sec-nombreseccion</code>. En nuestro libro, vamos a hacer referencia al capítulo 1 llamado <em>Conceptos Básicos</em></p>
+<p>Como vimos en <a href="#sec-figuras">Section&nbsp;3.2</a>, para hacer referencias a las figuras debe identificarse a la figura con <code>{#fig-nombrefigura}</code> y luego llamarla con <code>@fig-nombrefigura</code>. Para referenciar una sección como un capítulo o un apéndice se usa <code>{#sec-nombreseccion}</code> y luego <code>@sec-nombreseccion</code>. En nuestro libro, vamos a hacer referencia al capítulo 1 llamado <em>Conceptos Básicos</em></p>
 <p><img src="Imagenes/01_Libros/26_gt_table_referencia_seccion.png" class="img-fluid" alt="Referencia a un capítulo"></p>
 </section>
 </section>
-<section id="estilo-del-libro" class="level1">
-<h1>Estilo del libro</h1>
-<section id="básicos-de-css" class="level2">
-<h2 class="anchored" data-anchor-id="básicos-de-css">Básicos de CSS</h2>
+<section id="personalización-del-libro" class="level1">
+<h1>Personalización del libro</h1>
+<section id="tema-del-libro-theme" class="level2">
+<h2 class="anchored" data-anchor-id="tema-del-libro-theme">Tema del libro (<strong><em>Theme</em></strong>)</h2>
+<p>Cuando creamos un libro en Quarto, este viene por defecto con el tema <code>default</code>, pero podemos cambiarlo y seleccionar una de las 25 opciones que trae Quarto, o bien podemos crear un nuevo tema usando archivos <strong>SASS</strong>.</p>
+<p>Las 25 opciones que nos ofrece Quarto son los temas <strong><em>Bootstap</em></strong>: <em>default, cerulean, cosmo, cyborg, darkly, flatly, journal, litera, lumen, lux, materia, minty, morph, pulse, quartz, sandstone, simplex, sketchy, slate, solar, spacelab, superhero, united, vapor, yeti, zephyr</em>. Para nuestro libro, usaremos el tema <em>cerulean</em> y poco a poco lo iremos personalizando.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>format:</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  html:</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    theme: cerulean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Y el libro se ve así</p>
+<p><img src="Imagenes/01_Libros/30_gt_table_cerulean.PNG" class="img-fluid">{fig-alt=‘cambio de tema a cerulean’.css’}</p>
+<p>Si usamos los temas <em>bootstrap</em> o <em>Pandoc</em> entonces podemos usar algunas de las opciones que permiten, por ejemplo, cambiar la fuente y el tamaño de la letra del libro, cambiar el color de fondo del libro, ajustar las márgenes del libro, entre otras. Al agregar en <code>_quarto.yml</code></p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>format:</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  html:</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    theme: cerulean</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    fontsize: 1.1em</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>    linestretch: 1.7</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>    fontcolor: white</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>    backgroundcolor: black</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>    css: styles.css</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>    link-external-icon: true</span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>    link-external-newwindow: true</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>hemos modificado no solo el tema sino el tamaño de la letra (<code>fontsize</code>), el interlineado (<code>linestretch</code>), el color de la letra (<code>fontcolor</code>) y el color de fondo (<code>backgroundcolor</code>). Nuestro libro ahora se ve</p>
+<p><img src="Imagenes/01_Libros/31_gt_cambio_tema.PNG" class="img-fluid">{fig-alt=‘personalizando aún más el tema del libro’.css’}</p>
+<p>También podemos cambiar el tipo de letra (<code>mainfont</code>), el color de los hyperlinks (<code>linkcolor</code>), el color de fondo de los códigos (<code>monobackgroundcolor</code>), entre otros. Para más información no dude en visitar <a href="https://quarto.org/docs/output-formats/html-themes.html#theme-options">HTML Theming</a> la sección <em>Basic Options</em>, ahí también puedes encontrar visualizaciones previas de cada tema para que escojas el que más te guste.</p>
+</section>
+<section id="usando-css" class="level2">
+<h2 class="anchored" data-anchor-id="usando-css">Usando CSS</h2>
 <p>Para personalizar nuestro libro podemos usar el archivo <code>styles.css</code>, que usa <strong>CSS</strong> (<em>Cascading Style Sheets</em>).</p>
 <p>Lo primero que debemos hacer es agregar el CSS, de modo que vamos al archivo <code>_quarto.yml</code> y hacemos:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>format:</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  html: </span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    css: styles.css</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>format:</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  html: </span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    css: styles.css</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>y entonces creamos el archivo <code>styles.css</code> escribiendo literalmente <em>“styles.css”</em> luego de dar clic en</p>
 <p><img src="Imagenes/01_Libros/27_gt_table_styles.png" class="img-fluid" alt="crear archivo styles.css"></p>
 <p>Ahora sí podemos empezar a personalizar nuestro libro, por ejemplo, pongamos todas las letras de los párrafos de color rojo escribiendo en <code>styles.css</code> lo siguiente</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>p {</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  color: red;</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>p {</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  color: red;</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>que se verá así</p>
 <p><img src="Imagenes/01_Libros/28_gt_table_todo_rojo.PNG" class="img-fluid" alt="títulos en color rojo"></p>
 <p>en el código anterior, <em>p</em> es el selector que básicamente nos indica a qué parte o elemento de nuestro libro le vamos a aplicar ciertas características que indicamos dentro de <em>{ }</em>. Lo que está dentro de las llaves debe tener concordancia en cuanto a que debe ser un atributo del selector y el valor que le asigno debe ser válido.</p>
 <p>Existen muchísimos tipos de selectores, por ejemplo, el selector <em>html</em> se refiere a la totalidad del documento, <em>h1</em> al título, <em>h2</em> al primer subtítulo, <em>h3</em> al segundo subtítulo y así sucesivamente, <em>li</em> hace referencia a cada uno de los elementos de una lista, y <em>p</em> a los párrafos. Así hay muchos más selectores, para explorar un poco más puede visitar <a href="https://developer.mozilla.org/es/docs/Learn/CSS">Aprenda CSS</a>.</p>
 <p>También podemos determinar varios selectores a la vez, por ejemplo, si queremos que los títulos y los párrafos sean de color verde, podemos especificarlo en una sola instrucción</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>p,</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>h1 {</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  color: green;</span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>p,</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>h1 {</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  color: green;</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>y queda</p>
 <p><img src="Imagenes/01_Libros/29_gt_table_todo_verde.PNG" class="img-fluid">{fig-alt=‘título y párrafos en color verde’.css’}</p>
+<section id="estilo-del-texto" class="level3">
+<h3 class="anchored" data-anchor-id="estilo-del-texto">Estilo del texto</h3>
 </section>
-<section id="estilo-del-texto" class="level2">
-<h2 class="anchored" data-anchor-id="estilo-del-texto">Estilo del texto</h2>
-<p>##Estilo de las figuras</p>
+<section id="estilo-de-las-figuras" class="level3">
+<h3 class="anchored" data-anchor-id="estilo-de-las-figuras">Estilo de las figuras</h3>
 </section>
 </section>
-<section id="tema-del-libro-theme" class="level1">
-<h1>Tema del libro (<strong><em>Theme</em></strong>)</h1>
-<p>Cuando creamos un libro en Quarto, este viene por defecto con el tema <code>default</code>, pero podemos cambiarlo y seleccionar una de las 25 opciones que trae Quarto, o bien podemos crear un nuevo tema usando archivos <strong>SASS</strong>.</p>
-<p>Las 25 opciones que nos ofrece Quarto son los temas <strong><em>Bootstap</em></strong>: <em>default, cerulean, cosmo, cyborg, darkly, flatly, journal, litera, lumen, lux, materia, minty, morph, pulse, quartz, sandstone, simplex, sketchy, slate, solar, spacelab, superhero, united, vapor, yeti, zephyr</em>. Para nuestro libro, usaremos el tema <em>cerulean</em> y poco a poco lo iremos personalizando.</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>format:</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  html:</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    theme: cerulean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Y el libro se ve así</p>
-<p><img src="Imagenes/01_Libros/30_gt_table_cerulean.PNG" class="img-fluid">{fig-alt=‘cambio de tema a cerulean’.css’}</p>
-<p>Si usamos los temas <em>bootstrap</em> o <em>Pandoc</em> entonces podemos usar algunas de las opciones que permiten, por ejemplo, cambiar la fuente y el tamaño de la letra del libro, cambiar el color de fondo del libro, ajustar las márgenes del libro, entre otras. Al agregar en <code>_quarto.yml</code></p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>format:</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  html:</span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    theme: cerulean</span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>    fontsize: 1.1em</span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>    linestretch: 1.7</span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>    fontcolor: white</span>
-<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>    backgroundcolor: black</span>
-<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>    css: styles.css</span>
-<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>    link-external-icon: true</span>
-<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>    link-external-newwindow: true</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>hemos modificado no solo el tema sino el tamaño de la letra (<code>fontsize</code>), el interlineado (<code>linestretch</code>), el color de la letra (<code>fontcolor</code>) y el color de fondo (<code>backgroundcoor</code>). Nuestro libro ahora se ve</p>
-<p><img src="Imagenes/01_Libros/31_gt_cambio_tema.PNG" class="img-fluid">{fig-alt=‘personalizando aún más el tema del libro’.css’}</p>
-<p>También podemos cambiar el tipo de letra (<code>mainfont</code>), el color de los hyperlinks (<code>linkcolor</code>), el color de fondo de los códigos (<code>monobackgroundcolor</code>), entre otros. Para más información no dude en visitar <a href="https://quarto.org/docs/output-formats/html-themes.html#theme-options">HTML Theming</a></p>
+<section id="usando-sass" class="level2">
+<h2 class="anchored" data-anchor-id="usando-sass">Usando SASS</h2>
 <!-- Firma -->
 <div class="footer-text">
 <div class="footer-container black-background">
@@ -691,6 +705,7 @@ Contactenos</p>
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

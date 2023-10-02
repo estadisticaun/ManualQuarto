@@ -74,7 +74,7 @@
     "href": "Libros.html#referencias-cruzadas",
     "title": "Manual Quarto",
     "section": "Referencias cruzadas",
-    "text": "Referencias cruzadas\nComo vimos en Section 2.3, para hacer referencias a las figuras debe identificarse a la figura con {#fig-nombrefigura} y luego llamarla con @fig-nombrefigura. Para referenciar una sección como un capítulo o un apéndice se usa {#sec-nombreseccion} y luego @sec-nombreseccion. En nuestro libro, vamos a hacer referencia al capítulo 1 llamado Conceptos Básicos"
+    "text": "Referencias cruzadas\nComo vimos en Section 3.2, para hacer referencias a las figuras debe identificarse a la figura con {#fig-nombrefigura} y luego llamarla con @fig-nombrefigura. Para referenciar una sección como un capítulo o un apéndice se usa {#sec-nombreseccion} y luego @sec-nombreseccion. En nuestro libro, vamos a hacer referencia al capítulo 1 llamado Conceptos Básicos"
   },
   {
     "objectID": "Paginas_Web.html",
@@ -86,9 +86,9 @@
   {
     "objectID": "Presentaciones.html",
     "href": "Presentaciones.html",
-    "title": "Presentaciones",
+    "title": "Manual Quarto",
     "section": "",
-    "text": "Presentaciones\nContenido\n\n\n\n\n\nPublicado por\n\n\n\n\n\n\n\nSobre nosotros\nObjetivo\nGrupo\nContactenos\n\n\nPaginas Web\n\n\nSiguenos en\nGitHub\nTwitter\nLinkedIn\nMastodon"
+    "text": "En esta sección, aprenderás cómo crear una presentación (en distintos formatos) utilizando Quarto.\nLa página oficial de presentaciones en Quarto se encuentra [aquí]https://quarto.org/docs/presentations/\n\n\nPara crear una presentación en Quarto, no es necesario crear un nuevo proyecto, simplemente crearemos un nuevo documento con la opción Quarto Presentation. SIgue los siguientes pasos:\n\nAbre RStudio\nEn la parte superior izquierda, selecciona New File y después Quarto Presentation. \nA continuación, dale un nombre a tu presentación y especifica el nombre del autor, y no olvides escoger el formato de la presentación (Reveal JS, Beamer, PowerPoint) pero no te afanes porque puedes modificarlo más adelante. \nQuedará una presentación así \n\nAhora sí empezaremos a crear y personalizar nuestra presentación. Como ejemplo, haremos una presentación sobre el contenido de dos bases de datos (mtcars e iris), ambas disponibles en R.\n\n\n\nEn Quarto podemos crear presentaciones con tres formatos:\n\nrevealjs: reveal.js (HTML)\npptx: PowerPoint (MS Office)\nbeamer: Beamer (LaTeX/PDF)\n\nLa selección de determinado formato depende de las necesidades de cada autor, en general, revealjs funciona muy bien y cuenta con salida HTML y PDF, pero si se desea cierta función específica de PowerPoint o de Beamer, es mejor usar pptx o beamer respectivamente.\n\n\n\n\nPara añadir una nueva diapositiva basta con usar #, seguido del título de la diapositiva:\n---\ntitle: \"Bases de datos en R\"\nauthor: \"Estadística UN\"\nformat: revealjs\n---\n\n# mtcars\n\n- Los datos se extrajeron de la revista Motor Trend US de 1974\n- Comprenden el consumo de combustible y 10 aspectos del diseño y rendimiento del automóvil para 32 automóviles (modelos 1973-74)\n\n\n# iris\n\n- Proporciona las medidas en centímetros de las variables longitud y ancho del sépalo y longitud y ancho de los pétalos, respectivamente, para 50 flores de cada una de las 3 especies de iris\n- Las especies son Iris setosa , versicolor y virginica\nPara dividir la presentación en secciones usando diapositivas que tengan solo el título, para esto agregamos otro(s) #:\n---\ntitle: \"Bases de datos en R\"\nauthor: \"Estadística UN\"\nformat: revealjs\n---\n\n# mtcars\n\n## Desripción\n\n- Los datos se extrajeron de la revista Motor Trend US de 1974\n- Comprenden el consumo de combustible y 10 aspectos del diseño y rendimiento del automóvil para 32 automóviles (modelos 1973-74)\n\n## Variables {.scrollable}\n\n- mpg: Millas/galón (EE.UU.)\n- cyl: Número de cilindros\n- disp: Desplazamiento (cu.in.)\n- hp: Caballos de fuerza brutos\n- drat: Relación del eje trasero\n- wt: Peso (1000 libras)\n-   qseg: Tiempo de 1/4 de milla\n- vs: Motor (0 = en forma de V, 1 = recto)\n- am: Transmisión (0 = automática, 1 = manual)\n- carb: Número de carburadores\n\n# iris\n\n## Descripción\n\n- Proporciona las medidas en centímetros de las variables longitud y ancho del sépalo y longitud y ancho de los pétalos, respectivamente, para 50 flores de cada una de las 3 especies de iris\n- Las especies son Iris setosa , versicolor y virginica\n\n## Variables\n\n- Sepal.Length: Longitud del sépalo\n- Sepal.Width: Ancho del sépalo\n- Petal.Length: Longitud del pétalo\n- Petal Width: Ancho del pétalo\n- Species: Especie\nLa opción {.scrollable} genera una barra en la parte derecha que permite desplazar la diapositiva hacia abajo para ver todo el contenido.\nSi no quieres títulos sino simplemente dividir las diapositivas, puedes usar --- así:\n---\ntitle: \"Bases de datos en R\"\nauthor: \"Estadística UN\"\nformat: revealjs\n---\n\nPara mtcars:\n- Los datos se extrajeron de la revista Motor Trend US de 1974\n- Comprenden el consumo de combustible y 10 aspectos del diseño y rendimiento del automóvil para 32 automóviles (modelos 1973-74)\n\n---\n\nPara iris:\n- Proporciona las medidas en centímetros de las variables longitud y ancho del sépalo y longitud y ancho de los pétalos, respectivamente, para 50 flores de cada una de las 3 especies de iris\n- Las especies son Iris setosa , versicolor y virginica\n\n\n\nPuedes hacer que los elementos de una lista en una de tus diapositivas aparezcan de a una, para eso utiliza la opción ::: {.incremental} :::, en nuestra presentación de librerías en R, haremos que los elementos de mtcars aparezcan de uno en uno así:\n---\ntitle: \"Bases de datos en R\"\nauthor: \"Estadística UN\"\nformat: revealjs\n---\n\n# mtcars\n\n::: {.incremental}\n- Los datos se extrajeron de la revista Motor Trend US de 1974\n- Comprenden el consumo de combustible y 10 aspectos del diseño y rendimiento del automóvil para 32 automóviles (modelos 1973-74)\n::: \n\n# iris\n\n- Proporciona las medidas en centímetros de las variables longitud y ancho del sépalo y longitud y ancho de los pétalos, respectivamente, para 50 flores de cada una de las 3 especies de iris\n- Las especies son Iris setosa , versicolor y virginica\nSi quieres que, en general, todas las listas de todas las diapositivas aparezcan de a una en una, puedes agregar la opción global incremental: true así:\n---\ntitle: \"Bases de datos en R\"\nauthor: \"Estadística UN\"\nformat: \n  revealjs:\n    incremental: true\n---\n\n# mtcars\n\n- Los datos se extrajeron de la revista Motor Trend US de 1974\n- Comprenden el consumo de combustible y 10 aspectos del diseño y rendimiento del automóvil para 32 automóviles (modelos 1973-74)\n\n# iris\n\n- Proporciona las medidas en centímetros de las variables longitud y ancho del sépalo y longitud y ancho de los pétalos, respectivamente, para 50 flores de cada una de las 3 especies de iris\n- Las especies son Iris setosa , versicolor y virginica\ny si luego de poner la opción global quieres que cierta lista no salga secuencialmente, utiliza ::: {.nonincremental} ::::\n---\ntitle: \"Bases de datos en R\"\nauthor: \"Estadística UN\"\nformat: \n  revealjs:\n    incremental: true\n---\n\n# mtcars\n\n- Los datos se extrajeron de la revista Motor Trend US de 1974\n- Comprenden el consumo de combustible y 10 aspectos del diseño y rendimiento del automóvil para 32 automóviles (modelos 1973-74)\n\n# iris\n::: {.nonincremental}\n\n- Proporciona las medidas en centímetros de las variables longitud y ancho del sépalo y longitud y ancho de los pétalos, respectivamente, para 50 flores de cada una de las 3 especies de iris\n- Las especies son Iris setosa , versicolor y virginica\n:::\n\n\n\nPuedes dividir una diapositiva en varias columnas, solo debes ser cuidadoso con el argumento width en cada columna, ya que, en total, debe sumar \\(100%\\). Para dividir en columnas es necesario usar {.columns} para indicar que la diapositiva se dividirá en columnas y {.column width=\"40%\"} para especificar cada columna. En nuestro ejemplo, crearemos una diapositiva con dos columnas para la descripción y las variables de iris\n---\ntitle: \"Bases de datos en R\"\nauthor: \"Estadística UN\"\nformat: revealjs\n---\n\n# mtcars\n\n## Desripción\n\n- Los datos se extrajeron de la revista Motor Trend US de 1974\n- Comprenden el consumo de combustible y 10 aspectos del diseño y rendimiento del automóvil para 32 automóviles (modelos 1973-74)\n\n## Variables {.scrollable}\n\n- mpg: Millas/galón (EE.UU.)\n- cyl: Número de cilindros\n- disp: Desplazamiento (cu.in.)\n- hp: Caballos de fuerza brutos\n- drat: Relación del eje trasero\n- wt: Peso (1000 libras)\n-   qseg: Tiempo de 1/4 de milla\n- vs: Motor (0 = en forma de V, 1 = recto)\n- am: Transmisión (0 = automática, 1 = manual)\n- carb: Número de carburadores\n\n# iris\n\n# {.smaller}\n:::: {.columns}\n\n::: {.column width=\"60%\"}\n\nDescripción:\n\n- Proporciona las medidas en centímetros de las variables longitud y ancho del sépalo y longitud y ancho de los pétalos, respectivamente, para 50 flores de cada una de las 3 especies de iris\n- Las especies son Iris setosa , versicolor y virginica\n:::\n\n\n::: {.column width=\"40%\"}\n\nVariables:\n\n- Sepal.Length: Longitud del sépalo\n- Sepal.Width: Ancho del sépalo\n- Petal.Length: Longitud del pétalo\n- Petal Width: Ancho del pétalo\n- Species: Especie\n:::\n\n::::\nLa opción {.smaller} es para que el texto salga más pequeño y quepa en toda la diapositiva.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nObjetivo\nGrupo\nContactenos\n\n\n\n\n\n\nGitHub\nTwitter\nLinkedIn\nMastodon"
   },
   {
     "objectID": "Libros.html#configuración-inicial-_language.yml",
@@ -117,5 +117,103 @@
     "title": "Manual Quarto",
     "section": "Estilo del texto",
     "text": "Estilo del texto\n##Estilo de las figuras"
+  },
+  {
+    "objectID": "Libros.html#tema-del-libro-theme",
+    "href": "Libros.html#tema-del-libro-theme",
+    "title": "Manual Quarto",
+    "section": "Tema del libro (Theme)",
+    "text": "Tema del libro (Theme)\nCuando creamos un libro en Quarto, este viene por defecto con el tema default, pero podemos cambiarlo y seleccionar una de las 25 opciones que trae Quarto, o bien podemos crear un nuevo tema usando archivos SASS.\nLas 25 opciones que nos ofrece Quarto son los temas Bootstap: default, cerulean, cosmo, cyborg, darkly, flatly, journal, litera, lumen, lux, materia, minty, morph, pulse, quartz, sandstone, simplex, sketchy, slate, solar, spacelab, superhero, united, vapor, yeti, zephyr. Para nuestro libro, usaremos el tema cerulean y poco a poco lo iremos personalizando.\nformat:\n  html:\n    theme: cerulean\nY el libro se ve así\n{fig-alt=‘cambio de tema a cerulean’.css’}\nSi usamos los temas bootstrap o Pandoc entonces podemos usar algunas de las opciones que permiten, por ejemplo, cambiar la fuente y el tamaño de la letra del libro, cambiar el color de fondo del libro, ajustar las márgenes del libro, entre otras. Al agregar en _quarto.yml\nformat:\n  html:\n    theme: cerulean\n    fontsize: 1.1em\n    linestretch: 1.7\n    fontcolor: white\n    backgroundcolor: black\n    css: styles.css\n    link-external-icon: true\n    link-external-newwindow: true\nhemos modificado no solo el tema sino el tamaño de la letra (fontsize), el interlineado (linestretch), el color de la letra (fontcolor) y el color de fondo (backgroundcolor). Nuestro libro ahora se ve\n{fig-alt=‘personalizando aún más el tema del libro’.css’}\nTambién podemos cambiar el tipo de letra (mainfont), el color de los hyperlinks (linkcolor), el color de fondo de los códigos (monobackgroundcolor), entre otros. Para más información no dude en visitar HTML Theming la sección Basic Options, ahí también puedes encontrar visualizaciones previas de cada tema para que escojas el que más te guste."
+  },
+  {
+    "objectID": "Libros.html#usando-css",
+    "href": "Libros.html#usando-css",
+    "title": "Manual Quarto",
+    "section": "Usando CSS",
+    "text": "Usando CSS\nPara personalizar nuestro libro podemos usar el archivo styles.css, que usa CSS (Cascading Style Sheets).\nLo primero que debemos hacer es agregar el CSS, de modo que vamos al archivo _quarto.yml y hacemos:\nformat:\n  html: \n    css: styles.css\ny entonces creamos el archivo styles.css escribiendo literalmente “styles.css” luego de dar clic en\n\nAhora sí podemos empezar a personalizar nuestro libro, por ejemplo, pongamos todas las letras de los párrafos de color rojo escribiendo en styles.css lo siguiente\np {\n  color: red;\n}\nque se verá así\n\nen el código anterior, p es el selector que básicamente nos indica a qué parte o elemento de nuestro libro le vamos a aplicar ciertas características que indicamos dentro de { }. Lo que está dentro de las llaves debe tener concordancia en cuanto a que debe ser un atributo del selector y el valor que le asigno debe ser válido.\nExisten muchísimos tipos de selectores, por ejemplo, el selector html se refiere a la totalidad del documento, h1 al título, h2 al primer subtítulo, h3 al segundo subtítulo y así sucesivamente, li hace referencia a cada uno de los elementos de una lista, y p a los párrafos. Así hay muchos más selectores, para explorar un poco más puede visitar Aprenda CSS.\nTambién podemos determinar varios selectores a la vez, por ejemplo, si queremos que los títulos y los párrafos sean de color verde, podemos especificarlo en una sola instrucción\np,\nh1 {\n  color: green;\n}\ny queda\n{fig-alt=‘título y párrafos en color verde’.css’}\n\nEstilo del texto\n\n\nEstilo de las figuras"
+  },
+  {
+    "objectID": "Libros.html#usando-sass",
+    "href": "Libros.html#usando-sass",
+    "title": "Manual Quarto",
+    "section": "Usando SASS",
+    "text": "Usando SASS\n\n\n\n\n\n\nPublicado por\n\n\n\n\n\n\n\nSobre nosotros\nObjetivo\nGrupo\nContactenos\n\n\nPaginas Web\n\n\nSiguenos en\nGitHub\nTwitter\nLinkedIn\nMastodon"
+  },
+  {
+    "objectID": "ejemplos/nueva.html",
+    "href": "ejemplos/nueva.html",
+    "title": "Bases de datos en R",
+    "section": "",
+    "text": "mtcars\n\nLos datos se extrajeron de la revista Motor Trend US de 1974\nComprenden el consumo de combustible y 10 aspectos del diseño y rendimiento del automóvil para 32 automóviles (modelos 1973-74)\n\n\n\niris\n\nProporciona las medidas en centímetros de las variables longitud y ancho del sépalo y longitud y ancho de los pétalos, respectivamente, para 50 flores de cada una de las 3 especies de iris\nLas especies son Iris setosa , versicolor y virginica"
+  },
+  {
+    "objectID": "ejemplos/columnas.html",
+    "href": "ejemplos/columnas.html",
+    "title": "Bases de datos en R",
+    "section": "",
+    "text": "Los datos se extrajeron de la revista Motor Trend US de 1974\nComprenden el consumo de combustible y 10 aspectos del diseño y rendimiento del automóvil para 32 automóviles (modelos 1973-74)\n\n\n\n\n\nmpg: Millas/galón (EE.UU.)\ncyl: Número de cilindros\ndisp: Desplazamiento (cu.in.)\nhp: Caballos de fuerza brutos\ndrat: Relación del eje trasero\nwt: Peso (1000 libras)\nqseg: Tiempo de 1/4 de milla\nvs: Motor (0 = en forma de V, 1 = recto)\nam: Transmisión (0 = automática, 1 = manual)\ncarb: Número de carburadores"
+  },
+  {
+    "objectID": "ejemplos/dividir.html",
+    "href": "ejemplos/dividir.html",
+    "title": "Bases de datos en R",
+    "section": "",
+    "text": "Para mtcars: - Los datos se extrajeron de la revista Motor Trend US de 1974 - Comprenden el consumo de combustible y 10 aspectos del diseño y rendimiento del automóvil para 32 automóviles (modelos 1973-74)\n\nPara iris: - Proporciona las medidas en centímetros de las variables longitud y ancho del sépalo y longitud y ancho de los pétalos, respectivamente, para 50 flores de cada una de las 3 especies de iris - Las especies son Iris setosa , versicolor y virginica"
+  },
+  {
+    "objectID": "ejemplos/dos.html",
+    "href": "ejemplos/dos.html",
+    "title": "Bases de datos en R",
+    "section": "",
+    "text": "Los datos se extrajeron de la revista Motor Trend US de 1974\nComprenden el consumo de combustible y 10 aspectos del diseño y rendimiento del automóvil para 32 automóviles (modelos 1973-74)\n\n\n\n\n\nmpg: Millas/galón (EE.UU.)\ncyl: Número de cilindros\ndisp: Desplazamiento (cu.in.)\nhp: Caballos de fuerza brutos\ndrat: Relación del eje trasero\nwt: Peso (1000 libras)\nqseg: Tiempo de 1/4 de milla\nvs: Motor (0 = en forma de V, 1 = recto)\nam: Transmisión (0 = automática, 1 = manual)\ncarb: Número de carburadores"
+  },
+  {
+    "objectID": "ejemplos/dos.html#descripción",
+    "href": "ejemplos/dos.html#descripción",
+    "title": "Bases de datos en R",
+    "section": "Descripción",
+    "text": "Descripción\n\nProporciona las medidas en centímetros de las variables longitud y ancho del sépalo y longitud y ancho de los pétalos, respectivamente, para 50 flores de cada una de las 3 especies de iris\nLas especies son Iris setosa , versicolor y virginica"
+  },
+  {
+    "objectID": "ejemplos/dos.html#variables-1",
+    "href": "ejemplos/dos.html#variables-1",
+    "title": "Bases de datos en R",
+    "section": "Variables",
+    "text": "Variables\n\nSepal.Length: Longitud del sépalo\nSepal.Width: Ancho del sépalo\nPetal.Length: Longitud del pétalo\nPetal Width: Ancho del pétalo\nSpecies: Especie"
+  },
+  {
+    "objectID": "ejemplos/incrementar.html",
+    "href": "ejemplos/incrementar.html",
+    "title": "Bases de datos en R",
+    "section": "",
+    "text": "mtcars\n\n\nLos datos se extrajeron de la revista Motor Trend US de 1974\nComprenden el consumo de combustible y 10 aspectos del diseño y rendimiento del automóvil para 32 automóviles (modelos 1973-74)\n\n\n\n\niris\n\nProporciona las medidas en centímetros de las variables longitud y ancho del sépalo y longitud y ancho de los pétalos, respectivamente, para 50 flores de cada una de las 3 especies de iris\nLas especies son Iris setosa , versicolor y virginica"
+  },
+  {
+    "objectID": "ejemplos/incrementar_general.html",
+    "href": "ejemplos/incrementar_general.html",
+    "title": "Bases de datos en R",
+    "section": "",
+    "text": "mtcars\n\nLos datos se extrajeron de la revista Motor Trend US de 1974\nComprenden el consumo de combustible y 10 aspectos del diseño y rendimiento del automóvil para 32 automóviles (modelos 1973-74)\n\n\n\niris\n\nProporciona las medidas en centímetros de las variables longitud y ancho del sépalo y longitud y ancho de los pétalos, respectivamente, para 50 flores de cada una de las 3 especies de iris\nLas especies son Iris setosa , versicolor y virginica"
+  },
+  {
+    "objectID": "ejemplos/noincrementar.html",
+    "href": "ejemplos/noincrementar.html",
+    "title": "Bases de datos en R",
+    "section": "",
+    "text": "mtcars\n\nLos datos se extrajeron de la revista Motor Trend US de 1974\nComprenden el consumo de combustible y 10 aspectos del diseño y rendimiento del automóvil para 32 automóviles (modelos 1973-74)\n\n\n\niris\n\n\nProporciona las medidas en centímetros de las variables longitud y ancho del sépalo y longitud y ancho de los pétalos, respectivamente, para 50 flores de cada una de las 3 especies de iris\nLas especies son Iris setosa , versicolor y virginica"
+  },
+  {
+    "objectID": "ejemplos/dos.html#desripción",
+    "href": "ejemplos/dos.html#desripción",
+    "title": "Bases de datos en R",
+    "section": "Desripción",
+    "text": "Desripción\n\nLos datos se extrajeron de la revista Motor Trend US de 1974\nComprenden el consumo de combustible y 10 aspectos del diseño y rendimiento del automóvil para 32 automóviles (modelos 1973-74)"
+  },
+  {
+    "objectID": "ejemplos/dos.html#variables",
+    "href": "ejemplos/dos.html#variables",
+    "title": "Bases de datos en R",
+    "section": "Variables",
+    "text": "Variables\n\nmpg: Millas/galón (EE.UU.)\ncyl: Número de cilindros\ndisp: Desplazamiento (cu.in.)\nhp: Caballos de fuerza brutos\ndrat: Relación del eje trasero\nwt: Peso (1000 libras)\nqseg: Tiempo de 1/4 de milla\nvs: Motor (0 = en forma de V, 1 = recto)\nam: Transmisión (0 = automática, 1 = manual)\ncarb: Número de carburadores"
   }
 ]

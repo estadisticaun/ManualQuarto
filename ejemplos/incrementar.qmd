@@ -1,0 +1,17 @@
+---
+title: "Bases de datos en R"
+author: "Estadística UN"
+format: revealjs
+---
+
+# mtcars
+
+::: {.incremental}
+- Los datos se extrajeron de la revista Motor Trend US de 1974
+- Comprenden el consumo de combustible y 10 aspectos del diseño y rendimiento del automóvil para 32 automóviles (modelos 1973-74)
+::: 
+
+# iris
+
+- Proporciona las medidas en centímetros de las variables longitud y ancho del sépalo y longitud y ancho de los pétalos, respectivamente, para 50 flores de cada una de las 3 especies de iris
+- Las especies son Iris setosa , versicolor y virginica
