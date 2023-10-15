@@ -215,5 +215,19 @@
     "title": "Bases de datos en R",
     "section": "Variables",
     "text": "Variables\n\nmpg: Millas/galón (EE.UU.)\ncyl: Número de cilindros\ndisp: Desplazamiento (cu.in.)\nhp: Caballos de fuerza brutos\ndrat: Relación del eje trasero\nwt: Peso (1000 libras)\nqseg: Tiempo de 1/4 de milla\nvs: Motor (0 = en forma de V, 1 = recto)\nam: Transmisión (0 = automática, 1 = manual)\ncarb: Número de carburadores"
+  },
+  {
+    "objectID": "ejemplos/columnas.html#desripción",
+    "href": "ejemplos/columnas.html#desripción",
+    "title": "Bases de datos en R",
+    "section": "Desripción",
+    "text": "Desripción\n\nLos datos se extrajeron de la revista Motor Trend US de 1974\nComprenden el consumo de combustible y 10 aspectos del diseño y rendimiento del automóvil para 32 automóviles (modelos 1973-74)"
+  },
+  {
+    "objectID": "ejemplos/columnas.html#variables",
+    "href": "ejemplos/columnas.html#variables",
+    "title": "Bases de datos en R",
+    "section": "Variables",
+    "text": "Variables\n\nmpg: Millas/galón (EE.UU.)\ncyl: Número de cilindros\ndisp: Desplazamiento (cu.in.)\nhp: Caballos de fuerza brutos\ndrat: Relación del eje trasero\nwt: Peso (1000 libras)\nqseg: Tiempo de 1/4 de milla\nvs: Motor (0 = en forma de V, 1 = recto)\nam: Transmisión (0 = automática, 1 = manual)\ncarb: Número de carburadores"
   }
 ]
