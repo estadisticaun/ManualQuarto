@@ -20,11 +20,9 @@ Para crear una presentación en Quarto, no es necesario crear un nuevo proyecto,
 
 2.  En la parte superior izquierda, selecciona ***New File*** y después ***Quarto Presentation***. ![](Imagenes/02_Presentaciones/00_Creacion.png)
 
-3.  A continuación, dale un nombre a tu presentación y especifica el nombre del autor, y no olvides escoger el formato de la presentación (*Reveal JS, Beamer, PowerPoint*) pero no te afanes porque puedes modificarlo más adelante. 
-![](Imagenes/02_Presentaciones/01_preliminares.png)
+3.  A continuación, dale un nombre a tu presentación y especifica el nombre del autor, y no olvides escoger el formato de la presentación (*Reveal JS, Beamer, PowerPoint*) pero no te afanes porque puedes modificarlo más adelante. ![](Imagenes/02_Presentaciones/01_preliminares.png)
 
-4.  Quedará una presentación así
-![](Imagenes/02_Presentaciones/02_Fin_creacion.png)
+4.  Quedará una presentación así ![](Imagenes/02_Presentaciones/02_Fin_creacion.png)
 
 Ahora sí empezaremos a crear y personalizar nuestra presentación. Como ejemplo, haremos una presentación sobre el contenido de dos bases de datos (mtcars e iris), ambas disponibles en R.
 
@@ -61,7 +59,6 @@ format: revealjs
 
 - Proporciona las medidas en centímetros de las variables longitud y ancho del sépalo y longitud y ancho de los pétalos, respectivamente, para 50 flores de cada una de las 3 especies de iris
 - Las especies son Iris setosa , versicolor y virginica
-
 ```
 
 Para dividir la presentación en secciones usando diapositivas que tengan solo el título, para esto agregamos otro(s) `#`:
@@ -88,7 +85,7 @@ format: revealjs
 - hp: Caballos de fuerza brutos
 - drat: Relación del eje trasero
 - wt: Peso (1000 libras)
--	qseg: Tiempo de 1/4 de milla
+-   qseg: Tiempo de 1/4 de milla
 - vs: Motor (0 = en forma de V, 1 = recto)
 - am: Transmisión (0 = automática, 1 = manual)
 - carb: Número de carburadores
@@ -113,7 +110,6 @@ La opción `{.scrollable}` genera una barra en la parte derecha que permite desp
 
 Si no quieres títulos sino simplemente dividir las diapositivas, puedes usar `---` así:
 
-
 ``` {.markdown code-preview="ejemplos/dividir.qmd"}
 ---
 title: "Bases de datos en R"
@@ -130,7 +126,6 @@ Para mtcars:
 Para iris:
 - Proporciona las medidas en centímetros de las variables longitud y ancho del sépalo y longitud y ancho de los pétalos, respectivamente, para 50 flores de cada una de las 3 especies de iris
 - Las especies son Iris setosa , versicolor y virginica
-
 ```
 
 #### Listas incrementales
@@ -155,11 +150,9 @@ format: revealjs
 
 - Proporciona las medidas en centímetros de las variables longitud y ancho del sépalo y longitud y ancho de los pétalos, respectivamente, para 50 flores de cada una de las 3 especies de iris
 - Las especies son Iris setosa , versicolor y virginica
-
 ```
 
 Si quieres que, en general, todas las listas de todas las diapositivas aparezcan de a una en una, puedes agregar la opción global `incremental: true` así:
-
 
 ``` {.markdown code-preview="ejemplos/incrementar_general.qmd"}
 ---
@@ -179,7 +172,6 @@ format:
 
 - Proporciona las medidas en centímetros de las variables longitud y ancho del sépalo y longitud y ancho de los pétalos, respectivamente, para 50 flores de cada una de las 3 especies de iris
 - Las especies son Iris setosa , versicolor y virginica
-
 ```
 
 y si luego de poner la opción global quieres que cierta lista no salga secuencialmente, utiliza `::: {.nonincremental} :::`:
@@ -204,7 +196,6 @@ format:
 - Proporciona las medidas en centímetros de las variables longitud y ancho del sépalo y longitud y ancho de los pétalos, respectivamente, para 50 flores de cada una de las 3 especies de iris
 - Las especies son Iris setosa , versicolor y virginica
 :::
-
 ```
 
 #### Varias columnas
@@ -233,7 +224,7 @@ format: revealjs
 - hp: Caballos de fuerza brutos
 - drat: Relación del eje trasero
 - wt: Peso (1000 libras)
--	qseg: Tiempo de 1/4 de milla
+-   qseg: Tiempo de 1/4 de milla
 - vs: Motor (0 = en forma de V, 1 = recto)
 - am: Transmisión (0 = automática, 1 = manual)
 - carb: Número de carburadores
@@ -269,8 +260,6 @@ Variables:
 La opción `{.smaller}` es para que el texto salga más pequeño y quepa en toda la diapositiva.
 
 ### Revealjs
-
-
 
 #### Notas del orador
 
@@ -319,7 +308,7 @@ format:
 
 #### Notas al pie de página
 
-Puedes agregar notas al pie de página de cada diapositiva usando el 
+Puedes agregar notas al pie de página de cada diapositiva usando el
 
 ``` default
 ---
@@ -346,7 +335,7 @@ Información adicional.
 
 #### Pie de página y logo
 
-Puedes personalizar aún más la presentación agregando un logo y un pie de página para todas tus diapositivas. Para esto hacemos 
+Puedes personalizar aún más la presentación agregando un logo y un pie de página para todas tus diapositivas. Para esto hacemos
 
 ``` default
 ---
@@ -365,13 +354,54 @@ format:
 
 ##### Bloques de código
 
-También podemos agregar bloques de código a nuestras presentación 
+También puedes agregar bloques de código a nuestras  y señalar o resaltar ciertas líneas, esto es posible utilizando la función `code-line-numbers`. Por ejemplo, vamos a señalar las columnas 4 a 6 escribiendo `{.r code-line-numbers="4-6"}`.
+
+``` {.markdown code-preview="ejemplos/resaltar.qmd"}
+```
+
+si quieres que solo se resalten las líneas 4 y 6, escribe `{.r code-line-numbers="4,6"}`. Y si deseas que se resalten de a una en una las líneas 4 y 6, entonces usa `{.r code-line-numbers="|4|6"}` que se verá así:
+
+``` {.markdown code-preview="ejemplos/resaltarUno.qmd"}
+```
+
+otra forma de configurar estos reslatados es escribiendo `#| code-line-numbers: "|4|6"` después de abrir tu *chunk* en R.
 
 ##### Ejecución de código
 
-#### Tablas
+También puedes ejecutar código de R en las presentaciones. Por defecto, el código no se mostrará en la diapositiva, solamente la salida, si quieres que aparezca el código puedes implementar la opción `#| echo: true` en tu *chunk* de R.
+
+``` {.markdown code-preview="ejemplos/ejecutable.qmd"}
+data(iris)
+
+plot(iris$Petal.Length,iris$Petal.Width)
+```
+
+si deseas que el código aparezca en una diapositiva y la salida en otra, entonces usa `#| echo: true` y `output-location: slide`.
+
+``` {.markdown code-preview="ejemplos/ejecutableAparte.qmd"}
+```
+
+#### Tabstets
+
+Los *tabsets* nos permiten controlar varias pestañas en la misma diapositiva, para implementarlas en tu presentación, basta con utilizar la opción `{.panel-tabset}` así
+
+``` {.markdown code-preview="ejemplos/tabset.qmd"}
+::: {.panel-tabset}
+
+### Sépalo
+
+Gráfica para el sépalo
+
+### Pétalo
+
+Gráfica para el pétalo
+
+:::
+```
 
 #### Fondo de la presentación
+
+
 
 ### PowerPoint
 

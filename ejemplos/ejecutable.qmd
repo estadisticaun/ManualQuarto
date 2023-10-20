@@ -1,0 +1,16 @@
+---
+title: "Bases de datos en R"
+author: "Estadística UN"
+format: revealjs
+---
+
+# Paquete: iris
+
+Largo y ancho del pétalo:
+
+``` {r}
+data(iris)
+
+plot(iris$Petal.Length,iris$Petal.Width)
+```
+

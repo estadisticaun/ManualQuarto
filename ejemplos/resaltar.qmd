@@ -1,0 +1,23 @@
+---
+title: "Bases de datos en R"
+author: "Estadística UN"
+format: revealjs
+---
+
+# Paquete: iris
+
+Respecto al sépalo:
+
+```{.r code-line-numbers="4-6"}
+data(iris)
+str(iris)
+
+# Media Sépalo
+mean(iris$Sepal.Length)
+mean(iris$Sepal.Width)
+
+# Media Pétalo
+mean(iris$Petal.Length)
+mean(iris$Petal.Width)
+```
+
