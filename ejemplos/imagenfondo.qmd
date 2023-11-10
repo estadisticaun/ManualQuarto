@@ -1,0 +1,10 @@
+---
+title: "Bases de datos en R"
+author: "Estadística UN"
+format: revealjs
+---
+
+# iris {background-color="black" background-image="https://upload.wikimedia.org/wikipedia/commons/a/a7/Irissetosa1.jpg"}
+
+- Proporciona las medidas en centímetros de las variables longitud y ancho del sépalo y longitud y ancho de los pétalos, respectivamente, para 50 flores de cada una de las 3 especies de iris
+- Las especies son Iris setosa , versicolor y virginica

@@ -1,0 +1,28 @@
+---
+title: "Bases de datos en R"
+author: "Estadística UN"
+format: revealjs
+---
+
+# Paquete: iris {background-color="khaki"}
+
+::: {.panel-tabset}
+
+### Sépalo 
+
+Gráfica para el sépalo
+
+``` {r}
+data(iris)
+plot(iris$Sepal.Length,iris$Sepal.Width)
+```
+
+### Pétalo
+
+Gráfica para el pétalo
+
+``` {r}
+plot(iris$Petal.Length,iris$Petal.Width)
+```
+
+:::

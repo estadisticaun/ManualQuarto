@@ -36,7 +36,7 @@ En Quarto podemos crear presentaciones con tres formatos:
 
 La selección de determinado formato depende de las necesidades de cada autor, en general, `revealjs` funciona muy bien y cuenta con salida HTML y PDF, pero si se desea cierta función específica de PowerPoint o de Beamer, es mejor usar `pptx` o `beamer` respectivamente.
 
-### Generalidades
+### Generalidades {#sec-generalidades}
 
 #### Crear diapositivas
 
@@ -399,11 +399,108 @@ Gráfica para el pétalo
 :::
 ```
 
-#### Fondo de la presentación
+#### Fondo de la presentación {#sec-fondo}
 
+En Quarto puedes cambiar el fondo de tus presentaciones y personalizarlas aún más. El fondo puede ser o bien una imagen o bien un video. Todo esto es posible simplemente usando el atributo `background` al momento de iniciar una diapositiva.
 
+Comenzaremos con algo sencillo, modificaremos el color del fondo de una sola dipositiva, para esto implementa `background-color:"khaki"`
+
+``` {.markdown code-preview="ejemplos/colorfondo.qmd"}
+# Paquete: iris {background-color="khaki"}
+
+::: {.panel-tabset}
+
+### Sépalo 
+
+Gráfica del sépalo
+
+### Pétalo
+
+Gráfica para el pétalo
+
+Gráfica del pétalo
+
+:::
+```
+
+Ahora, implementaremos una imagen como fondo para nuestra presentación, esto con la opción `background-image`
+
+``` {.markdown code-preview="ejemplos/imagenfondo.qmd"}
+```
+
+Como siempre, puedes personalizar la imagen de fondo en tu presentación con muchas opciones que trae Quarto y CSS, por ejemplo,
+
+* `background-size`: Modifica el tamaño de la imagen de fondo que estás implementando, puedes especificar con *px* o *%*, por ejemplo, `background-size="25px 50px"` o `background-size="50% 50%"`.
+
+* `background-position`: Cambia la posición de tu imagen, puedes especificar con *top*, *center*, *bottom*, *left*, *right*, *%* o *cm*. Para saber más sobre cómo específicarlo, puedes encontrar más información [aquí](https://developer.mozilla.org/es/docs/Web/CSS/background-size).
+
+* `background-repeat`: Permite repetir la imagen de fondo, por ejemplo
+
+::: {.panel-tabset}
+
+## repeat-x
+
+![](Imagenes/02_Presentaciones/05_repeat-x.png)
+
+## repeat
+
+![](Imagenes/02_Presentaciones/06_repeat.png)
+
+## space
+
+![](Imagenes/02_Presentaciones/07_space.png)
+
+## round
+
+![](Imagenes/02_Presentaciones/08_round.png)
+
+## no-repeat
+
+![](Imagenes/02_Presentaciones/09_no-repeat.png)
+:::   
+
+Para hacer tu presentación más interesante, puedes incluir un vídeo en tu presentación e incluso usarlo como fondo de una dipositiva, para esto utiliza la opción `background-video`, sin embargo, debes tener en cuenta que el video debe estar descargado en tu equipo.
+
+También puedes personalizar la visualización del video de fondo con las opciones que incluye Quarto y CSS, por ejemplo,
+
+* `background-video-loop`: Indicamos si se debe o no repetir el video
+* `background-video-muted`: Indicamos si queremos o no que el video ruede con sonido.
+* `background-size`: Es la misma opción cuando usabamos una imagen en lugar de un video. Por defecto es `cover`, es decir, al video cubre toda la pantalla, pero también tenemos la opción `contain` que.... COMPLETAR
+* `background-opacity`: Permite modificar la "nítidez" del video, es decir, si quieres que se vea transparente coloca "0", si quieres que se vea super  opaco entonces coloca "1", y puedes variar esto coomo gustes colocando valores entre 0 y 1.
 
 ### PowerPoint
+
+Para crear una presentación de PowerPoint usando Quarto simplemente debemos cambiar la opción `format: pptx` así
+
+``` defalut
+---
+title: "Bases de datos en R"
+author: "Estadística UN"
+format: pptx
+---
+```
+
+Las opciones para PowerPoint son las que tratamos en @sec-generalidades. Sin embargo, cuando generamos una presentación `.pptx`, solo trae un tema por defecto, por lo que si quieres personalizar tu presentación debes seguir los siguientes pasos:
+
+1.    Crea una presentación PowerPoint, `personalizado.pptx`, en el mismo directorio donde creaste el archivo `.qmd` de tu presentación de Quarto.
+2.    Personaliza desde PowerPoint el archivo `personalizado.pptx` y dale el estilo que más te guste.
+3.    Escribe en la cosola de R, lo siguiente: `quarto pandoc -o personalizado.pptx --print-default-data-file reference.pptx`
+4.    Escribe lo siguiente en el archivo `.qmd`
+``` default
+---
+title: "Bases de datos en R"
+author: "Estadística UN"
+format: 
+  pptx:
+    reference-doc: personalizado.pptx
+---
+```
+5.    Reenderiza tu presentación.
+
+
+Para agregar una imagen de fondo en una diapositiva puedes hacerlo tal y como se hacía en revealjs en @sec-fondo. Sin embargo, si quieres incluir la imagen para todas las daipostivas, debes hacerlo manualmente editando directamente el archivo `personalizado.pptx`.
+
+Puedes encotrar un ejemplo del archivo `personalizado.pptx` [aquí](), del archivo `.qmd` en este [enlace]() y finalmente, el resultado luego de reenderizar [aquí]()
 
 ### Beamer
 

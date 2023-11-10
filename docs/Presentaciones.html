@@ -182,7 +182,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#crea-tu-presentación" id="toc-crea-tu-presentación" class="nav-link" data-scroll-target="#crea-tu-presentación">Crea tu presentación</a></li>
   <li><a href="#formato-presentaciones" id="toc-formato-presentaciones" class="nav-link" data-scroll-target="#formato-presentaciones">Formato presentaciones</a>
   <ul class="collapse">
-  <li><a href="#generalidades" id="toc-generalidades" class="nav-link" data-scroll-target="#generalidades">Generalidades</a></li>
+  <li><a href="#sec-generalidades" id="toc-sec-generalidades" class="nav-link" data-scroll-target="#sec-generalidades">Generalidades</a></li>
   <li><a href="#revealjs" id="toc-revealjs" class="nav-link" data-scroll-target="#revealjs">Revealjs</a></li>
   <li><a href="#powerpoint" id="toc-powerpoint" class="nav-link" data-scroll-target="#powerpoint">PowerPoint</a></li>
   <li><a href="#beamer" id="toc-beamer" class="nav-link" data-scroll-target="#beamer">Beamer</a></li>
@@ -220,8 +220,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>beamer</code>: Beamer (LaTeX/PDF)</li>
 </ul>
 <p>La selección de determinado formato depende de las necesidades de cada autor, en general, <code>revealjs</code> funciona muy bien y cuenta con salida HTML y PDF, pero si se desea cierta función específica de PowerPoint o de Beamer, es mejor usar <code>pptx</code> o <code>beamer</code> respectivamente.</p>
-<section id="generalidades" class="level3">
-<h3 class="anchored" data-anchor-id="generalidades">Generalidades</h3>
+<section id="sec-generalidades" class="level3">
+<h3 class="anchored" data-anchor-id="sec-generalidades">Generalidades</h3>
 <section id="crear-diapositivas" class="level4">
 <h4 class="anchored" data-anchor-id="crear-diapositivas">Crear diapositivas</h4>
 <p>Para añadir una nueva diapositiva basta con usar <code>#</code>, seguido del título de la diapositiva:</p>
@@ -497,33 +497,120 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h4 class="anchored" data-anchor-id="código">Código</h4>
 <section id="bloques-de-código" class="level5">
 <h5 class="anchored" data-anchor-id="bloques-de-código">Bloques de código</h5>
-<p>También puedes agregar bloques de código a nuestras y señalar o resaltar ciertas líneas, esto es posible utilizando la función <code>code-line-numbers</code>. Por ejemplo, vamos a señalar las columnas 4 a 6 escribiendo <code>{.r code-line-numbers="|4|6"}</code>.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb12-2"><a href="#cb12-2"></a><span class="fu">data</span>(iris)</span>
-<span id="cb12-3"><a href="#cb12-3"></a><span class="fu">str</span>(iris)</span>
-<span id="cb12-4"><a href="#cb12-4"></a></span>
-<span id="cb12-5"><a href="#cb12-5"></a><span class="co"># Media Sépalo</span></span>
-<span id="cb12-6"><a href="#cb12-6"></a><span class="fu">mean</span>(iris<span class="sc">$</span>Sepal.Length)</span>
-<span id="cb12-7"><a href="#cb12-7"></a><span class="fu">mean</span>(iris<span class="sc">$</span>Sepal.Width)</span>
-<span id="cb12-8"><a href="#cb12-8"></a></span>
-<span id="cb12-9"><a href="#cb12-9"></a><span class="co"># Media Pétalo</span></span>
-<span id="cb12-10"><a href="#cb12-10"></a><span class="fu">mean</span>(iris<span class="sc">$</span>Petal.Length)</span>
-<span id="cb12-11"><a href="#cb12-11"></a><span class="fu">mean</span>(iris<span class="sc">$</span>Petal.Width)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb13"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><iframe class="sourceCode markdown code-with-copy" src="ejemplos/resaltar.html"></iframe></div>
+<p>También puedes agregar bloques de código a nuestras y señalar o resaltar ciertas líneas, esto es posible utilizando la función <code>code-line-numbers</code>. Por ejemplo, vamos a señalar las columnas 4 a 6 escribiendo <code>{.r code-line-numbers="4-6"}</code>.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><iframe class="sourceCode markdown code-with-copy" src="ejemplos/resaltar.html"></iframe></div>
+<p>si quieres que solo se resalten las líneas 4 y 6, escribe <code>{.r code-line-numbers="4,6"}</code>. Y si deseas que se resalten de a una en una las líneas 4 y 6, entonces usa <code>{.r code-line-numbers="|4|6"}</code> que se verá así:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><iframe class="sourceCode markdown code-with-copy" src="ejemplos/resaltarUno.html"></iframe></div>
+<p>otra forma de configurar estos reslatados es escribiendo <code>#| code-line-numbers: "|4|6"</code> después de abrir tu <em>chunk</em> en R.</p>
 </section>
 <section id="ejecución-de-código" class="level5">
 <h5 class="anchored" data-anchor-id="ejecución-de-código">Ejecución de código</h5>
+<p>También puedes ejecutar código de R en las presentaciones. Por defecto, el código no se mostrará en la diapositiva, solamente la salida, si quieres que aparezca el código puedes implementar la opción <code>#| echo: true</code> en tu <em>chunk</em> de R.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>data(iris)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>plot(iris$Petal.Length,iris$Petal.Width)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><iframe class="sourceCode markdown code-with-copy" src="ejemplos/ejecutable.html"></iframe></div>
+<p>si deseas que el código aparezca en una diapositiva y la salida en otra, entonces usa <code>#| echo: true</code> y <code>output-location: slide</code>.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><iframe class="sourceCode markdown code-with-copy" src="ejemplos/ejecutableAparte.html"></iframe></div>
 </section>
 </section>
 <section id="tabstets" class="level4">
 <h4 class="anchored" data-anchor-id="tabstets">Tabstets</h4>
+<p>Los <em>tabsets</em> nos permiten controlar varias pestañas en la misma diapositiva, para implementarlas en tu presentación, basta con utilizar la opción <code>{.panel-tabset}</code> así</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>::: {.panel-tabset}</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="fu">### Sépalo</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>Gráfica para el sépalo</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="fu">### Pétalo</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>Gráfica para el pétalo</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><iframe class="sourceCode markdown code-with-copy" src="ejemplos/tabset.html"></iframe></div>
 </section>
-<section id="fondo-de-la-presentación" class="level4">
-<h4 class="anchored" data-anchor-id="fondo-de-la-presentación">Fondo de la presentación</h4>
+<section id="sec-fondo" class="level4">
+<h4 class="anchored" data-anchor-id="sec-fondo">Fondo de la presentación</h4>
+<p>En Quarto puedes cambiar el fondo de tus presentaciones y personalizarlas aún más. El fondo puede ser o bien una imagen o bien un video. Todo esto es posible simplemente usando el atributo <code>background</code> al momento de iniciar una diapositiva.</p>
+<p>Comenzaremos con algo sencillo, modificaremos el color del fondo de una sola dipositiva, para esto implementa <code>background-color:"khaki"</code></p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Paquete: iris {background-color="khaki"}</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>::: {.panel-tabset}</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="fu">### Sépalo </span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>Gráfica del sépalo</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="fu">### Pétalo</span></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>Gráfica para el pétalo</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>Gráfica del pétalo</span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><iframe class="sourceCode markdown code-with-copy" src="ejemplos/colorfondo.html"></iframe></div>
+<p>Ahora, implementaremos una imagen como fondo para nuestra presentación, esto con la opción <code>background-image</code></p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><iframe class="sourceCode markdown code-with-copy" src="ejemplos/imagenfondo.html"></iframe></div>
+<p>Como siempre, puedes personalizar la imagen de fondo en tu presentación con muchas opciones que trae Quarto y CSS, por ejemplo,</p>
+<ul>
+<li><p><code>background-size</code>: Modifica el tamaño de la imagen de fondo que estás implementando, puedes especificar con <em>px</em> o <em>%</em>, por ejemplo, <code>background-size="25px 50px"</code> o <code>background-size="50% 50%"</code>.</p></li>
+<li><p><code>background-position</code>: Cambia la posición de tu imagen, puedes especificar con <em>top</em>, <em>center</em>, <em>bottom</em>, <em>left</em>, <em>right</em>, <em>%</em> o <em>cm</em>. Para saber más sobre cómo específicarlo, puedes encontrar más información <a href="https://developer.mozilla.org/es/docs/Web/CSS/background-size">aquí</a>.</p></li>
+<li><p><code>background-repeat</code>: Permite repetir la imagen de fondo, por ejemplo</p></li>
+</ul>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">repeat-x</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">repeat</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">space</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false">round</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-5" role="tab" aria-controls="tabset-1-5" aria-selected="false">no-repeat</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p><img src="Imagenes/02_Presentaciones/05_repeat-x.png" class="img-fluid"></p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p><img src="Imagenes/02_Presentaciones/06_repeat.png" class="img-fluid"></p>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<p><img src="Imagenes/02_Presentaciones/07_space.png" class="img-fluid"></p>
+</div>
+<div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
+<p><img src="Imagenes/02_Presentaciones/08_round.png" class="img-fluid"></p>
+</div>
+<div id="tabset-1-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-5-tab">
+<p><img src="Imagenes/02_Presentaciones/09_no-repeat.png" class="img-fluid"></p>
+</div>
+</div>
+</div>
+<p>Para hacer tu presentación más interesante, puedes incluir un vídeo en tu presentación e incluso usarlo como fondo de una dipositiva, para esto utiliza la opción <code>background-video</code>, sin embargo, debes tener en cuenta que el video debe estar descargado en tu equipo.</p>
+<p>También puedes personalizar la visualización del video de fondo con las opciones que incluye Quarto y CSS, por ejemplo,</p>
+<ul>
+<li><code>background-video-loop</code>: Indicamos si se debe o no repetir el video</li>
+<li><code>background-video-muted</code>: Indicamos si queremos o no que el video ruede con sonido.</li>
+<li><code>background-size</code>: Es la misma opción cuando usabamos una imagen en lugar de un video. Por defecto es <code>cover</code>, es decir, al video cubre toda la pantalla, pero también tenemos la opción <code>contain</code> que…. COMPLETAR</li>
+<li><code>background-opacity</code>: Permite modificar la “nítidez” del video, es decir, si quieres que se vea transparente coloca “0”, si quieres que se vea super opaco entonces coloca “1”, y puedes variar esto coomo gustes colocando valores entre 0 y 1.</li>
+</ul>
 </section>
 </section>
 <section id="powerpoint" class="level3">
 <h3 class="anchored" data-anchor-id="powerpoint">PowerPoint</h3>
+<p>Para crear una presentación de PowerPoint usando Quarto simplemente debemos cambiar la opción <code>format: pptx</code> así</p>
+<pre class="defalut"><code>---
+title: "Bases de datos en R"
+author: "Estadística UN"
+format: pptx
+---</code></pre>
+<p>Las opciones para PowerPoint son las que tratamos en <a href="#sec-generalidades">Section&nbsp;1.2.1</a>. Sin embargo, cuando generamos una presentación <code>.pptx</code>, solo trae un tema por defecto, por lo que si quieres personalizar tu presentación debes seguir los siguientes pasos:</p>
+<ol type="1">
+<li>Crea una presentación PowerPoint, <code>personalizado.pptx</code>, en el mismo directorio donde creaste el archivo <code>.qmd</code> de tu presentación de Quarto.</li>
+<li>Personaliza desde PowerPoint el archivo <code>personalizado.pptx</code> y dale el estilo que más te guste.</li>
+<li>Escribe en la cosola de R, lo siguiente: <code>quarto pandoc -o personalizado.pptx --print-default-data-file reference.pptx</code></li>
+<li>Escribe lo siguiente en el archivo <code>.qmd</code></li>
+</ol>
+<div class="sourceCode" id="cb20"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>title: "Bases de datos en R"</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>author: "Estadística UN"</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>format: </span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>  pptx:</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>    reference-doc: personalizado.pptx</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>---</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="5" type="1">
+<li>Reenderiza tu presentación.</li>
+</ol>
+<p>Para agregar una imagen de fondo en una diapositiva puedes hacerlo tal y como se hacía en revealjs en <a href="#sec-fondo">Section&nbsp;1.2.2.7</a>. Sin embargo, si quieres incluir la imagen para todas las daipostivas, debes hacerlo manualmente editando directamente el archivo <code>personalizado.pptx</code>.</p>
 </section>
 <section id="beamer" class="level3">
 <h3 class="anchored" data-anchor-id="beamer">Beamer</h3>
