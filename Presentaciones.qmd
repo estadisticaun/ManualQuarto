@@ -350,7 +350,7 @@ format:
 
 ![](Imagenes/02_Presentaciones/04_Logo.png)
 
-#### Código
+#### Código {#sec-codigo}
 
 ##### Bloques de código
 
@@ -500,9 +500,42 @@ format:
 
 Para agregar una imagen de fondo en una diapositiva puedes hacerlo tal y como se hacía en revealjs en @sec-fondo. Sin embargo, si quieres incluir la imagen para todas las daipostivas, debes hacerlo manualmente editando directamente el archivo `personalizado.pptx`.
 
-Puedes encotrar un ejemplo del archivo `personalizado.pptx` [aquí](), del archivo `.qmd` en este [enlace]() y finalmente, el resultado luego de reenderizar [aquí]()
+Puedes encotrar un ejemplo del archivo `personalizado.pptx` [aquí](https://github.com/estadisticaun/ManualQuarto/blob/main/ejemplos/personalizado.pptx), del archivo `.qmd` en este [enlace](https://github.com/estadisticaun/ManualQuarto/blob/main/ejemplos/Presentacion.qmd) y finalmente, el resultado luego de reenderizar [aquí](https://github.com/estadisticaun/ManualQuarto/blob/main/ejemplos/Presentacion.pptx)
 
 ### Beamer
+
+En Quarto puedes crear presentaciones en formato **Beamer** (LaTeX/PDF). Quarto te permite usar alguno temas de Beamer, y respecto a las celdas de código, por defecto se muestra únicamente la salida, sin embargo, puedes editar estas opciones, de forma similar que en @sec-codigo. 
+
+En Beamer se aplican las opciones especificadas en @sec-generalidades. 
+
+Como siempre, para que la salida sea un formato Beamer, escribe
+
+``` default
+---
+title: "Bases de datos en R"
+author: "Estadística UN"
+format: beamer
+---
+```
+
+Es importante que tengas instalado  `tinytex` para que tu documento compile. En caso de que no lo tengas instalado, debes correr lo siguiente en la Terminal de R: `quarto intall tinytex`. 
+
+Puedes personalizar tu presentación como más te guste. Paraa esto, modifica varias opciones al dar formato Beamer a tus diaapositivas, por ejemplo
+
+``` default
+---
+title: "Bases de datos en R"
+author: "Estadística UN"
+format:
+  beamer: 
+    aspectratio: 32
+    navigation: horizontal
+    theme: AnnArbor
+    colortheme: lily
+---
+```
+
+Hay muchas opciones para Beamer que puedes consultar [aquí](https://quarto.org/docs/reference/formats/presentations/beamer.html)
 
 ::: footer-text
 ::: {.footer-container .black-background}

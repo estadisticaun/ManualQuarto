@@ -493,8 +493,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>---</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><img src="Imagenes/02_Presentaciones/04_Logo.png" class="img-fluid"></p>
 </section>
-<section id="código" class="level4">
-<h4 class="anchored" data-anchor-id="código">Código</h4>
+<section id="sec-codigo" class="level4">
+<h4 class="anchored" data-anchor-id="sec-codigo">Código</h4>
 <section id="bloques-de-código" class="level5">
 <h5 class="anchored" data-anchor-id="bloques-de-código">Bloques de código</h5>
 <p>También puedes agregar bloques de código a nuestras y señalar o resaltar ciertas líneas, esto es posible utilizando la función <code>code-line-numbers</code>. Por ejemplo, vamos a señalar las columnas 4 a 6 escribiendo <code>{.r code-line-numbers="4-6"}</code>.</p>
@@ -611,9 +611,22 @@ format: pptx
 <li>Reenderiza tu presentación.</li>
 </ol>
 <p>Para agregar una imagen de fondo en una diapositiva puedes hacerlo tal y como se hacía en revealjs en <a href="#sec-fondo">Section&nbsp;1.2.2.7</a>. Sin embargo, si quieres incluir la imagen para todas las daipostivas, debes hacerlo manualmente editando directamente el archivo <code>personalizado.pptx</code>.</p>
+<p>Puedes encotrar un ejemplo del archivo <code>personalizado.pptx</code> <a href="https://github.com/estadisticaun/ManualQuarto/blob/main/ejemplos/personalizado.pptx">aquí</a>, del archivo <code>.qmd</code> en este <a href="https://github.com/estadisticaun/ManualQuarto/blob/main/ejemplos/Presentacion.qmd">enlace</a> y finalmente, el resultado luego de reenderizar <a href="https://github.com/estadisticaun/ManualQuarto/blob/main/ejemplos/Presentacion.pptx">aquí</a></p>
 </section>
 <section id="beamer" class="level3">
 <h3 class="anchored" data-anchor-id="beamer">Beamer</h3>
+<p>En Quarto puedes crear presentaciones en formato <strong>Beamer</strong> (LaTeX/PDF). Quarto te permite usar alguno temas de Beamer, y respecto a las celdas de código, por defecto se muestra únicamente la salida, sin embargo, puedes editar estas opciones, de forma similar que en <a href="#sec-codigo">Section&nbsp;1.2.2.5</a>.</p>
+<p>En Beamer se aplican las opciones especificadas en <a href="#sec-generalidades">Section&nbsp;1.2.1</a>.</p>
+<p>Como siempre, para que la salida sea un formato Beamer, escribe</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>title: "Bases de datos en R"</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>author: "Estadística UN"</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>format: beamer</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>---</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Es importante que tengas instalado <code>tinytex</code> para que tu documento compile. En caso de que no lo tengas instalado, debes correr lo siguiente en la Terminal de R: <code>quarto intall tinytex</code>.</p>
+<p>Puedes personalizar tu presentación como más te guste. Paraa esto, modifica varias opciones al dar formato Beamer a tus diaapositivas, por ejemplo</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Hay muchas opciones para Beamer que puedes consultar <a href="https://quarto.org/docs/reference/formats/presentations/beamer.html">aquí</a></p>
 </section>
 <div class="footer-text">
 <div class="footer-container black-background">
