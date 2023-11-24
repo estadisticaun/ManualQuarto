@@ -8,9 +8,8 @@ format: revealjs
 
 Largo y ancho del pétalo:
 
-``` {r}
+```{.r}
 data(iris)
 
 plot(iris$Petal.Length,iris$Petal.Width)
 ```
-

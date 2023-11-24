@@ -468,6 +468,139 @@ También puedes personalizar la visualización del video de fondo con las opcion
 * `background-size`: Es la misma opción cuando usabamos una imagen en lugar de un video. Por defecto es `cover`, es decir, al video cubre toda la pantalla, pero también tenemos la opción `contain` que.... COMPLETAR
 * `background-opacity`: Permite modificar la "nítidez" del video, es decir, si quieres que se vea transparente coloca "0", si quieres que se vea super  opaco entonces coloca "1", y puedes variar esto coomo gustes colocando valores entre 0 y 1.
 
+#### Títulos
+
+Antes vimos cómo podías agregar imágenes en el fondo de tus diapositivas. Esto también puedes hacerlo para la diapositiva que contiene el título de tu presentción. Para ello usa `title-slide-attributes`, de ese modo indicas que todas las especificaciones que pongas a continuación hacen referencia a la diapositiva del título. Vamos a hacer un ejemplo:
+
+``` {.markdown code-preview="ejemplos/titulo_imagen.qmd"}
+---
+title: "Bases de datos en R"
+title-slide-attributes:
+  data-background-image: "https://upload.wikimedia.org/wikipedia/commons/a/a7/Irissetosa1.jpg"
+  data-background-size: contain
+  data-background-opacity: "0.5"
+author: "Estadística UN"
+format: revealjs
+---
+```
+
+También puedes personalizar una plantilla como gustes en formato `.html`, puedes saber más de esto [aquí](https://quarto.org/docs/journals/templates.html#template-partials).
+
+``` default
+---
+title: "Bases de datos en R"
+author: "Estadística UN"
+format: 
+  revealjs:
+    template-partials:
+      - title-slide.html
+---
+```
+
+#### Transición de las diapositivas
+
+Muy similar a PowerPoint, puedes agregar efectos de transición al pasar de una diapositiva a otra. Para ello utiliza el comando `transition`. Puedes configurarlo de manera global para todas las daipositivas o especificar la transicipon en cada una de ellas.
+
+De forma global:
+
+``` {.markdown code-preview="ejemplos/transicion.qmd"}
+---
+title: "Bases de datos en R"
+title-slide-attributes:
+  data-background-image: "https://upload.wikimedia.org/wikipedia/commons/a/a7/Irissetosa1.jpg"
+  data-background-size: contain
+  data-background-opacity: "0.5"
+author: "Estadística UN"
+format: 
+  revealjs:
+    transition: slide
+    background-transition: fade
+    transition-speed: fast
+---
+```
+
+Para cada diapositiva:
+
+``` default
+# iris {transition="slide" background-transition="fade"}
+```
+
+#### Imágenes
+
+No solo puedes agregar imágenes como fondo de las diapositivas, también puedes simplemente agregar una imagen y ubicarla en el lugar que desees. Para ello usa la opción `.absolute` con demás especificaciones como `top`, `left`, `width`, entre otras.
+
+``` {.markdown code-preview="ejemplos/variasimagenes.qmd"}
+# iris 
+
+![](Irissetosa1.jpg){.absolute top=200 left=0 width="350" height="350"}
+![](Irissetosa2.jpg){.absolute top=50 right=50 width="450" height="250"}
+```
+
+#### Animación
+
+Revealjs en Quarto incluye la opción de `auto-animate`, esto anima automaticamente las diapositivas. En general, cumple bien su función  simplemente implementando `auto-animate=true`, sin embargo, puedes personalizarlo como desees especificando otros atributos como:
+
+* `auto-animate-easing`: Permite especificar la velocidad de las transiciones, por defecto es `ease`, pero también puede ser `linear`, `steps(#steps,end)`, entre otros. Puedes encontrar otras opciones [aquí](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timing-function).
+
+* `auto-animate-duration`: Indica el tiempo en segundos que debe durar la animación
+
+* `auto-animate-id`: Asigna una identificación a ciertos elementos de distintas diapositivas, esta opción permite "unir" y crear una animación increible en el cambio de diapositivas.
+
+* `auto-animate-restart`: Divide dos diapositivas "mezcladas" aunque tengan la misma identificación.
+
+Por ejemplo, vamos a animar un pequeño fragmento de código simplemente con la opción `auto-animate=true`
+
+``` {.markdown code-preview="ejemplos/autocodigo.qmd"}
+```
+![](Imagenes/02_Presentaciones/10_auto_codigo.png)
+
+Ahora, algo un poco más avanzado, vamos a utilizar el atributo `auto-animate-easing`, `delay`, `id` y demás características de personalización. El siguiente código permitirá pasar con una transición de una diapositiva con tres rectángulos dispuestos horizontalmente uno junto a otro, a otra diaositiva con circulos uno sobre otro.
+
+``` {.markdown code-preview="ejemplos/rec_cir.qmd"}
+## {auto-animate=true auto-animate-easing="ease-in-out"}
+
+::: {.r-hstack}
+::: {data-id="box1" auto-animate-delay="0" style="background: #2780e3; width: 200px; height: 150px; margin: 10px;"}
+:::
+
+::: {data-id="box2" auto-animate-delay="0.1" style="background: #3fb618; width: 200px; height: 150px; margin: 10px;"}
+:::
+
+::: {data-id="box3" auto-animate-delay="0.2" style="background: #e83e8c; width: 200px; height: 150px; margin: 10px;"}
+:::
+:::
+
+## {auto-animate=true auto-animate-easing="ease-in-out"}
+
+::: {.r-stack}
+::: {data-id="box1" style="background: #2780e3; width: 350px; height: 350px; border-radius: 200px;"}
+:::
+
+::: {data-id="box2" style="background: #3fb618; width: 250px; height: 250px; border-radius: 200px;"}
+:::
+
+::: {data-id="box3" style="background: #e83e8c; width: 150px; height: 150px; border-radius: 200px;"}
+:::
+:::
+``` 
+
+Recuerda que también puedes configurar la auto-animación de forma global para todas tus diapositivas simplemente especificándolo en `format:    revealjs:`.
+
+#### Navegación táctil
+
+Puedes visualizar tu presentación en cualquier dispositivo táctil. Si quieres desactivar esta opción y que tus diapostivas solo puedan verse en un dispositivo con teclado entonces escribe:
+
+``` default
+---
+title: "Bases de datos en R"
+author: "Estadística UN"
+format: 
+  revealjs:
+    touch: false
+    controls: true
+---
+```
+
 ### PowerPoint
 
 Para crear una presentación de PowerPoint usando Quarto simplemente debemos cambiar la opción `format: pptx` así

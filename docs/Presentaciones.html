@@ -584,6 +584,76 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>background-opacity</code>: Permite modificar la “nítidez” del video, es decir, si quieres que se vea transparente coloca “0”, si quieres que se vea super opaco entonces coloca “1”, y puedes variar esto coomo gustes colocando valores entre 0 y 1.</li>
 </ul>
 </section>
+<section id="títulos" class="level4">
+<h4 class="anchored" data-anchor-id="títulos">Títulos</h4>
+<p>Antes vimos cómo podías agregar imágenes en el fondo de tus diapositivas. Esto también puedes hacerlo para la diapositiva que contiene el título de tu presentción. Para ello usa <code>title-slide-attributes</code>, de ese modo indicas que todas las especificaciones que pongas a continuación hacen referencia a la diapositiva del título. Vamos a hacer un ejemplo:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Bases de datos en R"</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="an">title-slide-attributes:</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co">  data-background-image: "https://upload.wikimedia.org/wikipedia/commons/a/a7/Irissetosa1.jpg"</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="co">  data-background-size: contain</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="co">  data-background-opacity: "0.5"</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Estadística UN"</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> revealjs</span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><iframe class="sourceCode markdown code-with-copy" src="ejemplos/titulo_imagen.html"></iframe></div>
+<p>También puedes personalizar una plantilla como gustes en formato <code>.html</code>, puedes saber más de esto <a href="https://quarto.org/docs/journals/templates.html#template-partials">aquí</a>.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>title: "Bases de datos en R"</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>author: "Estadística UN"</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>format: </span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>  revealjs:</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>    template-partials:</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>      - title-slide.html</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>---</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="transición-de-las-diapositivas" class="level4">
+<h4 class="anchored" data-anchor-id="transición-de-las-diapositivas">Transición de las diapositivas</h4>
+<p>Muy similar a PowerPoint, puedes agregar efectos de transición al pasar de una diapositiva a otra. Para ello utiliza el comando <code>transition</code>. Puedes configurarlo de manera global para todas las daipositivas o especificar la transicipon en cada una de ellas.</p>
+<p>De forma global:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Bases de datos en R"</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="an">title-slide-attributes:</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co">  data-background-image: "https://upload.wikimedia.org/wikipedia/commons/a/a7/Irissetosa1.jpg"</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="co">  data-background-size: contain</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="co">  data-background-opacity: "0.5"</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Estadística UN"</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a><span class="co">  revealjs:</span></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a><span class="co">    transition: slide</span></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a><span class="co">    background-transition: fade</span></span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a><span class="co">    transition-speed: fast</span></span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><iframe class="sourceCode markdown code-with-copy" src="ejemplos/transicion.html"></iframe></div>
+<p>Para cada diapositiva:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a># iris {transition="slide" background-transition="fade"}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="imágenes" class="level4">
+<h4 class="anchored" data-anchor-id="imágenes">Imágenes</h4>
+<p>No solo puedes agregar imágenes como fondo de las diapositivas, también puedes simplemente agregar una imagen y ubicarla en el lugar que desees. Para ello usa la opción <code>.absolute</code> con demás especificaciones como <code>top</code>, <code>left</code>, <code>width</code>, entre otras.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># iris </span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="al">![](Irissetosa1.jpg)</span>{.absolute top=200 left=0 width="350" height="350"}</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="al">![](Irissetosa2.jpg)</span>{.absolute top=50 right=50 width="450" height="250"}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><iframe class="sourceCode markdown code-with-copy" src="ejemplos/variasimagenes.html"></iframe></div>
+</section>
+<section id="animación" class="level4">
+<h4 class="anchored" data-anchor-id="animación">Animación</h4>
+<p>Revealjs en Quarto incluye la opción de <code>auto-animate</code>, esto anima automaticamente las diapositivas. En general, cumple bien su función simplemente implementando <code>auto-animate=true</code>, sin embargo, puedes personalizarlo como desees especificando otros atributos como:</p>
+<ul>
+<li><p><code>auto-animate-easing</code>: Permite especificar la velocidad de las transiciones, por defecto es <code>ease</code>, pero también puede ser <code>linear</code>, <code>steps(#steps,end)</code>, entre otros. Puedes encontrar otras opciones <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timing-function">aquí</a>.</p></li>
+<li><p><code>auto-animate-duration</code>: Indica el tiempo en segundos que debe durar la animación</p></li>
+<li><p><code>auto-animate-id</code>: Asigna una identificación a ciertos elementos de distintas diapositivas, esta opción permite “unir” y crear una animación increible en el cambio de diapositivas.</p></li>
+<li><p><code>auto-animate-restart</code>: Divide dos diapositivas “mezcladas” aunque tengan la misma identificación.</p></li>
+</ul>
+<p>Por ejemplo, vamos a animar un pequeño fragmento de código simplemente con la opción <code>auto-animate=true</code></p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><iframe class="sourceCode markdown code-with-copy" src="ejemplos/autocodigo.html"></iframe></div>
+<p>Un poco más avanzado</p>
+<p>Recuerda que también puedes configurar la auto-animación de forma global para todas tus diapositivas</p>
+</section>
+<section id="diapositivas-verticales" class="level4">
+<h4 class="anchored" data-anchor-id="diapositivas-verticales">Diapositivas verticales</h4>
+</section>
+<section id="navegación-táctil" class="level4">
+<h4 class="anchored" data-anchor-id="navegación-táctil">Navegación táctil</h4>
+</section>
 </section>
 <section id="powerpoint" class="level3">
 <h3 class="anchored" data-anchor-id="powerpoint">PowerPoint</h3>
@@ -600,13 +670,13 @@ format: pptx
 <li>Escribe en la cosola de R, lo siguiente: <code>quarto pandoc -o personalizado.pptx --print-default-data-file reference.pptx</code></li>
 <li>Escribe lo siguiente en el archivo <code>.qmd</code></li>
 </ol>
-<div class="sourceCode" id="cb20"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>title: "Bases de datos en R"</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>author: "Estadística UN"</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>format: </span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>  pptx:</span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>    reference-doc: personalizado.pptx</span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>---</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>title: "Bases de datos en R"</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>author: "Estadística UN"</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>format: </span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>  pptx:</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>    reference-doc: personalizado.pptx</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>---</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="5" type="1">
 <li>Reenderiza tu presentación.</li>
 </ol>
@@ -618,14 +688,23 @@ format: pptx
 <p>En Quarto puedes crear presentaciones en formato <strong>Beamer</strong> (LaTeX/PDF). Quarto te permite usar alguno temas de Beamer, y respecto a las celdas de código, por defecto se muestra únicamente la salida, sin embargo, puedes editar estas opciones, de forma similar que en <a href="#sec-codigo">Section&nbsp;1.2.2.5</a>.</p>
 <p>En Beamer se aplican las opciones especificadas en <a href="#sec-generalidades">Section&nbsp;1.2.1</a>.</p>
 <p>Como siempre, para que la salida sea un formato Beamer, escribe</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>title: "Bases de datos en R"</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>author: "Estadística UN"</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>format: beamer</span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>---</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>title: "Bases de datos en R"</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>author: "Estadística UN"</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>format: beamer</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>---</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Es importante que tengas instalado <code>tinytex</code> para que tu documento compile. En caso de que no lo tengas instalado, debes correr lo siguiente en la Terminal de R: <code>quarto intall tinytex</code>.</p>
 <p>Puedes personalizar tu presentación como más te guste. Paraa esto, modifica varias opciones al dar formato Beamer a tus diaapositivas, por ejemplo</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>title: "Bases de datos en R"</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>author: "Estadística UN"</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>format:</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>  beamer: </span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>    aspectratio: 32</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>    navigation: horizontal</span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>    theme: AnnArbor</span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>    colortheme: lily</span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>---</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Hay muchas opciones para Beamer que puedes consultar <a href="https://quarto.org/docs/reference/formats/presentations/beamer.html">aquí</a></p>
 </section>
 <div class="footer-text">

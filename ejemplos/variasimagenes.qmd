@@ -1,0 +1,14 @@
+---
+title: "Bases de datos en R"
+author: "Estadística UN"
+format: 
+  revealjs:
+    transition: slide
+    background-transition: fade
+    transition-speed: fast
+---
+
+# iris 
+
+![](Irissetosa1.jpg){.absolute top=200 left=0 width="350" height="350"}
+![](Irissetosa2.jpg){.absolute top=50 right=50 width="450" height="250"}
