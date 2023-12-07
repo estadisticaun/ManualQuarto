@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.310">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -56,7 +90,8 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
@@ -64,7 +99,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -89,17 +124,39 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Inicio</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Presentaciones.html" rel="" target="">
- <span class="menu-text">Presentaciones</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="./Libros.html" rel="" target="">
  <span class="menu-text">Libros</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="./Paginas_Web.html" rel="" target="" aria-current="page">
- <span class="menu-text">Páginas Web</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-presentaciones" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Presentaciones</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-presentaciones">    
+        <li>
+    <a class="dropdown-item" href="./Presentaciones.html" rel="" target="">
+ <span class="dropdown-text">Quarto</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./CSS_Presentaciones.html" rel="" target="">
+ <span class="dropdown-text">HTML y CSS</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-páginas-web" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Páginas Web</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-páginas-web">    
+        <li>
+    <a class="dropdown-item" href="./Paginas_Web.html" rel="" target="">
+ <span class="dropdown-text">Quarto</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./CSS_Web.html" rel="" target="">
+ <span class="dropdown-text">HTML y CSS</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="./Articulos.html" rel="" target="">
  <span class="menu-text">Articulos</span></a>
@@ -135,7 +192,31 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#páginas-web" id="toc-páginas-web" class="nav-link active" data-scroll-target="#páginas-web">Páginas Web</a>
+  <ul class="collapse">
+  <li><a href="#crea-tu-página-web" id="toc-crea-tu-página-web" class="nav-link" data-scroll-target="#crea-tu-página-web">Crea tu página web</a></li>
+  <li><a href="#enlaces" id="toc-enlaces" class="nav-link" data-scroll-target="#enlaces">Enlaces</a></li>
+  <li><a href="#navegación-del-sitio-web" id="toc-navegación-del-sitio-web" class="nav-link" data-scroll-target="#navegación-del-sitio-web">Navegación del sitio web</a>
+  <ul class="collapse">
+  <li><a href="#navegación-superior" id="toc-navegación-superior" class="nav-link" data-scroll-target="#navegación-superior">Navegación superior</a></li>
+  <li><a href="#navegación-lateral" id="toc-navegación-lateral" class="nav-link" data-scroll-target="#navegación-lateral">Navegación lateral</a></li>
+  <li><a href="#navegación-híbrida" id="toc-navegación-híbrida" class="nav-link" data-scroll-target="#navegación-híbrida">Navegación híbrida</a></li>
+  <li><a href="#pie-de-página" id="toc-pie-de-página" class="nav-link" data-scroll-target="#pie-de-página">Pie de página</a></li>
+  <li><a href="#esconder-barra-de-navegación" id="toc-esconder-barra-de-navegación" class="nav-link" data-scroll-target="#esconder-barra-de-navegación">Esconder barra de navegación</a></li>
+  <li><a href="#modo-lector" id="toc-modo-lector" class="nav-link" data-scroll-target="#modo-lector">Modo lector</a></li>
+  <li><a href="#búsqueda" id="toc-búsqueda" class="nav-link" data-scroll-target="#búsqueda">Búsqueda</a></li>
+  </ul></li>
+  <li><a href="#búsqueda-en-el-sitio-web" id="toc-búsqueda-en-el-sitio-web" class="nav-link" data-scroll-target="#búsqueda-en-el-sitio-web">Búsqueda en el sitio web</a></li>
+  <li><a href="#herramientas-en-el-sitio-web" id="toc-herramientas-en-el-sitio-web" class="nav-link" data-scroll-target="#herramientas-en-el-sitio-web">Herramientas en el sitio web</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -143,7 +224,184 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="páginas-web" class="level1">
 <h1>Páginas Web</h1>
-<p>Contenido</p>
+<div class="header-text">
+<div class="content-container">
+<div class="header-block">
+<p>En esta sección de Páginas Web aprenderás cómo crear tu propia página web y personalizarla como más te guste haciendo uso de Quarto y otros lenguajes como CSS.</p>
+</div>
+</div>
+</div>
+<section id="crea-tu-página-web" class="level2">
+<h2 class="anchored" data-anchor-id="crea-tu-página-web">Crea tu página web</h2>
+<p>Primero, debes crear la página web. En R, sigue los siguientes pasos:</p>
+<ol type="1">
+<li>Ve a la esquina superior derecha de RStudio, selecciona el ícono de cajita y luego da clic en la opción de <em>“New Project”</em></li>
+</ol>
+<p><img src="Imagenes/03_Web/00_creacion.png" class="img-fluid"></p>
+<p><img src="Imagenes/03_Web/01_creacion.png" class="img-fluid"></p>
+<ol start="2" type="1">
+<li>Selecciona la opción <em>“Quarto Website”</em></li>
+</ol>
+<p><img src="Imagenes/03_Web/02_creacion.png" class="img-fluid"></p>
+<ol start="3" type="1">
+<li>Llena las opciones que aparezcan en la ventana emergente automáticamente</li>
+</ol>
+<p><img src="Imagenes/03_Web/03_creacion.png" class="img-fluid"> 4. Da clic en <em>“Render”</em> y echa un vistazon a la primera versión (y al primer acercamiento) de tu página Web.</p>
+<p><img src="Imagenes/03_Web/04_creacion.png" class="img-fluid"></p>
+<p>Cuando creas una página web con Quarto, por defecto se crea un archivo llamado <code>_quarto.yml</code> donde se especifican ciertas opciones del sitio web y puedes predeterminar ciertas características que desees en los HTML. Más adelante aprenderás cómo modificar este archivo para crear lo que tú quieras.</p>
+<p>Para un primer acercamiento, si quieres modificar el idioma de tu página web, puedes hacerlo agregando la opción <code>lang:</code> en el <code>_quarto.yml</code> y en nuestro caso (español) <code>lang: es</code>. Si no te gustan las traducciones que se hacen por defecto, puedes agregar un archivo <code>_language.yml</code> donde puedes especificar las traducciones que desees, por ejemplo</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>toc-title-document: "Tabla de contenido"</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>toc-title-website: "En esta página"</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="enlaces" class="level2">
+<h2 class="anchored" data-anchor-id="enlaces">Enlaces</h2>
+<p>Para agregar enlaces dentro de tu página web, y puedes especificarlos en <code>.html</code> o directamente con <code>.qmd</code>, la ventaja de incluir enlaces de esta última forma es que si en algún momento quieres convertir tu página en un libro, los enlaces se adaptarán automáticamente. Si quieres saber más sobre libros en Quarto, visita <a href="./Libros.html">aquí</a></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>[lo que quieres que aparezca en la página](nombre_archivo.qmd)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>[lo que quieres que aparezca en la página](nombre_archivo.qmd#seccion_referencia)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="navegación-del-sitio-web" class="level2">
+<h2 class="anchored" data-anchor-id="navegación-del-sitio-web">Navegación del sitio web</h2>
+<section id="navegación-superior" class="level3">
+<h3 class="anchored" data-anchor-id="navegación-superior">Navegación superior</h3>
+<p>Cuando hablamos de navegación superior, hacemos referencia a la “barra” superior que aparecen en la mayoría de páginas web que permiten organizar la información del sitio y facilitan la navegación del usuario. Agregar esta barra en Quarto es muy sencillo, simplemente agrega la opción <code>navbar</code> en el documeto <code>_quarto.yml</code>, y dentro de esta opción puedes indicar qué elementos quieres que aparezcan y en qué posición. Por ejemplo, está página web en la que lees este documento, en la parte superior izquierda tiene el logo de la universidad y en la parte superior derecha tiene todos los documentos de creaciones en R, el código para crear esto es</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>website:</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  navbar:</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    logo: 'Imagenes/Logos/Logo_UNAL.png'</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    search: true</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    pinned: false</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    collapse: true</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    right: </span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>      - text: Inicio</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        file: index.qmd</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>      - text: Libros</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>        file: Libros.qmd</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>      - text: Presentaciones</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>        file: Presentaciones.qmd</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>      - text: Páginas Web</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>        file: Paginas_Web.qmd</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>      - text: Articulos</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>        file: Articulos.qmd</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>      - icon: github</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>        href: https://github.com/estadisticaun</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>        aria-label: GitHub</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>      - icon: youtube</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>        href: https://www.youtube.com/@UNALoficial</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>      - icon: globe2</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>        href: https://unal.edu.co/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="Imagenes/03_Web/05_navsup.png" class="img-fluid"></p>
+<p>Más a detalle, con <code>logo</code> agregamos el escudo de la Universidad Nacional de Colombia en la parte superior izquierda y solo fue necesario indicar la dirección del archivo. Con <code>search</code> permitimos que la página incluya la opción de búsqueda para facilitar la navegación del usuario en el sitio web. La opción <code>right</code> especifica que lo que indiquemos a continuación debe estar en la parte superior derecha, con <code>text</code> detallamos el texto que se mostrará en la barra para el documento que especificamos en <code>file</code>. <code>icon</code> muestra el “logo” de cierta aplicación o página y con <code>href</code> precisamos el link a donde queremos que se dirija el usuario cuando de clic en dichos íconos. FALTA <code>pinned</code> y <code>collapse</code>.</p>
+</section>
+<section id="navegación-lateral" class="level3">
+<h3 class="anchored" data-anchor-id="navegación-lateral">Navegación lateral</h3>
+<p>Ahora, para la navegación lateral, debes reemplazar <code>navbar</code> por <code>sidebar</code>, además, ten en cuenta que la navegación lateral resulta muy útil cuando tienes demasiados documentos referentes a un tema, por lo que es necesario organizar dichos documentos en secciones. Por ejemplo,</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>website:</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  title: "Manual Quarto"</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  favicon: 'Imagenes/Logos/Escudo_UNAL.png'</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  reader-mode: true</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  sidebar:</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    style: "docked"</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    search: true</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    contents: </span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>      - section: Inicio</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>        contents: index.qmd</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>      - section: Documentos</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>        contents:</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>          - Libros.qmd</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>          - Presentaciones.qmd</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>          - Articulos.qmd</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>      - section: Páginas Web</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>        contents: Paginas_Web.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="Imagenes/03_Web/06_navlat.png" class="img-fluid"></p>
+</section>
+<section id="navegación-híbrida" class="level3">
+<h3 class="anchored" data-anchor-id="navegación-híbrida">Navegación híbrida</h3>
+<p>Como vimos anterirormente, cuando tienes muchos documentos se hace necesario clasificarlos y organizarlos, cuando hacemos referencia a la navegación híbrida, hablamos de que hay demasiados documentos, por lo que puedes crear secciones con <code>navbar</code> y más subsecciones con <code>sidebar</code> además de agregar la opción <code>sidebar: true</code> en cada documento que permite que estos también estén organizados. En nuestro ejemplo,</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>website:</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  navbar:</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    logo: 'Imagenes/Logos/Logo_UNAL.png'</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    search: true</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    pinned: false</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    collapse: true</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    right: </span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>      - text: Indice</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>        file: index.qmd</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>      - text: Documentos</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>        file: Libros.qmd</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>      - text: Páginas Web</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>        file: Paginas_Web.qmd</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>      - icon: github</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>        href: https://github.com/estadisticaun</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>        aria-label: GitHub</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>      - icon: youtube</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>        href: https://www.youtube.com/@UNALoficial</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>      - icon: globe2</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>        href: https://unal.edu.co/</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>  sidebar:</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>    - title: "Indice"</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>      style: "docked"</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>      background: light</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>      contents:</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>        - index.qmd</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>    - title: "Documentos"</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>      style: "docked"</span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>      background: light</span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>      contents:</span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>        - Libros.qmd</span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>        - Presentaciones.qmd</span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>        - Articulos.qmd</span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>    - title: "Páginas Web"</span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>      contents:</span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>        - Paginas_Web.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="Imagenes/03_Web/07_navhib.png" class="img-fluid"> ### <em>Back top</em></p>
+<p>Quarto te da la posibilidad de agregar un “botón emergente” que permite que el usuario vuelva a la parte superior de la página en la que está navegando, para ello solo debes agregar la opción <code>back-to-top-navigation: true</code></p>
+<p><img src="Imagenes/03_Web/08_back.png" class="img-fluid"></p>
+</section>
+<section id="pie-de-página" class="level3">
+<h3 class="anchored" data-anchor-id="pie-de-página">Pie de página</h3>
+<p>Para agregar un pie de página con información sobre tu contacto, o en general cualquier información que quieras dejar disponible en todas las páginas de tu sitio web, puedes emplear la opción <code>page-footer</code>. Puedes poner algo sencillo en el pie de página e incluso especificar qué irá en el centro, a la derecha y a la izquierda, así como también si quieres que aparezca con borde (<code>border: true</code>) y el color de fondo (<code>background: black</code>). Por ejemplo,</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>website:</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  page-footer: "Universidad Nacional de Colombia 2023, Estadística UN" </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>website:</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  page-footer:</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    left: "Universidad Nacional de Colombia 2023, Estadística UN"</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    right: </span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>      - icon: github</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>        href: https://github.com/estadisticaun</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>      - icon: youtube</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>        href: https://www.youtube.com/@UNALoficial</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="Imagenes/03_Web/09_footer.png" class="img-fluid"></p>
+<p>Recuerda que si quieres personalizar más este pie de página, puedes utilizar lenguaje HTML, puedes encontrar más información <a href="./CSS_Web.html">aquí</a></p>
+</section>
+<section id="esconder-barra-de-navegación" class="level3">
+<h3 class="anchored" data-anchor-id="esconder-barra-de-navegación">Esconder barra de navegación</h3>
+<p>En algunas páginas resulta muy útil esconder la barra de navegación, por ejemplo en la página de inicio. Para esto, especifica en dicha página lo siguiente</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>sidebar: false</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>---</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>navbar: false</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="modo-lector" class="level3">
+<h3 class="anchored" data-anchor-id="modo-lector">Modo lector</h3>
+<p>Si quieres permitir que el lector de tu sitio web tenga la opción de “esconder” y no visualizar el <em>“En esta página”</em>, basta con la opción <code>reader-mode: true</code>, también puedes especificarlo para cierta página en específico.</p>
+<p><img src="Imagenes/03_Web/10_read.png" class="img-fluid"></p>
+</section>
+<section id="búsqueda" class="level3">
+<h3 class="anchored" data-anchor-id="búsqueda">Búsqueda</h3>
+<p>Puedes agregar una “lupa” que deje a tus lectores buscar en tu sitio web, escriben una palabra y se busca en todos las páginas de tu sitio.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>website:</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  navbar:</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    search: true</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    # Todo lo demás</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="búsqueda-en-el-sitio-web" class="level2">
+<h2 class="anchored" data-anchor-id="búsqueda-en-el-sitio-web">Búsqueda en el sitio web</h2>
+</section>
+<section id="herramientas-en-el-sitio-web" class="level2">
+<h2 class="anchored" data-anchor-id="herramientas-en-el-sitio-web">Herramientas en el sitio web</h2>
 <div class="footer-text">
 <div class="footer-container black-background">
 <div class="footer-block">
@@ -179,6 +437,7 @@ Contactenos</p>
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

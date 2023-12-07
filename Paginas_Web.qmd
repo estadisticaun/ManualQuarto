@@ -1,52 +1,267 @@
+---
+page-layout: article
+section-divs: true
+sidebar: true
+search: true
+toc: true
+---
+
 # Páginas Web
 
-Contenido
+::: header-text
+::: content-container
+::: header-block
+En esta sección de Páginas Web aprenderás cómo crear tu propia página web y personalizarla como más te guste haciendo uso de Quarto y otros lenguajes como CSS.
+:::
+:::
+:::
+
+## Crea tu página web
+
+Primero, debes crear la página web. En R, sigue los siguientes pasos:
+
+1.    Ve a la esquina superior derecha de RStudio, selecciona el ícono de cajita y luego da clic en la opción de *"New Project"*
+
+![](Imagenes/03_Web/00_creacion.png)
+
+![](Imagenes/03_Web/01_creacion.png)
+
+2.    Selecciona la opción *"Quarto Website"*
+
+![](Imagenes/03_Web/02_creacion.png)
+
+3.    Llena las opciones que aparezcan en la ventana emergente automáticamente 
+
+![](Imagenes/03_Web/03_creacion.png)
+4.    Da clic en *"Render"* y echa un vistazon a la primera versión (y al primer acercamiento) de tu página Web.
+
+![](Imagenes/03_Web/04_creacion.png)
 
 
+Cuando creas una página web con Quarto, por defecto se crea un archivo llamado `_quarto.yml` donde se especifican ciertas opciones del sitio web y puedes predeterminar ciertas características que desees en los HTML. Más adelante aprenderás cómo modificar este archivo para crear lo que tú quieras.
 
-::: {.footer-text}
+Para un primer acercamiento, si quieres modificar el idioma de tu página web, puedes hacerlo agregando la opción `lang:` en el `_quarto.yml` y en nuestro caso (español) `lang: es`. Si no te gustan las traducciones que se hacen por defecto, puedes agregar un archivo `_language.yml` donde puedes especificar las traducciones que desees, por ejemplo
+
+``` default
+toc-title-document: "Tabla de contenido"
+toc-title-website: "En esta página"
+```
+
+## Enlaces
+
+Para agregar enlaces dentro de tu página web, y puedes especificarlos en `.html` o directamente con `.qmd`, la ventaja de incluir enlaces de esta última forma es que si en algún momento quieres convertir tu página en un libro, los enlaces se adaptarán automáticamente. Si quieres saber más sobre libros en Quarto, visita [aquí](Libros.qmd)
+
+``` default
+[lo que quieres que aparezca en la página](nombre_archivo.qmd)
+[lo que quieres que aparezca en la página](nombre_archivo.qmd#seccion_referencia)
+```
+
+## Navegación del sitio web
+
+### Navegación superior
+
+Cuando hablamos de navegación superior, hacemos referencia a la "barra" superior que aparecen en la mayoría de páginas web que permiten organizar la información del sitio y facilitan la navegación del usuario. Agregar esta barra en Quarto es muy sencillo, simplemente agrega la opción `navbar` en el documeto `_quarto.yml`, y dentro de esta opción puedes indicar qué elementos quieres que aparezcan y en qué posición. Por ejemplo, está página web en la que lees este documento, en la parte superior izquierda tiene el logo de la universidad y en la parte superior derecha tiene todos los documentos de creaciones en R, el código para crear esto es
+
+``` default
+website:
+  navbar:
+    logo: 'Imagenes/Logos/Logo_UNAL.png'
+    search: true
+    pinned: false
+    collapse: true
+    right: 
+      - text: Inicio
+        file: index.qmd
+      - text: Libros
+        file: Libros.qmd
+      - text: Presentaciones
+        file: Presentaciones.qmd
+      - text: Páginas Web
+        file: Paginas_Web.qmd
+      - text: Articulos
+        file: Articulos.qmd
+      - icon: github
+        href: https://github.com/estadisticaun
+        aria-label: GitHub
+      - icon: youtube
+        href: https://www.youtube.com/@UNALoficial
+      - icon: globe2
+        href: https://unal.edu.co/
+```
+
+![](Imagenes/03_Web/05_navsup.png)
+
+Más a detalle, con `logo` agregamos el escudo de la Universidad Nacional de Colombia en la parte superior izquierda y solo fue necesario indicar la dirección del archivo. Con `search` permitimos que la página incluya la opción de búsqueda para facilitar la navegación del usuario en el sitio web. La opción `right` especifica que lo que indiquemos a continuación debe estar en la parte superior derecha, con `text` detallamos el texto que se mostrará en la barra para el documento que especificamos en `file`. `icon` muestra el "logo" de cierta aplicación o página y con `href` precisamos el link a donde queremos que se dirija el usuario cuando de clic en dichos íconos.
+FALTA `pinned` y `collapse`.
+
+### Navegación lateral
+
+Ahora, para la navegación lateral, debes reemplazar `navbar` por `sidebar`, además, ten en cuenta que la navegación lateral resulta muy útil cuando tienes demasiados documentos referentes a un tema, por lo que es necesario organizar dichos documentos en secciones. Por ejemplo,
+
+``` default
+website:
+  title: "Manual Quarto"
+  favicon: 'Imagenes/Logos/Escudo_UNAL.png'
+  reader-mode: true
+  sidebar:
+    style: "docked"
+    search: true
+    contents: 
+      - section: Inicio
+        contents: index.qmd
+      - section: Documentos
+        contents:
+          - Libros.qmd
+          - Presentaciones.qmd
+          - Articulos.qmd
+      - section: Páginas Web
+        contents: Paginas_Web.qmd
+```
+![](Imagenes/03_Web/06_navlat.png)
+
+
+### Navegación híbrida
+
+Como vimos anterirormente, cuando tienes muchos documentos se hace necesario clasificarlos y organizarlos, cuando hacemos referencia a la navegación híbrida, hablamos de que hay demasiados documentos, por lo que puedes crear secciones con `navbar` y más subsecciones con `sidebar` además de agregar la opción `sidebar: true` en cada documento que permite que estos también estén organizados. En nuestro ejemplo, 
+
+``` default
+website:
+  navbar:
+    logo: 'Imagenes/Logos/Logo_UNAL.png'
+    search: true
+    pinned: false
+    collapse: true
+    right: 
+      - text: Indice
+        file: index.qmd
+      - text: Documentos
+        file: Libros.qmd
+      - text: Páginas Web
+        file: Paginas_Web.qmd
+      - icon: github
+        href: https://github.com/estadisticaun
+        aria-label: GitHub
+      - icon: youtube
+        href: https://www.youtube.com/@UNALoficial
+      - icon: globe2
+        href: https://unal.edu.co/
+        
+  sidebar:
+    - title: "Indice"
+      style: "docked"
+      background: light
+      contents:
+        - index.qmd
+        
+    - title: "Documentos"
+      style: "docked"
+      background: light
+      contents:
+        - Libros.qmd
+        - Presentaciones.qmd
+        - Articulos.qmd
+
+    - title: "Páginas Web"
+      contents:
+        - Paginas_Web.qmd
+```
+![](Imagenes/03_Web/07_navhib.png)
+### *Back top*
+
+Quarto te da la posibilidad de agregar un "botón emergente" que permite que el usuario vuelva a la parte superior de la página en la que está navegando, para ello solo debes agregar la opción `back-to-top-navigation: true`
+
+![](Imagenes/03_Web/08_back.png)
+
+### Pie de página
+
+Para agregar un pie de página con información sobre tu contacto, o en general cualquier información que quieras dejar disponible en todas las páginas de tu sitio web, puedes emplear la opción `page-footer`. Puedes poner algo sencillo en el pie de página e incluso especificar qué irá en el centro, a la derecha y a la izquierda, así como también si quieres que aparezca con borde (`border: true`) y el color de fondo (`background: black`). Por ejemplo,
+
+``` default
+website:
+  page-footer: "Universidad Nacional de Colombia 2023, Estadística UN" 
+```
+
+``` default
+website:
+  page-footer:
+    left: "Universidad Nacional de Colombia 2023, Estadística UN"
+    right: 
+      - icon: github
+        href: https://github.com/estadisticaun
+      - icon: youtube
+        href: https://www.youtube.com/@UNALoficial
+```
+
+![](Imagenes/03_Web/09_footer.png)
+
+Recuerda que si quieres personalizar más este pie de página, puedes utilizar lenguaje HTML, puedes encontrar más información [aquí](CSS_Web.qmd)
+
+### Esconder barra de navegación
+
+En algunas páginas resulta muy útil esconder la barra de navegación, por ejemplo en la página de inicio. Para esto, especifica en dicha página lo siguiente
+
+``` default
+---
+sidebar: false
+---
+```
+
+``` default
+navbar: false
+```
+
+### Modo lector
+
+Si quieres permitir que el lector de tu sitio web tenga la opción de "esconder" y no visualizar el *"En esta página"*, basta con la opción `reader-mode: true`, también puedes especificarlo para cierta página en específico.
+
+![](Imagenes/03_Web/10_read.png)
+
+### Búsqueda
+
+Puedes agregar una "lupa" que deje a tus lectores buscar en tu sitio web, escriben una palabra y se busca en todos las páginas de tu sitio.
+
+``` default
+website:
+  navbar:
+    search: true
+    # Todo lo demás
+```
+
+## Búsqueda en el sitio web
+
+## Herramientas en el sitio web
+
+::: footer-text
 ::: {.footer-container .black-background}
-::: {.footer-block}
+::: footer-block
 ::: grid
-
-
 ::: {.g-col-12 .g-col-md-6}
-
 ### Publicado por
-[![](Imagenes/Logos/escudoUnal.svg){ width=50% }](https://unal.edu.co/)
 
+[![](Imagenes/Logos/escudoUnal.svg){width="50%"}](https://unal.edu.co/)
 :::
 
 ::: {.g-col-12 .g-col-md-2}
-
 ### Sobre nosotros
+
 Objetivo\
 Grupo\
 Contactenos
-
 :::
 
 ::: {.g-col-12 .g-col-md-2}
-
 ### Paginas Web
-
-
 :::
 
 ::: {.g-col-12 .g-col-md-2}
-
 ### Siguenos en
+
 [GitHub](https://github.com/realworlddatascience)\
 [Twitter](https://twitter.com/rwdatasci)\
 [LinkedIn](https://www.linkedin.com/showcase/rss-real-world-data-science)\
 [Mastodon](https://fosstodon.org/@rwdatasci)\
-
 :::
-
 :::
-
 :::
-
 :::
-
 :::

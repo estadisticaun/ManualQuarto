@@ -17,9 +17,17 @@ website:
       - text: Libros
         file: Libros.qmd
       - text: Presentaciones
-        file: Presentaciones.qmd
+        menu: 
+          - text: Quarto
+            file: Presentaciones.qmd
+          - text: HTML y CSS
+            file: CSS_Presentaciones.qmd
       - text: Páginas Web
-        file: Paginas_Web.qmd
+        menu: 
+          - text: Quarto
+            file: Paginas_Web.qmd
+          - text: HTML y CSS
+            file: CSS_Web.qmd
       - text: Articulos
         file: Articulos.qmd
       - icon: github
@@ -36,6 +44,7 @@ format:
     theme: cosmo
     css: styles.css
     toc: false
+    code-copy: true
 
 editor: visual
 
