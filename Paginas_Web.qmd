@@ -227,9 +227,257 @@ website:
     # Todo lo demás
 ```
 
+Si quieres deshabilitar esta opción entonces simplemente usa `search: false`, si deseas que solo sea para una sección de tu sitio web, entonces
+
+``` default
+---
+title: seccion
+search: false
+---
+```
+
 ## Búsqueda en el sitio web
 
+### Apariencia
+
+Quarto permite que incluyas la opción para que el lector de tu sitio web pueda buscar más facilmente en TODAS las páginas que dispongas en tu sitio, para ello, utiliza la opción `search` y ajustala como más desees con las opciones `location` y `type`.
+
+| Opción   | Descripción     |
+|:--------:|:---------------:|
+|`location`|Especificamos si queremos *navbar* o *sidebar*|
+| `type`   |Con `overlay` aparece un *pop up*, con `textbox` no|
+| `limit`  |Número de resultados que deseas que aparezcan en el cuadro al hacer la búsqueda|
+|`collapse-after`|Número de secciones que coinciden con la búsqueda y deseas que aparezcan en el cuadro|
+|`copy-button`|Cuando es `true` aparece un icono que da la opción al usuario de copiar la URL de lo que está buscando|
+
+
+::: panel-tabset
+#### overlay
+
+![](Imagenes/03_Web/11_overlay.png)
+
+#### textbox
+![](Imagenes/03_Web/12_textbox.png)
+
+#### copy-button
+![](Imagenes/03_Web/13_copy.png)
+:::
+
+### Algolia
+
 ## Herramientas en el sitio web
+
+### Encabezado y pie de página
+
+Puedes agregar texto e imagenes en el encabeza y/o en el pie de página de tu sitio web, de tal forma que aparezca en todos o en una sola de las pestañas de tu sitio. Para ello utiliza las opciones `body-header`, `body-footer`, `margin-header`, `margin-footer`, por ejemplo
+
+::: panel-tabset
+
+#### *body-header*
+
+``` default
+website:
+  body-header: | 
+    Puedes encontrar nás información en <https://quarto.org/docs/guide/>
+  margin-header: |
+    ![Logo UNAL](/Imagenes/Logos/Logo_UNAL.png)
+```
+
+![](Imagenes/03_Web/14_bodyheader.png)
+
+#### *body-footer*
+
+``` default
+website:
+  body-footer: | 
+    Puedes encontrar nás información en <https://quarto.org/docs/guide/>
+  margin-header: |
+    ![Logo UNAL](/Imagenes/Logos/Logo_UNAL.png)
+```
+
+![](Imagenes/03_Web/16_bodyfooter.png)
+
+#### *margin-header*
+
+``` default
+website:
+  body-header: | 
+    Puedes encontrar nás información en <https://quarto.org/docs/guide/>
+  margin-header: |
+    ![Logo UNAL](/Imagenes/Logos/Logo_UNAL.png)
+```
+
+![](Imagenes/03_Web/15_marginheader.png)
+
+#### *margin-footer*
+
+``` default
+website:
+  body-header: | 
+    Puedes encontrar nás información en <https://quarto.org/docs/guide/>
+  margin-footer: |
+    ![Logo UNAL](/Imagenes/Logos/Logo_UNAL.png)
+```
+
+![](Imagenes/03_Web/17_marginfooter.png)
+:::
+
+### favicon
+
+Con la opción `favicon` puedes proporcionar un ícono para tus sitio web en la pestaña del navegador, solo debes especificar la dirección de la imagen que deseas que aparezca
+
+``` default
+website:
+  favicon: 'Imagenes/Logos/Escudo_UNAL.png'
+```
+
+![](Imagenes/03_Web/18_favicon.png)
+
+### Tarjetas de Twitter
+
+### Google analítico
+
+### Cookies
+
+Con Quarto puedes permitir que el usuario acepte o rechace las *cookies* de tu sitio (si las tiene). Con Google Analítico se pueden vincular directamente las preferencias de *cookies* del lector, si esta opción no está habilitada, entonces puedes personalizar el formato del consentimiento.
+
+| Opción   | Descripción     |
+|:--------:|:---------------:|
+|`type`|Con `implied` se notifica al usuario que el sitio tiene *cookies* y le permite aceptar, rechazar y/o modificar sus preferencias. Con `express` se notifica al usuario que el sitio tiene cookies, pero no puede continuar visitando el sitio hasta que las acepte|
+|`style`|`simple`, `headline`, `interstitial`, `standalone`|
+| `palette`  |`light`, `dark`|
+|`policy-url`|La URL donde se encuentran las políticas de privacidad de tu sitio web|
+|`prefs-text`|El texto que se muestra para personalizar la preferencia de cookies|
+
+Cookies por defecto:
+
+``` default
+website:
+  cookie-consent: true
+```
+
+![](Imagenes/03_Web/19_cookie.png)
+
+Ejemplo usando las opciones de la tabla:
+
+``` default
+website:
+  cookie-consent: 
+    type: express
+    style: interstitial
+    palette: dark
+```
+![](Imagenes/03_Web/20_cookies.png)
+
+::: panel-tabset
+
+#### implied
+
+``` default
+website:
+  cookie-consent: 
+    type: implied
+    style: simple
+    palette: light
+```
+![](Imagenes/03_Web/21_implied.png)
+
+#### express
+
+``` default
+website:
+  cookie-consent: 
+    type: express
+    style: simple
+    palette: light
+```
+![](Imagenes/03_Web/22_express.png)
+
+#### simple
+
+``` default
+website:
+  cookie-consent: 
+    type: implied
+    style: simple
+    palette: light
+```
+![](Imagenes/03_Web/21_implied.png)
+
+#### headline
+
+``` default
+website:
+  cookie-consent: 
+    type: implied
+    style: headline
+    palette: light
+```
+![](Imagenes/03_Web/23_headline.png)
+
+#### interstitial
+
+``` default
+website:
+  cookie-consent: 
+    type: implied
+    style: interstitial
+    palette: light
+```
+![](Imagenes/03_Web/24_interstitial.png)
+
+#### standalone
+
+``` default
+website:
+  cookie-consent: 
+    type: implied
+    style: standalone
+    palette: light
+```
+![](Imagenes/03_Web/25_standalone.png)
+
+#### light
+
+``` default
+website:
+  cookie-consent: 
+    type: implied
+    style: simple
+    palette: light
+```
+![](Imagenes/03_Web/21_implied.png)
+
+#### dark
+
+``` default
+website:
+  cookie-consent: 
+    type: implied
+    style: simple
+    palette: dark
+```
+![](Imagenes/03_Web/26_dark.png)
+
+:::
+
+### Aperiencia (modo)
+
+Con Quarto puedes implementar un "interruptor" que permita al usuario modificar la visualización de tu sitio web, ya sea que desee el modo claro o el modo oscuro. Para ello
+
+``` default
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: darkly
+```
+
+![](Imagenes/03_Web/27_themes.png)
+
+![](Imagenes/03_Web/28_themes.png)
+
+Recuerda que puedes elegir el tema que desees para cada modo, los temas disponibles los puedes encontrar [aquí](https://quarto.org/docs/output-formats/html-themes.html#overview)
 
 ::: footer-text
 ::: {.footer-container .black-background}

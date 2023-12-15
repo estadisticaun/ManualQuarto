@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Motivación del uso de Quarto para creación de documentos académicos.">
 
-<title>Manual Quarto</title>
+<title>Manual Quarto – blog</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -66,8 +31,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./Imagenes/Logos/Escudo_UNAL.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -97,43 +60,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-latest-content .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-latest-content'] = new List('listing-latest-content', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -154,7 +86,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="./index.html" rel="" target="">
  <span class="menu-text">Inicio</span></a>
   </li>  
   <li class="nav-item">
@@ -192,7 +124,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./blog.html" rel="" target="">
+    <a class="nav-link active" href="./blog.html" rel="" target="" aria-current="page">
  <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
@@ -227,179 +159,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 
-
-<div class="content-container">
-<div class="top-story gray-background">
-<div class="grid">
-<section id="crea-documentos-con-quarto" class="g-col-12 g-col-lg-6 top-story-text">
-<h2 class="anchored">¡Crea documentos con <span style="color:darkblue">Quarto</span>!</h2>
-<p>Posit en el evento <em>rstudio::conf(2022)</em> anuncio la creación de <strong>Quarto</strong>, un nuevo sistema de publicación científica y técnica de código abierto que funciona con R, Python, Julia, JavaScript y muchos otros lenguajes, para la creación de documentos dinámicos como artículos, presentaciones, páginas web, blogs, y libros en HTML, PDF, MS Word, ePub, y muchos más. El objetivo de Quarto aparte de manejar diferentes lenguajes es poder trabajar en diferentes Entornos de Desarrollo Integrado (IDE – siglas en ingles) como lo es Jupyter, Visual Studio Code (VSC) y RStudio.</p>
-</section>
-<div class="g-col-12 g-col-lg-6 top-story-img">
-<p><a href="https://posit.co/blog/four-announcements-from-rstudio-conf-2022/"> <img src="Imagenes/Logos/Quarto.jpg" class="img-fluid"> </a></p>
-</div>
-</div>
-</div>
-</div>
-<div class="header-text">
-<div class="content-container">
-<div class="header-block">
-<p>Nuestra página web tiene como objetivo empoderarte en el proceso de creación de diferentes tipos de documentos, guiándote desde el inicio hasta el final del proceso. Aprenderás todo lo necesario, incluyendo la instalación de programas y el uso de Quarto, de una manera clara y detallada. Nuestro objetivo es hacerte sentir seguro y confiado en tus habilidades de creación de documentos, para que puedas aplicarlas en tu trabajo, estudio o cualquier proyecto que te propongas.</p>
-<p>¡Únete a nuestra comunidad de creadores de documentos y descubre todo lo que puedes lograr!</p>
-</div>
-</div>
-</div>
-<div class="content-container">
-<section id="instalación-de-quarto-y-rstudio" class="listing-block">
-<h2 class="anchored">Instalación de Quarto y RStudio</h2>
-<p>Quarto es un programa de código abierto que puede ser utilizado en diferentes IDE. En esta página usaremos RStudio y el lenguaje de programación de R y Python. Es importante aclarar que RStudio únicamente está en Inglés. Para esto, seguir los siguientes pasos:</p>
-<ol type="1">
-<li><p>Descarga e instala Quarto en la página oficial: <a href="https://quarto.org/docs/get-started/" target="_blank">https://quarto.org/docs/get-started/</a>.</p></li>
-<li><p>Instala R en la página oficial: <a href="https://posit.co/download/rstudio-desktop/" target="_blank">https://posit.co/download/rstudio-desktop/</a>.</p></li>
-<li><p>Selecciona un IDE, en este caso RStudio. Para esto, instala R y después puedes instalar RStudio en la página oficial: <a href="https://posit.co/download/rstudio-desktop/" target="_blank">https://posit.co/download/rstudio-desktop/</a>.</p></li>
-<li><p>Verifica que la instalación de R, RStudio y Quarto es correcta. Para esto, descarga el ejemplo.</p></li>
-</ol>
-<div class="callout callout-style-simple callout-none no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<p><a href="https://quarto.org/docs/get-started/hello/rstudio/_hello.qmd" download="hello.qmd">Descargar hello.qmd </a></p>
-</div>
-</div>
-</div>
-<p><img src="Imagenes/00_Instalacion/0_Ejemplo.png" class="img-fluid"></p>
-<ol start="5" type="1">
-<li>Instala las librerias necesarias.</li>
-</ol>
-<div class="sourceCode" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>install.packages("tidyverse")</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>install.packages("palmerpenguins")</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="6" type="1">
-<li>Renderiza el documento en la parte superior marcada con una flecha azul hacia la derecha.</li>
-</ol>
-<p><img src="Imagenes/00_Instalacion/1_Render.png" class="img-fluid"></p>
-<ol start="7" type="1">
-<li>Una vez realizado todos los pasos anteriores deberias tener sin problema el siguiente documento HTML.</li>
-</ol>
-<p><img src="Imagenes/00_Instalacion/2_HTML.png" class="img-fluid"></p>
-</section>
-</div>
-<div class="content-container">
-<div class="listing-block">
-<p><a href="./Libros.html"></a></p><a href="./Libros.html">
-<h2 id="articulos-relacionados" class="anchored">Articulos relacionados</h2>
-</a><p><a href="./Libros.html"></a></p>
-<div id="listing-latest-content" class="quarto-listing quarto-listing-container-grid">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-listing-file-modified-sort="1697800857787" data-listing-reading-time-sort="13">
-<a href="./Libros.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="Imagenes\01_Libros\00_Crear_Project.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Libros
-</h5>
-<div class="card-text listing-description">
-En esta sección, aprenderás cómo crear un libro utilizando Quarto, el cual consiste en combinar…
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-listing-file-modified-sort="1700855400953" data-listing-reading-time-sort="16">
-<a href="./Presentaciones.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="Imagenes\02_Presentaciones\00_Creacion.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Presentaciones
-</h5>
-<div class="card-text listing-description">
-En esta sección, aprenderás cómo crear una presentación (en distintos formatos) utilizando Quarto.
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-listing-file-modified-sort="1702666271698" data-listing-reading-time-sort="11">
-<a href="./Paginas_Web.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="Imagenes\03_Web\00_creacion.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Páginas Web
-</h5>
-<div class="card-text listing-description">
-En esta sección de Páginas Web aprenderás cómo crear tu propia página web y personalizarla como más te guste haciendo uso de Quarto y otros lenguajes como CSS.
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div>
-</div>
-</div>
-<div class="footer-text">
-<div class="footer-container black-background">
-<div class="footer-block">
-<div class="grid">
-<section id="publicado-por" class="g-col-12 g-col-md-6">
-<h3 class="anchored">Publicado por</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://unal.edu.co/"><img src="Imagenes/Logos/escudoUnal.svg" class="img-fluid figure-img" style="width:50.0%"></a></p>
-</figure>
-</div>
-</section>
-<section id="sobre-nosotros" class="g-col-12 g-col-md-2">
-<h3 class="anchored">Sobre nosotros</h3>
-<p>Objetivo<br>
-Grupo<br>
-Contactenos</p>
-</section>
-<section id="paginas-web" class="g-col-12 g-col-md-2">
-<h3 class="anchored">Paginas Web</h3>
-</section>
-<section id="siguenos-en" class="g-col-12 g-col-md-2">
-<h3 class="anchored">Siguenos en</h3>
-<p><a href="https://github.com/realworlddatascience" target="_blank">GitHub</a><br>
-<a href="https://twitter.com/rwdatasci" target="_blank">Twitter</a><br>
-<a href="https://www.linkedin.com/showcase%7Btarget=%22_blank%22%7D/rss-real-world-data-science" target="_blank">LinkedIn</a><br>
-<a href="https://fosstodon.org/@rwdatasci" target="_blank">Mastodon</a><br>
-</p>
-</section>
-</div>
-</div>
-</div>
-</div>
 
 
 

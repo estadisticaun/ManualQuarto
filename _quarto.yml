@@ -28,6 +28,8 @@ website:
             file: Paginas_Web.qmd
           - text: HTML y CSS
             file: CSS_Web.qmd
+      - text: Blog
+        file: blog.qmd
       - text: Articulos
         file: Articulos.qmd
       - icon: github

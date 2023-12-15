@@ -158,6 +158,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </ul>
   </li>
   <li class="nav-item">
+    <a class="nav-link" href="./blog.html" rel="" target="">
+ <span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="./Articulos.html" rel="" target="">
  <span class="menu-text">Articulos</span></a>
   </li>  
@@ -211,8 +215,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#modo-lector" id="toc-modo-lector" class="nav-link" data-scroll-target="#modo-lector">Modo lector</a></li>
   <li><a href="#búsqueda" id="toc-búsqueda" class="nav-link" data-scroll-target="#búsqueda">Búsqueda</a></li>
   </ul></li>
-  <li><a href="#búsqueda-en-el-sitio-web" id="toc-búsqueda-en-el-sitio-web" class="nav-link" data-scroll-target="#búsqueda-en-el-sitio-web">Búsqueda en el sitio web</a></li>
-  <li><a href="#herramientas-en-el-sitio-web" id="toc-herramientas-en-el-sitio-web" class="nav-link" data-scroll-target="#herramientas-en-el-sitio-web">Herramientas en el sitio web</a></li>
+  <li><a href="#búsqueda-en-el-sitio-web" id="toc-búsqueda-en-el-sitio-web" class="nav-link" data-scroll-target="#búsqueda-en-el-sitio-web">Búsqueda en el sitio web</a>
+  <ul class="collapse">
+  <li><a href="#apariencia" id="toc-apariencia" class="nav-link" data-scroll-target="#apariencia">Apariencia</a></li>
+  <li><a href="#algolia" id="toc-algolia" class="nav-link" data-scroll-target="#algolia">Algolia</a></li>
+  </ul></li>
+  <li><a href="#herramientas-en-el-sitio-web" id="toc-herramientas-en-el-sitio-web" class="nav-link" data-scroll-target="#herramientas-en-el-sitio-web">Herramientas en el sitio web</a>
+  <ul class="collapse">
+  <li><a href="#encabezado-y-pie-de-página" id="toc-encabezado-y-pie-de-página" class="nav-link" data-scroll-target="#encabezado-y-pie-de-página">Encabezado y pie de página</a></li>
+  <li><a href="#favicon" id="toc-favicon" class="nav-link" data-scroll-target="#favicon">favicon</a></li>
+  <li><a href="#tarjetas-de-twitter" id="toc-tarjetas-de-twitter" class="nav-link" data-scroll-target="#tarjetas-de-twitter">Tarjetas de Twitter</a></li>
+  <li><a href="#google-analítico" id="toc-google-analítico" class="nav-link" data-scroll-target="#google-analítico">Google analítico</a></li>
+  <li><a href="#cookies" id="toc-cookies" class="nav-link" data-scroll-target="#cookies">Cookies</a></li>
+  <li><a href="#aperiencia-modo" id="toc-aperiencia-modo" class="nav-link" data-scroll-target="#aperiencia-modo">Aperiencia (modo)</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -395,13 +411,248 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  navbar:</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    search: true</span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    # Todo lo demás</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Si quieres deshabilitar esta opción entonces simplemente usa <code>search: false</code>, si deseas que solo sea para una sección de tu sitio web, entonces</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>title: seccion</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>search: false</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>---</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
 <section id="búsqueda-en-el-sitio-web" class="level2">
 <h2 class="anchored" data-anchor-id="búsqueda-en-el-sitio-web">Búsqueda en el sitio web</h2>
+<section id="apariencia" class="level3">
+<h3 class="anchored" data-anchor-id="apariencia">Apariencia</h3>
+<p>Quarto permite que incluyas la opción para que el lector de tu sitio web pueda buscar más facilmente en TODAS las páginas que dispongas en tu sitio, para ello, utiliza la opción <code>search</code> y ajustala como más desees con las opciones <code>location</code> y <code>type</code>.</p>
+<table class="table">
+<colgroup>
+<col style="width: 37%">
+<col style="width: 62%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Opción</th>
+<th style="text-align: center;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><code>location</code></td>
+<td style="text-align: center;">Especificamos si queremos <em>navbar</em> o <em>sidebar</em></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>type</code></td>
+<td style="text-align: center;">Con <code>overlay</code> aparece un <em>pop up</em>, con <code>textbox</code> no</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>limit</code></td>
+<td style="text-align: center;">Número de resultados que deseas que aparezcan en el cuadro al hacer la búsqueda</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>collapse-after</code></td>
+<td style="text-align: center;">Número de secciones que coinciden con la búsqueda y deseas que aparezcan en el cuadro</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>copy-button</code></td>
+<td style="text-align: center;">Cuando es <code>true</code> aparece un icono que da la opción al usuario de copiar la URL de lo que está buscando</td>
+</tr>
+</tbody>
+</table>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">overlay</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">textbox</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">copy-button</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p><img src="Imagenes/03_Web/11_overlay.png" class="img-fluid"></p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p><img src="Imagenes/03_Web/12_textbox.png" class="img-fluid"></p>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<p><img src="Imagenes/03_Web/13_copy.png" class="img-fluid"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="algolia" class="level3">
+<h3 class="anchored" data-anchor-id="algolia">Algolia</h3>
+</section>
 </section>
 <section id="herramientas-en-el-sitio-web" class="level2">
 <h2 class="anchored" data-anchor-id="herramientas-en-el-sitio-web">Herramientas en el sitio web</h2>
+<section id="encabezado-y-pie-de-página" class="level3">
+<h3 class="anchored" data-anchor-id="encabezado-y-pie-de-página">Encabezado y pie de página</h3>
+<p>Puedes agregar texto e imagenes en el encabeza y/o en el pie de página de tu sitio web, de tal forma que aparezca en todos o en una sola de las pestañas de tu sitio. Para ello utiliza las opciones <code>body-header</code>, <code>body-footer</code>, <code>margin-header</code>, <code>margin-footer</code>, por ejemplo</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true"><em>body-header</em></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false"><em>body-footer</em></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false"><em>margin-header</em></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-4" role="tab" aria-controls="tabset-2-4" aria-selected="false"><em>margin-footer</em></a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div class="sourceCode" id="cb12"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>website:</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  body-header: | </span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    Puedes encontrar nás información en &lt;https://quarto.org/docs/guide/&gt;</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  margin-header: |</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    ![Logo UNAL](/Imagenes/Logos/Logo_UNAL.png)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="Imagenes/03_Web/14_bodyheader.png" class="img-fluid"></p>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<div class="sourceCode" id="cb13"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>website:</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  body-footer: | </span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    Puedes encontrar nás información en &lt;https://quarto.org/docs/guide/&gt;</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  margin-header: |</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    ![Logo UNAL](/Imagenes/Logos/Logo_UNAL.png)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="Imagenes/03_Web/16_bodyfooter.png" class="img-fluid"></p>
+</div>
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+<div class="sourceCode" id="cb14"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>website:</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  body-header: | </span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    Puedes encontrar nás información en &lt;https://quarto.org/docs/guide/&gt;</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  margin-header: |</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    ![Logo UNAL](/Imagenes/Logos/Logo_UNAL.png)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="Imagenes/03_Web/15_marginheader.png" class="img-fluid"></p>
+</div>
+<div id="tabset-2-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-4-tab">
+<div class="sourceCode" id="cb15"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>website:</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  body-header: | </span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    Puedes encontrar nás información en &lt;https://quarto.org/docs/guide/&gt;</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  margin-footer: |</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    ![Logo UNAL](/Imagenes/Logos/Logo_UNAL.png)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="Imagenes/03_Web/17_marginfooter.png" class="img-fluid"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="favicon" class="level3">
+<h3 class="anchored" data-anchor-id="favicon">favicon</h3>
+<p>Con la opción <code>favicon</code> puedes proporcionar un ícono para tus sitio web en la pestaña del navegador, solo debes especificar la dirección de la imagen que deseas que aparezca</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>website:</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  favicon: 'Imagenes/Logos/Escudo_UNAL.png'</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="Imagenes/03_Web/18_favicon.png" class="img-fluid"></p>
+</section>
+<section id="tarjetas-de-twitter" class="level3">
+<h3 class="anchored" data-anchor-id="tarjetas-de-twitter">Tarjetas de Twitter</h3>
+</section>
+<section id="google-analítico" class="level3">
+<h3 class="anchored" data-anchor-id="google-analítico">Google analítico</h3>
+</section>
+<section id="cookies" class="level3">
+<h3 class="anchored" data-anchor-id="cookies">Cookies</h3>
+<p>Con Quarto puedes permitir que el usuario acepte o rechace las <em>cookies</em> de tu sitio (si las tiene). Con Google Analítico se pueden vincular directamente las preferencias de <em>cookies</em> del lector, si esta opción no está habilitada, entonces puedes personalizar el formato del consentimiento.</p>
+<table class="table">
+<colgroup>
+<col style="width: 37%">
+<col style="width: 62%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Opción</th>
+<th style="text-align: center;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><code>type</code></td>
+<td style="text-align: center;">Con <code>implied</code> se notifica al usuario que el sitio tiene <em>cookies</em> y le permite aceptar, rechazar y/o modificar sus preferencias. Con <code>express</code> se notifica al usuario que el sitio tiene cookies, pero no puede continuar visitando el sitio hasta que las acepte</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>style</code></td>
+<td style="text-align: center;"><code>simple</code>, <code>headline</code>, <code>interstitial</code>, <code>standalone</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>palette</code></td>
+<td style="text-align: center;"><code>light</code>, <code>dark</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>policy-url</code></td>
+<td style="text-align: center;">La URL donde se encuentran las políticas de privacidad de tu sitio web</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>prefs-text</code></td>
+<td style="text-align: center;">El texto que se muestra para personalizar la preferencia de cookies</td>
+</tr>
+</tbody>
+</table>
+<p>Cookies por defecto:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>website:</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  cookie-consent: true</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="Imagenes/03_Web/19_cookie.png" class="img-fluid"></p>
+<p>Ejemplo usando las opciones de la tabla:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>website:</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  cookie-consent: </span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    type: express</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    style: interstitial</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    palette: dark</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="Imagenes/03_Web/20_cookies.png" class="img-fluid"></p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">implied</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">express</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false">simple</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-4" role="tab" aria-controls="tabset-3-4" aria-selected="false">headline</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-5" role="tab" aria-controls="tabset-3-5" aria-selected="false">interstitial</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-6-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-6" role="tab" aria-controls="tabset-3-6" aria-selected="false">standalone</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-7-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-7" role="tab" aria-controls="tabset-3-7" aria-selected="false">light</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-8-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-8" role="tab" aria-controls="tabset-3-8" aria-selected="false">dark</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<div class="sourceCode" id="cb19"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>website:</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  cookie-consent: </span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    type: implied</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    style: simple</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    palette: light</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="Imagenes/03_Web/21_implied.png" class="img-fluid"></p>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<div class="sourceCode" id="cb20"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>website:</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  cookie-consent: </span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    type: express</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    style: simple</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>    palette: light</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="Imagenes/03_Web/22_express.png" class="img-fluid"></p>
+</div>
+<div id="tabset-3-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-3-tab">
+<div class="sourceCode" id="cb21"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>website:</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  cookie-consent: </span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    type: implied</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    style: simple</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    palette: light</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="Imagenes/03_Web/21_implied.png" class="img-fluid"></p>
+</div>
+<div id="tabset-3-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-4-tab">
+<div class="sourceCode" id="cb22"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>website:</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  cookie-consent: </span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    type: implied</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>    style: headline</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>    palette: light</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="Imagenes/03_Web/23_headline.png" class="img-fluid"></p>
+</div>
+<div id="tabset-3-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-5-tab">
+<div class="sourceCode" id="cb23"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>website:</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  cookie-consent: </span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    type: implied</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    style: interstitial</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    palette: light</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="Imagenes/03_Web/24_interstitial.png" class="img-fluid"></p>
+</div>
+<div id="tabset-3-6" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-6-tab">
+<div class="sourceCode" id="cb24"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>website:</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  cookie-consent: </span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    type: implied</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    style: standalone</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>    palette: light</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="Imagenes/03_Web/25_standalone.png" class="img-fluid"></p>
+</div>
+<div id="tabset-3-7" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-7-tab">
+<div class="sourceCode" id="cb25"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>website:</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  cookie-consent: </span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    type: implied</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    style: simple</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>    palette: light</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="Imagenes/03_Web/21_implied.png" class="img-fluid"></p>
+</div>
+<div id="tabset-3-8" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-8-tab">
+<div class="sourceCode" id="cb26"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>website:</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  cookie-consent: </span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    type: implied</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    style: simple</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>    palette: dark</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="Imagenes/03_Web/26_dark.png" class="img-fluid"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="aperiencia-modo" class="level3">
+<h3 class="anchored" data-anchor-id="aperiencia-modo">Aperiencia (modo)</h3>
+</section>
 <div class="footer-text">
 <div class="footer-container black-background">
 <div class="footer-block">
