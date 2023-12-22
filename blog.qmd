@@ -38,6 +38,86 @@ Tal y como sucede cuando creas un sitio web, en el directorio del blog se crean 
 
 ## Acerca de 
 
+Esta sección en tu blog brinda a tus lectores más información sobre ti o tu organización. Esto puede habilitarlo simplemente con la opción `about`dondes especificas el tema (`template`) y otras herramientas que desees que aparezcan (link de Twitter, GitHub, YouTube, etc).
+
+``` default
+---
+title: "Estadística UN"
+image: Escudo_UNAL.png
+about:
+  template: jolla
+  links:
+    - icon: globe2
+      text: Web
+      href: https://unal.edu.co/
+    - icon: linkedin
+      text: youtube
+      href: https://www.youtube.com/@UNALoficial
+    - icon: github
+      text: Github
+      href: https://github.com/estadisticaun
+---
+```
+
+Con `template` puedes modificar el tema de esta sección
+
+::: panel-tabset
+
+### jolla
+
+![](Imagenes/04_blog/10_jolla.png)
+
+### trestles
+
+![](Imagenes/04_blog/11_trestles.png)
+
+### solana
+
+![](Imagenes/04_blog/12_solana.png)
+
+### marquee
+
+![](Imagenes/04_blog/13_marquee.png)
+
+### broadside
+
+![](Imagenes/04_blog/14_broadside.png)
+
+:::
+
+Si agregas un *"id"* con la opción `id` en `about` puedes ubicar toda la sección de "acerca de" donde tu desees, en otras palabras, puedes agregar contenido aantes y despues del "acerca de".
+
+``` default
+---
+title: "Estadística UN"
+image: Escudo_UNAL.png
+about:
+  id: tu-id
+  template: jolla
+  links:
+    - icon: globe2
+      text: Web
+      href: https://unal.edu.co/
+    - icon: linkedin
+      text: youtube
+      href: https://www.youtube.com/@UNALoficial
+    - icon: github
+      text: Github
+      href: https://github.com/estadisticaun
+---
+
+Antes de acerca de
+
+:::{#tu-id}
+
+Todo lo de acerca de
+
+:::
+
+Después de acerca de
+
+```
+
 ## Agregar una publicación 
 
 Para agregar una nueva publicación a tu blog, debes dirigirte a la carpeta *"posts"* y crear una nueva carpeta con el nombre de tu nuevo artículo, en ella creas un archivo llamado `index.qmd` junto con una imagen. Cuando reenderices nuevamente, este ya estará actualizado.
