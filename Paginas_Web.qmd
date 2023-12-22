@@ -6,7 +6,7 @@ search: true
 toc: true
 ---
 
-# Páginas Web
+# Páginas Web 
 
 ::: header-text
 ::: content-container
@@ -33,7 +33,7 @@ Primero, debes crear la página web. En R, sigue los siguientes pasos:
 3.    Llena las opciones que aparezcan en la ventana emergente automáticamente 
 
 ![](Imagenes/03_Web/03_creacion.png)
-4.    Da clic en *"Render"* y echa un vistazon a la primera versión (y al primer acercamiento) de tu página Web.
+4.    Da clic en *"Render"* y echa un vistazo a la primera versión (y al primer acercamiento) de tu página Web.
 
 ![](Imagenes/03_Web/04_creacion.png)
 
@@ -263,8 +263,6 @@ Quarto permite que incluyas la opción para que el lector de tu sitio web pueda 
 ![](Imagenes/03_Web/13_copy.png)
 :::
 
-### Algolia
-
 ## Herramientas en el sitio web
 
 ### Encabezado y pie de página
@@ -333,9 +331,11 @@ website:
 
 ![](Imagenes/03_Web/18_favicon.png)
 
-### Tarjetas de Twitter
+### Google Analítico
 
-### Google analítico
+Google Analítico (*Google Analytics*) es una herramienta de análisis Web que te permite conocer información detallada del tráfico y el comportamiento de los visitantes de tu sitio web. Para saber más de Google Analytics consulta [aquí](https://analytics.google.com/analytics/web/provision/?pli=1#/provision).
+
+Para agregar esta increíble herramienta a tu sitio web, basta con incluir la opción `google-analytics:` en `website:` y especificas tu ID de Google Analítico.
 
 ### Cookies
 

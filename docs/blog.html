@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -65,7 +99,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -93,43 +127,17 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="./Libros.html" rel="" target="">
  <span class="menu-text">Libros</span></a>
   </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-presentaciones" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
- <span class="menu-text">Presentaciones</span>
-    </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-presentaciones">    
-        <li>
-    <a class="dropdown-item" href="./Presentaciones.html" rel="" target="">
- <span class="dropdown-text">Quarto</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="./Presentaciones.html" rel="" target="">
+ <span class="menu-text">Presentaciones</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="./CSS_Presentaciones.html" rel="" target="">
- <span class="dropdown-text">HTML y CSS</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="./Paginas_Web.html" rel="" target="">
+ <span class="menu-text">Páginas Web</span></a>
   </li>  
-    </ul>
-  </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-páginas-web" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
- <span class="menu-text">Páginas Web</span>
-    </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-páginas-web">    
-        <li>
-    <a class="dropdown-item" href="./Paginas_Web.html" rel="" target="">
- <span class="dropdown-text">Quarto</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./CSS_Web.html" rel="" target="">
- <span class="dropdown-text">HTML y CSS</span></a>
-  </li>  
-    </ul>
-  </li>
   <li class="nav-item">
     <a class="nav-link active" href="./blog.html" rel="" target="" aria-current="page">
  <span class="menu-text">Blog</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./Articulos.html" rel="" target="">
- <span class="menu-text">Articulos</span></a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/estadisticaun" rel="" target=""><i class="bi bi-github" role="img" aria-label="GitHub">
@@ -162,14 +170,198 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#blog" id="toc-blog" class="nav-link active" data-scroll-target="#blog">Blog</a>
+  <ul class="collapse">
+  <li><a href="#crea-tu-blog" id="toc-crea-tu-blog" class="nav-link" data-scroll-target="#crea-tu-blog">Crea tu Blog</a></li>
+  <li><a href="#acerca-de" id="toc-acerca-de" class="nav-link" data-scroll-target="#acerca-de">Acerca de</a></li>
+  <li><a href="#agregar-una-publicación" id="toc-agregar-una-publicación" class="nav-link" data-scroll-target="#agregar-una-publicación">Agregar una publicación</a></li>
+  <li><a href="#borradores" id="toc-borradores" class="nav-link" data-scroll-target="#borradores">Borradores</a></li>
+  <li><a href="#fecha-de-actualización" id="toc-fecha-de-actualización" class="nav-link" data-scroll-target="#fecha-de-actualización">Fecha de actualización</a></li>
+  <li><a href="#categorías" id="toc-categorías" class="nav-link" data-scroll-target="#categorías">Categorías</a></li>
+  <li><a href="#temas" id="toc-temas" class="nav-link" data-scroll-target="#temas">Temas</a></li>
+  <li><a href="#rss-feed" id="toc-rss-feed" class="nav-link" data-scroll-target="#rss-feed">RSS Feed</a></li>
+  <li><a href="#publicación-y-suscripciones" id="toc-publicación-y-suscripciones" class="nav-link" data-scroll-target="#publicación-y-suscripciones">Publicación y suscripciones</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
 
+<section id="blog" class="level1">
+<h1>Blog</h1>
+<p>Crear tu propio blog en Quarto es muy sencillo, puedes utilizar muchs de las opciones que son válidas para sitios web creados con Quarto.</p>
+<section id="crea-tu-blog" class="level2">
+<h2 class="anchored" data-anchor-id="crea-tu-blog">Crea tu Blog</h2>
+<p>Para crear tu propio blog en R, sigue los siguientes pasos:</p>
+<ol type="1">
+<li>Ve a la esquina superior derecha de RStudio, selecciona el ícono de cajita y luego da clic en la opción de <em>“New Project”</em></li>
+</ol>
+<p><img src="Imagenes/03_Web/00_creacion.png" class="img-fluid"></p>
+<p><img src="Imagenes/03_Web/01_creacion.png" class="img-fluid"></p>
+<ol start="2" type="1">
+<li>Selecciona la opción <em>“Quarto Blog”</em></li>
+</ol>
+<p><img src="Imagenes/04_blog/00_creacion.png" class="img-fluid"></p>
+<ol start="3" type="1">
+<li>Llena las opciones que aparezcan en la ventana emergente automáticamente</li>
+</ol>
+<p><img src="Imagenes/04_blog/01_creacion.png" class="img-fluid"></p>
+<ol start="4" type="1">
+<li>Da clic en <em>“Render”</em> y echa un vistazo a la primera versión de tu blog.</li>
+</ol>
+<p><img src="Imagenes/04_blog/02_creacion.png" class="img-fluid"></p>
+<p>Tal y como sucede cuando creas un sitio web, en el directorio del blog se crean automáticamente ciertos archivos que cumplen las mismas funciones que en <a href="./Paginas_Web.html">Páginas Web</a>, la carpeta <em>“posts”</em> guarda las actualizaciones que hagas en tu blog.</p>
+</section>
+<section id="acerca-de" class="level2">
+<h2 class="anchored" data-anchor-id="acerca-de">Acerca de</h2>
+</section>
+<section id="agregar-una-publicación" class="level2">
+<h2 class="anchored" data-anchor-id="agregar-una-publicación">Agregar una publicación</h2>
+<p>Para agregar una nueva publicación a tu blog, debes dirigirte a la carpeta <em>“posts”</em> y crear una nueva carpeta con el nombre de tu nuevo artículo, en ella creas un archivo llamado <code>index.qmd</code> junto con una imagen. Cuando reenderices nuevamente, este ya estará actualizado.</p>
+<ol type="1">
+<li><p>Crea la carpeta con los archivos. <img src="Imagenes/04_blog/04_agregar.png" class="img-fluid"></p></li>
+<li><p>En <code>index.qmd</code> escribe lo que desees que vaya en el artículo.</p></li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>title: "Actualización"</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>author: "Estadísticas UN"</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>date: "2023-12-15"</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>categories: [news]</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>---</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="3" type="1">
+<li>Reenderiza. <img src="Imagenes/04_blog/03_agregar.png" class="img-fluid"></li>
+</ol>
+<p>Recuerda que para cambiar el idioma en el que aparecen las opciones del blog, es necesario agregar/modificar el archivo <code>_language.yml</code>. En nuestro ejemplo, usamos el formato dado por Quarto que puedes encontrar <a href="https://github.com/quarto-dev/quarto-cli/blob/main/src/resources/language/_language-es.yml">aquí</a>.</p>
+</section>
+<section id="borradores" class="level2">
+<h2 class="anchored" data-anchor-id="borradores">Borradores</h2>
+<p>Si estas creando un nuevo artículo para tu blog y aún no lo deseas publicar, puedes activar la opción <code>draft: true</code>, con ella puedes modificar dicho archivo hasta que lo tengas listo y quieras publicarlo.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>title: "Actualización"</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>author: "Estadísticas UN"</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>date: "2023-12-15"</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>categories: [news]</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>draft: true</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>---</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Cuando reenderices, aún no aparecerá publicado el articulo “Actualización”.</p>
+</section>
+<section id="fecha-de-actualización" class="level2">
+<h2 class="anchored" data-anchor-id="fecha-de-actualización">Fecha de actualización</h2>
+<p>Si ya publicaste cierto artículo en tu blog y quieres modificarle algo, puedes usar la opción <code>date-mofified</code> de modo que informes a tus lectores que se hizo una modificación del artículo que están visualizando.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>title: "Actualización"</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>author: "Estadísticas UN"</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>date: "2023-12-15"</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>categories: [news]</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>date-modified: "2023-12-18"</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>---</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="Imagenes/04_blog/05_modificacion.png" class="img-fluid"></p>
+</section>
+<section id="categorías" class="level2">
+<h2 class="anchored" data-anchor-id="categorías">Categorías</h2>
+</section>
+<section id="temas" class="level2">
+<h2 class="anchored" data-anchor-id="temas">Temas</h2>
+<p>Quarto incluye 25 temas de Bootswatcha para blogs, puedes encontrar la lista completa <a href="https://quarto.org/docs/websites/website-blog.html#themes">aquí</a></p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">cyborg</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">solar</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">quartz</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false">yeti</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p><img src="Imagenes/04_blog/06_cyborg.png" class="img-fluid"></p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p><img src="Imagenes/04_blog/07_solar.png" class="img-fluid"></p>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<p><img src="Imagenes/04_blog/08_quartz.png" class="img-fluid"></p>
+</div>
+<div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
+<p><img src="Imagenes/04_blog/09_yeti.png" class="img-fluid"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="rss-feed" class="level2">
+<h2 class="anchored" data-anchor-id="rss-feed">RSS Feed</h2>
+<p>Con Quarto puedes agregar un “RSS Feed” que permite a los lectores de tu blog recibir notificaciones cuando agregues algo nuevo a tu blog.Quarto permite agregar esta opción para cuando agregues algo en generall al blog o en cierta categoría.</p>
+<p>Para incluirlo en tu blog, debes agregar en tu archivo <code>quarto.yml</code> en <code>website</code> la opción <code>site-url</code> donde pones la URL de tu blog y la opción <code>description</code> para añadir una corta descripción de tu blog que atraiga a tus lectores.</p>
+<p>Luego, en la página de inicio del blog incluye la opción <code>feed: true</code></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>title: "Blog UNAL"</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>listing:</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  contents: posts</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  sort: "date desc"</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  type: default</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  categories: true</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  sort-ui: false</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  filter-ui: false</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  feed: true</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>page-layout: full</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>title-block-banner: true</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>---</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Si quieres que el <em>feed</em> sea únicamente para ciertas categorías entonces debes especificarlo en <code>categories</code> en <code>feed</code></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>title: "Blog UNAL"</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>listing:</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  contents: posts</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  sort: "date desc"</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  type: default</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  categories: true</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  sort-ui: false</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  filter-ui: false</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  feed: </span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    categories: [nuevo, news]</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>page-layout: full</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>title-block-banner: true</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>---</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="publicación-y-suscripciones" class="level2">
+<h2 class="anchored" data-anchor-id="publicación-y-suscripciones">Publicación y suscripciones</h2>
+<div class="footer-text">
+<div class="footer-container black-background">
+<div class="footer-block">
+<div class="grid">
+<section id="publicado-por" class="level3 g-col-12 g-col-md-6">
+<h3 class="anchored" data-anchor-id="publicado-por">Publicado por</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://unal.edu.co/"><img src="Imagenes/Logos/escudoUnal.svg" class="img-fluid figure-img" style="width:50.0%"></a></p>
+</figure>
+</div>
+</section>
+<section id="sobre-nosotros" class="level3 g-col-12 g-col-md-2">
+<h3 class="anchored" data-anchor-id="sobre-nosotros">Sobre nosotros</h3>
+<p>Objetivo<br>
+Grupo<br>
+Contactenos</p>
+</section>
+<section id="paginas-web" class="level3 g-col-12 g-col-md-2">
+<h3 class="anchored" data-anchor-id="paginas-web">Paginas Web</h3>
+</section>
+<section id="siguenos-en" class="level3 g-col-12 g-col-md-2">
+<h3 class="anchored" data-anchor-id="siguenos-en">Siguenos en</h3>
+<p><a href="https://github.com/realworlddatascience">GitHub</a><br>
+<a href="https://twitter.com/rwdatasci">Twitter</a><br>
+<a href="https://www.linkedin.com/showcase/rss-real-world-data-science">LinkedIn</a><br>
+<a href="https://fosstodon.org/@rwdatasci">Mastodon</a><br>
+</p>
+</section>
+</div>
+</div>
+</div>
+</div>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

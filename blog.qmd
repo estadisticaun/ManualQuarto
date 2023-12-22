@@ -1,1 +1,226 @@
+---
+page-layout: article
+section-divs: true
+sidebar: true
+search: true
+toc: true
+---
 
+# Blog
+
+Crear tu propio blog en Quarto es muy sencillo, puedes utilizar muchs de las opciones que son válidas para sitios web creados con Quarto.
+
+## Crea tu Blog
+
+Para crear tu propio blog en R, sigue los siguientes pasos:
+
+1.    Ve a la esquina superior derecha de RStudio, selecciona el ícono de cajita y luego da clic en la opción de *"New Project"*
+
+![](Imagenes/03_Web/00_creacion.png)
+
+![](Imagenes/03_Web/01_creacion.png)
+
+2.    Selecciona la opción *"Quarto Blog"*
+
+![](Imagenes/04_blog/00_creacion.png)
+
+3.    Llena las opciones que aparezcan en la ventana emergente automáticamente 
+
+![](Imagenes/04_blog/01_creacion.png)
+
+4.    Da clic en *"Render"* y echa un vistazo a la primera versión de tu blog.
+
+![](Imagenes/04_blog/02_creacion.png)
+
+
+Tal y como sucede cuando creas un sitio web, en el directorio del blog se crean automáticamente ciertos archivos que cumplen las mismas funciones que en [Páginas Web](Paginas_Web.qmd), la carpeta *"posts"* guarda las actualizaciones que hagas en tu blog.
+
+
+## Acerca de 
+
+## Agregar una publicación 
+
+Para agregar una nueva publicación a tu blog, debes dirigirte a la carpeta *"posts"* y crear una nueva carpeta con el nombre de tu nuevo artículo, en ella creas un archivo llamado `index.qmd` junto con una imagen. Cuando reenderices nuevamente, este ya estará actualizado.
+
+1.    Crea la carpeta con los archivos.
+![](Imagenes/04_blog/04_agregar.png)
+
+2.    En `index.qmd` escribe lo que desees que vaya en el artículo.
+
+``` default
+---
+title: "Actualización"
+author: "Estadísticas UN"
+date: "2023-12-15"
+categories: [news]
+---
+```
+
+3.    Reenderiza.
+![](Imagenes/04_blog/03_agregar.png)
+
+Recuerda que para cambiar el idioma en el que aparecen las opciones del blog, es necesario agregar/modificar el archivo `_language.yml`. En nuestro ejemplo, usamos el formato dado por Quarto que puedes encontrar [aquí](https://github.com/quarto-dev/quarto-cli/blob/main/src/resources/language/_language-es.yml). 
+
+
+## Borradores
+
+Si estas creando un nuevo artículo para tu blog y aún no lo deseas publicar, puedes activar la opción `draft: true`, con ella puedes modificar dicho archivo hasta que lo tengas listo y quieras publicarlo.
+
+``` default
+---
+title: "Actualización"
+author: "Estadísticas UN"
+date: "2023-12-15"
+categories: [news]
+draft: true
+---
+``` 
+
+Cuando reenderices, aún no aparecerá publicado el articulo "Actualización".
+
+## Fecha de actualización
+
+Si ya publicaste cierto artículo en tu blog y quieres modificarle algo, puedes usar la opción `date-mofified` de modo que informes a tus lectores que se hizo una modificación del artículo que están visualizando.
+
+``` default
+---
+title: "Actualización"
+author: "Estadísticas UN"
+date: "2023-12-15"
+categories: [news]
+date-modified: "2023-12-18"
+---
+```
+
+![](Imagenes/04_blog/05_modificacion.png)
+
+## Categorías
+
+Para agregar una categoría, primero debes incluir en el índice principal de tu blog la opción `categories: true`, luego, en cada artículo o `.qmd` de tu blog, incluye la opción `categories` y especifica la categoría a la que pertenece.
+
+En el índice principal:
+
+``` default
+---
+title: "Blog UNAL"
+listing:
+  contents: posts
+  sort: "date desc"
+  type: default
+  categories: true
+---
+```
+
+En cada artículo que agregues:
+
+``` default
+---
+title: "Actualización"
+author: "Estadísticas UN"
+date: "2023-12-15"
+categories: [nuevo]
+date-modified: "2023-12-18"
+---
+``` 
+
+## Temas
+
+Quarto incluye 25 temas de Bootswatcha para blogs, puedes encontrar la lista completa [aquí](https://quarto.org/docs/websites/website-blog.html#themes)
+
+::: panel-tabset
+
+### cyborg
+
+![](Imagenes/04_blog/06_cyborg.png)
+
+### solar
+
+![](Imagenes/04_blog/07_solar.png)
+
+### quartz
+
+![](Imagenes/04_blog/08_quartz.png)
+
+### yeti
+
+![](Imagenes/04_blog/09_yeti.png)
+
+:::
+
+## RSS Feed
+
+Con Quarto puedes agregar un "RSS Feed" que permite a los lectores de tu blog recibir notificaciones cuando agregues algo nuevo a tu blog.Quarto permite agregar esta opción para cuando agregues algo en generall al blog o en cierta categoría. 
+
+Para incluirlo en tu blog, debes agregar en tu archivo `quarto.yml` en `website` la opción `site-url` donde pones la URL de tu blog y la opción `description` para añadir una corta descripción de tu blog que atraiga a tus lectores.
+
+Luego, en la página de inicio del blog incluye la opción `feed: true`
+
+``` default
+---
+title: "Blog UNAL"
+listing:
+  contents: posts
+  sort: "date desc"
+  type: default
+  categories: true
+  sort-ui: false
+  filter-ui: false
+  feed: true
+page-layout: full
+title-block-banner: true
+---
+``` 
+
+Si quieres que el *feed* sea únicamente para ciertas categorías entonces debes especificarlo en `categories` en `feed`
+
+``` default
+---
+title: "Blog UNAL"
+listing:
+  contents: posts
+  sort: "date desc"
+  type: default
+  categories: true
+  sort-ui: false
+  filter-ui: false
+  feed: 
+    categories: [nuevo, news]
+page-layout: full
+title-block-banner: true
+---
+``` 
+
+::: footer-text
+::: {.footer-container .black-background}
+::: footer-block
+::: grid
+::: {.g-col-12 .g-col-md-6}
+### Publicado por
+
+[![](Imagenes/Logos/escudoUnal.svg){width="50%"}](https://unal.edu.co/)
+:::
+
+::: {.g-col-12 .g-col-md-2}
+### Sobre nosotros
+
+Objetivo\
+Grupo\
+Contactenos
+:::
+
+::: {.g-col-12 .g-col-md-2}
+### Paginas Web
+:::
+
+::: {.g-col-12 .g-col-md-2}
+### Siguenos en
+
+[GitHub](https://github.com/realworlddatascience)\
+[Twitter](https://twitter.com/rwdatasci)\
+[LinkedIn](https://www.linkedin.com/showcase/rss-real-world-data-science)\
+[Mastodon](https://fosstodon.org/@rwdatasci)\
+:::
+:::
+:::
+:::
+:::

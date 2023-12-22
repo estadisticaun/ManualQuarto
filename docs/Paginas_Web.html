@@ -127,43 +127,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="./Libros.html" rel="" target="">
  <span class="menu-text">Libros</span></a>
   </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-presentaciones" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
- <span class="menu-text">Presentaciones</span>
-    </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-presentaciones">    
-        <li>
-    <a class="dropdown-item" href="./Presentaciones.html" rel="" target="">
- <span class="dropdown-text">Quarto</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="./Presentaciones.html" rel="" target="">
+ <span class="menu-text">Presentaciones</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="./CSS_Presentaciones.html" rel="" target="">
- <span class="dropdown-text">HTML y CSS</span></a>
+  <li class="nav-item">
+    <a class="nav-link active" href="./Paginas_Web.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Páginas Web</span></a>
   </li>  
-    </ul>
-  </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-páginas-web" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
- <span class="menu-text">Páginas Web</span>
-    </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-páginas-web">    
-        <li>
-    <a class="dropdown-item" href="./Paginas_Web.html" rel="" target="">
- <span class="dropdown-text">Quarto</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./CSS_Web.html" rel="" target="">
- <span class="dropdown-text">HTML y CSS</span></a>
-  </li>  
-    </ul>
-  </li>
   <li class="nav-item">
     <a class="nav-link" href="./blog.html" rel="" target="">
  <span class="menu-text">Blog</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./Articulos.html" rel="" target="">
- <span class="menu-text">Articulos</span></a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/estadisticaun" rel="" target=""><i class="bi bi-github" role="img" aria-label="GitHub">
@@ -262,7 +236,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol start="3" type="1">
 <li>Llena las opciones que aparezcan en la ventana emergente automáticamente</li>
 </ol>
-<p><img src="Imagenes/03_Web/03_creacion.png" class="img-fluid"> 4. Da clic en <em>“Render”</em> y echa un vistazon a la primera versión (y al primer acercamiento) de tu página Web.</p>
+<p><img src="Imagenes/03_Web/03_creacion.png" class="img-fluid"> 4. Da clic en <em>“Render”</em> y echa un vistazo a la primera versión (y al primer acercamiento) de tu página Web.</p>
 <p><img src="Imagenes/03_Web/04_creacion.png" class="img-fluid"></p>
 <p>Cuando creas una página web con Quarto, por defecto se crea un archivo llamado <code>_quarto.yml</code> donde se especifican ciertas opciones del sitio web y puedes predeterminar ciertas características que desees en los HTML. Más adelante aprenderás cómo modificar este archivo para crear lo que tú quieras.</p>
 <p>Para un primer acercamiento, si quieres modificar el idioma de tu página web, puedes hacerlo agregando la opción <code>lang:</code> en el <code>_quarto.yml</code> y en nuestro caso (español) <code>lang: es</code>. Si no te gustan las traducciones que se hacen por defecto, puedes agregar un archivo <code>_language.yml</code> donde puedes especificar las traducciones que desees, por ejemplo</p>
@@ -389,7 +363,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>      - icon: youtube</span>
 <span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>        href: https://www.youtube.com/@UNALoficial</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><img src="Imagenes/03_Web/09_footer.png" class="img-fluid"></p>
-<p>Recuerda que si quieres personalizar más este pie de página, puedes utilizar lenguaje HTML, puedes encontrar más información <a href="./CSS_Web.html">aquí</a></p>
+<p>Recuerda que si quieres personalizar más este pie de página, puedes utilizar lenguaje HTML, puedes encontrar más información <a href="CSS_Web.qmd">aquí</a></p>
 </section>
 <section id="esconder-barra-de-navegación" class="level3">
 <h3 class="anchored" data-anchor-id="esconder-barra-de-navegación">Esconder barra de navegación</h3>
@@ -652,6 +626,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="aperiencia-modo" class="level3">
 <h3 class="anchored" data-anchor-id="aperiencia-modo">Aperiencia (modo)</h3>
+<p>Con Quarto puedes implementar un “interruptor” que permita al usuario modificar la visualización de tu sitio web, ya sea que desee el modo claro o el modo oscuro. Para ello</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>format:</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  html:</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    theme:</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>      light: cosmo</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>      dark: darkly</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="Imagenes/03_Web/27_themes.png" class="img-fluid"></p>
+<p><img src="Imagenes/03_Web/28_themes.png" class="img-fluid"></p>
+<p>Recuerda que puedes elegir el tema que desees para cada modo, los temas disponibles los puedes encontrar <a href="https://quarto.org/docs/output-formats/html-themes.html#overview">aquí</a></p>
 </section>
 <div class="footer-text">
 <div class="footer-container black-background">
